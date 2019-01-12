@@ -1,0 +1,65 @@
+@import "./../../variables.scss";
+
+.tag {
+  font-size: 12px;
+  display: inline-block;
+  border: 1px solid $border-color-primary;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-in-out, color 0.2s ease-in;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: $text-color-primary;
+  font-weight: 300;
+  letter-spacing: 2px;
+  user-select: none;
+
+  &:hover {
+    .tag-label {
+      &.new {
+          color: white;
+          background-color: darken(#d2fabb, 30%);
+      }
+      &.top {
+          color: white;
+          background-color: darken(#dddddd, 30%);
+      }
+    }
+  }
+
+  @media(max-width: $phone-max){
+    font-size: 10px;
+    padding: 10px;
+  }
+}
+
+.tag:hover {
+  background-color: $brand-color-light;
+  color: $text-color-white;
+  font-weight: 700;
+}
+
+.tag-label {
+  margin-left: 10px;
+  display: block;
+  padding: 2px 5px;
+  border-radius: 5px;
+  letter-spacing: 0;
+  font-weight: 900;
+}
+
+.tag-label.new {
+  background-color: #d2fabb;
+  display: inline-block;
+  font-size: 10px;
+  padding: 5px 10px;
+}
+
+.tag-label.top {
+  background-color: #ddd;
+  display: inline-block;
+  font-size: 10px;
+  padding: 5px 10px;
+}

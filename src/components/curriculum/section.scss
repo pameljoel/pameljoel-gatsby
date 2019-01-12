@@ -1,0 +1,16 @@
+@import "./../../variables.scss";
+
+.cv-section {
+    padding: 20px;
+    margin-bottom: 20px;
+
+    @media(max-width: $tablet-min){
+        padding: 0;
+    }
+}
+
+.cv-section:after {
+    content: "";
+    clear: both;
+    display: block;
+}

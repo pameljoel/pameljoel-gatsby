@@ -1,0 +1,80 @@
+@import "./../../variables.scss";
+@import "./../../mixins.scss";
+
+.fields-container {
+    max-width: 680px;
+    margin: auto;
+
+    @include clearfix;
+
+}
+
+.field-container {
+    padding: 10px 10px 20px;
+    width: 50%;
+    float: left;
+
+    @media (max-width: $phone-min) {
+        width: 100%;
+        float: none;
+    }
+
+    &:nth-child(odd) {
+        position:relative;
+        @media (min-width: $phone-min) {
+            text-align: right;
+            padding-right: 20px;
+            &:before {
+                content: "";
+                position: absolute;
+                right: 0px;
+                top: 0;
+                bottom: 0;
+                width: 1px;
+                background: #eee;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                right: -5px;
+                top: 50%;
+                height: 10px;
+                width: 10px;
+                border: 3px solid #ddd;
+                background: white;
+                border-radius: 50%;
+            }
+        }
+
+        
+    }
+
+    &:nth-child(even) {
+        @media (min-width: $phone-min) {
+            text-align: left;
+            padding-left: 20px;
+        }
+    }
+}
+
+.field-container .field-question {
+    color: $text-color-secondary;
+    font-weight: 300;
+    font-size: 14px;
+
+    @media (max-width: $phone-min) {
+        width: 100%;
+        float: none;
+        border-bottom: 1px solid $border-color-secondary;
+        margin-bottom: 10px;
+    }
+
+}
+
+.field-container .field-link {
+    display: inline-block;
+
+    @media (max-width: $tablet-min) {
+        display: block;
+    }
+}

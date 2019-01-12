@@ -1,0 +1,44 @@
+// brand colors
+$brand-color: #2175AA !default;
+$brand-color-dark: #1972F5 !default;
+$brand-color-darker: darken($brand-color-dark, 10%) !default;
+$brand-color-light: #00baff !default;
+$brand-color-lighter: #4fd0ff !default;
+
+// text colors
+$text-color-primary: #000 !default;
+$text-color-secondary: #575757 !default;
+$text-color-muted: #333 !default;
+$text-color-white: white;
+
+// background colors
+$background-color-primary: white !default;
+$background-color-secondary: #eee !default;
+
+// shadow colors
+$shadow-color-primary: rgba(49, 172, 255, 0.2);
+
+
+// border colors
+$border-color-primary: #eee !default;
+$border-color-secondary: #eee !default;
+
+// button colors
+
+// links colors
+$link-color-primary: #388eff;
+$link-color-hover: darken(#388eff, 10%);
+$link-color-visited: #084eaa;
+
+// hamburger color
+$hamburger-color: white;
+
+// breakpoints
+$phone-min: 480px;
+$phone-max: 767px;
+
+$tablet-min: 768px;
+$tablet-max: 1024px;
+
+$desktop-min: 1025px;
+$desktop-max: 1200px;

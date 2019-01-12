@@ -1,0 +1,11 @@
+.curriculum-container {
+  padding: 20px;
+  /* common */ }
+  .curriculum-container .prefix {
+    padding-right: 5px;
+    display: inline-block; }
+  .curriculum-container .text {
+    color: #00baff;
+    display: inline-block; }
+  .curriculum-container a {
+    border-bottom: 1px dotted #388eff; }

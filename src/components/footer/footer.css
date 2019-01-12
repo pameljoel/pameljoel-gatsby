@@ -1,0 +1,25 @@
+footer {
+  padding: 40px;
+  margin-top: 40px;
+  background-color: rgba(49, 172, 255, 0.1);
+  font-size: 16px;
+  line-height: 24px;
+  border-top: 1px solid #ccf1ff;
+  color: #00baff;
+  font-weight: 300; }
+  footer .footer-text {
+    display: inline-block;
+    vertical-align: middle; }
+    footer .footer-text p {
+      margin: 0; }
+    footer .footer-text .footer-role {
+      display: inline-block;
+      margin-right: 20px; }
+  footer .social {
+    padding: 16px 0;
+    display: inline-block;
+    vertical-align: middle; }
+    footer .social > a {
+      width: 24px;
+      display: inline-block;
+      margin-right: 20px; }

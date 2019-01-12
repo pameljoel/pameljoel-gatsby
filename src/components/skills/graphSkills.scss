@@ -1,0 +1,175 @@
+@import "./../../variables.scss";
+@import "./../../mixins.scss";
+
+.skill-graph-container {
+    @include clearfix;
+
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .skill-graph {
+        float: left;
+        width: 100%;
+        position: relative;
+        padding: 10px;
+
+        @include clearfix;
+
+        @media (max-width: $phone-min) {
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: $phone-min) {
+            width: 100%;
+        }
+
+        @media (min-width: $tablet-min) {
+            width: 50%;
+        }
+
+        @media (min-width: $desktop-min) {
+            width: 50%;
+        }
+
+        &.clickable {
+
+            .skill-graph-title {
+                cursor: pointer;
+                &:hover {
+                    h1:after {
+                        background-color: $brand-color-light;
+                        color: white;
+                        border-color: transparent;
+                    }
+                }
+
+                h1 {
+                    color: $brand-color-light;
+
+                    &:after {
+                        $width: 20px;
+
+                        content: "?";
+                        display: inline-block;
+                        vertical-align: middle;
+                        text-align: center;
+                        margin-left: 10px;
+                        height: $width;
+                        width: $width;
+                        font-size: 12px;
+                        line-height: 19px;
+                        font-weight: 700;
+                        border: 1px solid #ddd;
+                        border-radius: 50%;
+                        transition: all .3s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
+    .skill-graph-image {
+        position: relative;
+
+        @media (max-width: $phone-min) {
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: $phone-min) {
+            float: left;
+            width: 25%;
+        }
+
+        @media (min-width: $tablet-min) {
+            width: 25%;
+        }
+
+        @media (min-width: $desktop-min) {
+            width: 25%;
+        }
+
+        .skill-level-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .skill-level-label {
+            font-weight: 300;
+            color: $text-color-secondary;
+            font-size: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-level {}
+
+        .graph-item {
+            position: relative;
+
+            @media (max-width: $phone-min) {
+                max-width: 150px;
+                margin: auto;
+            }
+
+            svg {
+                position: relative;
+                z-index: 1;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 50%;
+                border: 10px solid #eee;
+            }
+        }
+    }
+
+    .skill-graph-text {
+        text-align: left;
+
+        @media (min-width: $phone-min) {
+            float: left;
+            padding: 0 20px;
+            width: 75%;
+        }
+
+        @media (min-width: $tablet-min) {
+            width: 75%;
+        }
+
+        @media (min-width: $desktop-min) {
+            width: 75%;
+        }
+
+        .skill-graph-title {
+            h1 {
+                margin-top: 0;
+
+                @include title-small;
+
+                margin-bottom: 10px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+        .skill-graph-description {
+            @include body-text-secondary;
+
+            color: $text-color-primary;
+        }
+    }
+
+    svg path {
+        stroke: $brand-color-light;
+    }
+}

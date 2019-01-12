@@ -1,0 +1,58 @@
+@import './../../mixins.scss';
+
+.school-container {
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    .school-role {
+        margin-top: 10px;
+        margin-bottom: 2px;
+
+        @include title-small;
+    }
+
+    .school-data-container {
+        margin-bottom: 20px;
+    }
+
+    .school-degree-type {
+        margin-right: 10px;
+    }
+
+    .school-name {
+        margin-right: 10px;
+    }
+
+    .school-city {
+        margin-right: 10px;
+    }
+
+    .school-description-container {
+        float: left;
+        width: 50%;
+        margin-bottom: 20px;
+        @include body-text;
+
+        @media (max-width: $phone-max) {
+            float: none;
+            width: 100%;
+        }
+    }
+
+    .school-year {}
+
+    .school-skills-container {
+        float: left;
+        width: 50%;
+        margin-bottom: 20px;
+
+
+        @media (max-width: $phone-max) {
+            float: none;
+            width: 100%;
+        }
+    }
+}

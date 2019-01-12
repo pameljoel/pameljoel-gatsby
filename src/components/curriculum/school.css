@@ -1,0 +1,49 @@
+.school-container:after {
+  content: "";
+  clear: both;
+  display: block; }
+
+.school-container .school-role {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000; }
+
+.school-container .school-data-container {
+  margin-bottom: 20px; }
+
+.school-container .school-degree-type {
+  margin-right: 10px; }
+
+.school-container .school-name {
+  margin-right: 10px; }
+
+.school-container .school-city {
+  margin-right: 10px; }
+
+.school-container .school-description-container {
+  float: left;
+  width: 50%;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  line-height: 1.6em;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  color: #000;
+  font-weight: 300; }
+  @media (max-width: 767px) {
+    .school-container .school-description-container {
+      float: none;
+      width: 100%; } }
+
+.school-container .school-skills-container {
+  float: left;
+  width: 50%;
+  margin-bottom: 20px; }
+  @media (max-width: 767px) {
+    .school-container .school-skills-container {
+      float: none;
+      width: 100%; } }

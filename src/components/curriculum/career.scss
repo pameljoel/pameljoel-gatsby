@@ -1,0 +1,14 @@
+@import "./../../variables.scss";
+@import "./../../mixins.scss";
+
+.career-container {}
+
+.career-title {
+    h1 {
+        @include title;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+}
+
+.career-content {}

@@ -1,0 +1,9 @@
+@import '../../variables.scss';
+
+.ReactModalPortal {
+    .ReactModal__Overlay.ReactModal__Overlay--after-open {
+        @media (max-width: 767px ){
+            z-index: 9999 !important;
+        }
+    }
+}

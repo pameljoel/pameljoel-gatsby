@@ -1,0 +1,17 @@
+.homepage-container {
+  padding: 20px; }
+
+.more-arrows {
+  width: 48px;
+  margin-top: 50px;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: moveArrows 1s ease-in-out .5s infinite alternate both; }
+
+@keyframes moveArrows {
+  0% {
+    transform: translateX(-50%) scale(0.8) translateY(30px); }
+  100% {
+    transform: translateX(-50%) scale(1); } }

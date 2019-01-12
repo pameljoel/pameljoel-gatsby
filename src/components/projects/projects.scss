@@ -1,0 +1,200 @@
+@import "./../../variables.scss";
+@import "./../../mixins.scss";
+
+/********************************************
+	CUSTOM STYLES
+********************************************/
+
+.projects {
+    //padding: 20px;
+
+    @media (max-width: $desktop-min) {
+        margin-top: 50px;
+    }
+
+    @media (max-width: $tablet-min) {
+        margin-top: 100px;
+    }
+
+    @media (max-width: $phone-min) {
+        margin-top: 150px;
+    }
+}
+
+.project {
+    text-align: center;
+    margin-top: 60px;
+    padding: 0 40px;
+    color: $text-color-primary;
+
+    .project-header {
+        text-align: center;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .project-date {
+        color: $brand-color-light;
+    }
+
+    .project-name {
+        h1 {
+            @include title;
+
+            margin-bottom: 10px;
+
+            @media (max-width: $phone-min) {
+                font-size: 5vw;
+            }
+        }
+    }
+
+    .project-category {
+        @include subtitle;
+    }
+
+    .project-subtitle {
+        text-align: left;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: $text-color-secondary;
+        font-size: 14px;
+        display: block;
+    }
+
+    .project-divider {
+        max-width: 480px;
+        margin: 20px auto;
+        display: block;
+        border-bottom: 0;
+        border-top: 1px solid $border-color-primary;
+    }
+
+    // about the company
+    .project-about-container {
+        max-width: 480px;
+        margin: 40px auto 0;
+
+        .project-about {
+            text-align: justify;
+
+            @include body-text;
+        }
+    }
+
+    // about the project
+    .project-description-container {
+        max-width: 480px;
+        margin: auto;
+        margin-bottom: 20px;
+
+        .project-description {
+            text-align: justify;
+
+            @include body-text-secondary;
+
+            color: $text-color-primary;
+        }
+    }
+
+    .project-link {
+        a {
+            border-bottom: 1px dotted $link-color-primary;
+        }
+    }
+
+    // project images
+    .project-images-container {
+        text-align: center;
+
+        .project-images {}
+
+        .project-image {
+            max-width: 100%;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            display: inline-block;
+
+            @include box-shadow;
+        }
+    }
+
+    // About my work
+    .project-my-work-container {
+        max-width: 480px;
+        margin: 20px auto;
+
+        .project-my-work {
+            text-align: justify;
+
+            @include body-text;
+        }
+    }
+
+    // project tags
+    .project-tags-container {
+        max-width: 480px;
+        margin: 20px auto;
+
+        .project-tags {
+            margin-top: 20px;
+        }
+    }
+}
+
+.carousel {
+    .slide {}
+
+    .carousel-status {
+        color: $text-color-primary;
+        text-shadow: none;
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
+    &.carousel-slider .control-arrow {
+        &.control-prev {
+            background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+            border-radius: 0;
+            width: 60px;
+
+            &:before {
+                position: fixed;
+                left: 5px;
+                top: 50%;
+                margin: 0 5px;
+                display: inline-block;
+                border-top: 20px solid transparent;
+                border-bottom: 20px solid transparent;
+                content: "";
+                border-right: 20px solid white;
+                z-index: 1;
+            }
+        }
+
+        &.control-next {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+            border-radius: 0;
+            width: 60px;
+
+            &:before {
+                position: fixed;
+                right: 5px;
+                top: 50%;
+                margin: 0 5px;
+                display: inline-block;
+                border-top: 20px solid transparent;
+                border-bottom: 20px solid transparent;
+                content: "";
+                border-left: 20px solid white;
+                z-index: 1;
+            }
+        }
+    }
+}

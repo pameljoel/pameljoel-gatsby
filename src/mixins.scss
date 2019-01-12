@@ -1,0 +1,78 @@
+@import "./variables.scss";
+
+@mixin clearfix {
+    &:after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+
+// utility
+
+@mixin box-shadow {
+    box-shadow: 0 0 50px $shadow-color-primary;
+}
+
+// typography
+@mixin base-text {
+    font-family: sans-serif;
+}
+
+@mixin title {
+    @include base-text;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: $brand-color-light;
+    font-size: 36px;
+    margin-top: 0;
+}
+
+@mixin title-big {
+    @include base-text;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 44px;
+    color: $brand-color;
+}
+@mixin title-small {
+    @include base-text;
+    font-weight: 700;
+    font-size: 24px;
+    color: $text-color-primary;
+}
+
+@mixin subtitle {
+    @include base-text;
+    font-weight: 300;
+    font-size: 24px;
+    color: $text-color-secondary;
+}
+
+@mixin subtitle-small {
+
+    @include base-text;
+    font-weight: 300;
+    font-size: 18px;
+    color: $brand-color-light;
+}
+
+@mixin body-text {
+    @include base-text;
+    line-height: 1.6em;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    color: $text-color-primary;
+    font-weight: 300;
+}
+
+@mixin body-text-secondary {
+    @include base-text;
+    line-height: 1.6em;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    font-weight: 300;
+    color: $text-color-secondary;
+}

@@ -1,0 +1,80 @@
+@import "./../../mixins.scss";
+
+.related-projects {
+    position: relative;
+    padding-top: 40px;
+
+    .related-project-image {
+        img, .project-image {
+            max-width: 100%;
+        }
+    }
+
+    .related-projects-result {}
+    .related-project-no-result {}
+    .slick-arrow {
+        position: absolute;
+        top: 50%;
+        width: 24px;
+        height: 24px;
+        transform: translateY(-50%);
+
+        &.slick-prev {
+            transform: translateX(50%);
+            left: -40px;
+        }
+
+        &.slick-next {
+            transform: translateX(-50%);
+            right: -40px;
+        }
+    }
+
+    .slick-slide {
+        transition: all .3s ease-in-out;
+    }
+
+    .slick-slide.slick-active {
+        padding: 10px;
+
+        img {
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .slick-slider .slick-dots {
+        position: absolute;
+        top: auto;
+        bottom: -40px;
+        transform: translateY(-50%);
+
+        @media (max-width: $phone-max) {
+            display: none !important;
+        }
+
+        li {
+            position: relative;
+
+            &.slick-active {
+                button {
+                    background: rgba(0, 0, 0, 0.4);
+                }
+            }
+
+            button {
+                background: #ddd;
+                max-width: 20px;
+                max-height: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+
+                &::before {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

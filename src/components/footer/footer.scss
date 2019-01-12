@@ -1,0 +1,40 @@
+@import './../../variables.scss';
+
+footer {
+    padding: 40px;
+    margin-top: 40px;
+    background-color: rgba(49, 172, 255, 0.1);
+    font-size: 16px;
+    line-height: 24px;
+    border-top: 1px solid lighten($brand-color-light, 40%);
+    color: $brand-color-light;
+    font-weight: 300;
+
+    .footer-text {
+        display:inline-block;
+        vertical-align:  middle;
+        p {
+            margin: 0;
+        }
+
+        .footer-name {
+
+        }
+        .footer-role {
+            display: inline-block;
+            margin-right: 20px;
+        }
+    }
+
+
+    .social {
+        padding: 16px 0;
+        display: inline-block;
+        vertical-align: middle;
+        > a {
+            width: 24px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+    }
+}

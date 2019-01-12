@@ -1,0 +1,45 @@
+@import "./../../variables.scss";
+@import "./../../mixins.scss";
+
+.skill-additional-info {
+    background-color: lightgreen;
+    color: darkgreen;
+
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    transform: scale(.5);
+
+    &:after {
+        content: "";
+        border-top: 20px solid transparent;
+        border-right: 20px solid lightgreen;
+        position: absolute;
+        right: 20px;
+        top: -20px;
+    }
+
+    &.animate {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .skill-additional-info-icon {
+        color: darkgreen;
+        margin-right: 10px;
+        font-size: 13px;
+        line-height: normal;
+        font-weight: 700;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .skill-additional-info-text {
+        @include body-text-secondary;
+        color: darkgreen;
+        font-size: 13px;
+        margin: 0;
+    }
+}

@@ -1,0 +1,46 @@
+.related-projects {
+  position: relative;
+  padding-top: 40px; }
+  .related-projects .related-project-image img, .related-projects .related-project-image .project-image {
+    max-width: 100%; }
+  .related-projects .slick-arrow {
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%); }
+    .related-projects .slick-arrow.slick-prev {
+      transform: translateX(50%);
+      left: -40px; }
+    .related-projects .slick-arrow.slick-next {
+      transform: translateX(-50%);
+      right: -40px; }
+  .related-projects .slick-slide {
+    transition: all .3s ease-in-out; }
+  .related-projects .slick-slide.slick-active {
+    padding: 10px; }
+    .related-projects .slick-slide.slick-active img {
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2); }
+  .related-projects .slick-slider .slick-dots {
+    position: absolute;
+    top: auto;
+    bottom: -40px;
+    transform: translateY(-50%); }
+    @media (max-width: 767px) {
+      .related-projects .slick-slider .slick-dots {
+        display: none !important; } }
+    .related-projects .slick-slider .slick-dots li {
+      position: relative; }
+      .related-projects .slick-slider .slick-dots li.slick-active button {
+        background: rgba(0, 0, 0, 0.4); }
+      .related-projects .slick-slider .slick-dots li button {
+        background: #ddd;
+        max-width: 20px;
+        max-height: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%; }
+        .related-projects .slick-slider .slick-dots li button::before {
+          font-size: 18px; }

@@ -1,0 +1,336 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.big-header {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: -200px;
+    padding-bottom: 300px;
+    text-align: center;
+    color: white;
+
+    &.home {
+        .big-header-content {
+        }
+
+        h1, h2 {
+            color: white;
+            font-size: 124px;
+            font-family: 'Roboto Slab', serif;
+            text-shadow: 1px 1px 7px rgba(0,0,0,.1), 20px 10px 100px white;
+            font-weight: 700;
+
+            @media (max-width: $phone-max) {
+                font-size: 15vw;
+            }
+
+            margin-bottom: 0;
+        }
+        h1 {
+            text-shadow: none;
+        }
+    }
+
+    .big-header-background {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform-origin: 0;
+        transform: skewY(-5deg);
+        background: $brand-color-light;
+        background: linear-gradient(to right, #5b86e5, $brand-color-light);
+    }
+
+    .big-header-content {
+        padding: 40px 20px;
+        position: relative;
+        z-index: 1;
+        background-size: contain;
+    }
+
+    h1{
+        color: white;
+        font-size: 124px;
+        font-family: 'Roboto Slab', serif;
+        text-shadow: 1px 1px 7px rgba(0,0,0,.1), 20px 10px 100px white;
+        font-weight: 700;
+
+        @media (max-width: $phone-max) {
+            font-size: 15vw;
+        }
+
+        margin-bottom: 0;
+    }
+
+    .subtitle {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 24px;
+        margin-bottom: 20px;
+
+        > .name {
+            cursor: pointer;
+            border-bottom: 2px dotted transparent;
+            transition: all .3s ease-in-out;
+            margin-left: 10px;
+            position: relative;
+
+            &:hover {
+                border-bottom: 2px dotted white;
+                color: #1976D2;
+
+                .presentation-tooltip {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    .job {
+        overflow: hidden;
+        width: 100%;
+        padding-bottom: 20px;
+
+        .job-suffix {
+            position: relative;
+            min-height: 40px;
+
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 20%;
+                float: left;
+                color: white;
+                line-height: normal;
+            }
+
+            &:before {
+                content: "";
+                border-bottom: 1px solid white;
+                width: 50%;
+                max-width: 100px;
+                position: absolute;
+                right: 50%;
+                top: 50%;
+                transform: translateX(-40px);
+            }
+
+            &:after {
+                content: "";
+                border-bottom: 1px solid white;
+                width: 50%;
+                max-width: 100px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(40px);
+            }
+        }
+
+        .job-title {
+            h1 {
+                font-size: 36px;
+                font-weight: 700;
+                letter-spacing: 2px;
+
+                @media (max-width: $phone-max) {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    .company {
+        padding-bottom: 60px;
+        max-width: 300px;
+        margin: auto;
+
+        .company-field {
+            display: block;
+            border-bottom: 1px solid white;
+            text-align: left;
+            padding: 20px 20px 10px;
+        }
+
+        .field-suffix {
+            color: white;
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+        }
+
+        .field-name {
+            display: inline-block;
+            width: calc(100% - 20px);
+            vertical-align: middle;
+            padding-left: 10px;
+            color: $text-color-primary;
+            font-weight: 700;
+            transition: color .4s ease-in-out;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .company-location {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 30px;
+            color: $text-color-primary;
+            background-color: white;
+            margin-bottom: 10px;
+        }
+
+        .company-job-title {
+            font-family: 'Roboto Slab', serif;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1;
+            line-height: 1.5em;
+            font-size: 18px;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                background-color: white;
+                color: $text-color-primary;
+            }
+
+            small {
+                font-weight: 400;
+            }
+        }
+
+        .company-suffix {
+            padding: 10px;
+        }
+    }
+}
+
+.presentation-tooltip {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 100;
+    width: 290px;
+    display: none;
+
+    @media (min-width: 600px) and (max-width: 768px) {
+        width: 200px;
+    }
+
+    @media (max-width: 600px) {
+        left: initial;
+        bottom: initial;
+        right: 0;
+        top: 40px;
+    }
+
+    @media (max-width: 480px) {
+        position: relative;
+        display: flex;
+        top: 10px;
+        width: 100%;
+    }
+
+    &:after {
+        content: "";
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid white;
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: -15px;
+        left: 20px;
+
+        @media (max-width: 600px) {
+            border-bottom: none;
+            border-left: none;
+            border-top: 20px solid transparent;
+            border-right: 20px solid white;
+            left: initial;
+            bottom: initial;
+            top: -15px;
+            right: 20px;
+        }
+
+        @media (max-width: 480px) {
+            border-right: none;
+            border-top: 20px solid transparent;
+            border-left: 20px solid white;
+        }
+    }
+
+    .image {
+        width: 80px;
+        height: 80px;
+        background-image: url("./me.png");
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        float: left;
+
+        @media (min-width: 600px) and (max-width: 768px) {
+            width: 64px;
+            height: 64px;
+        }
+
+        @media (max-width: 600px) {}
+    }
+
+    .description {
+        width: 170px;
+        color: $text-color-primary;
+        text-transform: none;
+        text-align: left;
+        float: left;
+        padding-left: 20px;
+
+        @media (min-width: 600px) and (max-width: 768px) {
+            width: 90px;
+        }
+
+        @media (max-width: 600px) {}
+    }
+
+    .name {
+        display: block;
+        color: $text-color-primary;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .text {
+        display: block;
+        color: $text-color-secondary;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .social {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+
+        .linkedin,
+        .facebook,
+        .skype {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

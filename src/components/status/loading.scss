@@ -1,0 +1,12 @@
+.loading-panel {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

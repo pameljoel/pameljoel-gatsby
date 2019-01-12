@@ -1,0 +1,59 @@
+/* company container */
+.company-container {
+  /* role */
+  /* company data */
+  /* contract type */
+  /* description */
+  /* skills */
+  /* projects */ }
+  .company-container:after {
+    content: "";
+    clear: both;
+    display: block; }
+  .company-container .company-role h1 {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000; }
+  .company-container .company-data-container {
+    margin-bottom: 20px; }
+  .company-container .company-name {
+    margin-right: 20px; }
+  .company-container .company-contract {
+    margin-right: 20px; }
+  .company-container .company-city {
+    margin-right: 20px; }
+  .company-container .company-content-container:after {
+    content: '';
+    clear: both;
+    display: block; }
+  .company-container .company-description-container {
+    float: left;
+    margin-bottom: 40px;
+    width: 50%; }
+    @media (max-width: 767px) {
+      .company-container .company-description-container {
+        float: none;
+        width: 100%; } }
+  .company-container .company-description {
+    font-family: sans-serif;
+    line-height: 1.6em;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    color: #000;
+    font-weight: 300;
+    margin-bottom: 40px; }
+  .company-container .company-website a {
+    border: 1px solid #00baff;
+    padding: 10px 20px;
+    border-radius: 30px; }
+  .company-container .company-skills-container {
+    float: left;
+    width: 50%; }
+    @media (max-width: 767px) {
+      .company-container .company-skills-container {
+        float: none;
+        width: 100%; } }

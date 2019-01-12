@@ -1,0 +1,84 @@
+@import "./../../mixins.scss";
+
+/* company container */
+.company-container {
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    /* role */
+    .company-role {}
+
+    .company-role h1 {
+        margin-top: 10px;
+        margin-bottom: 2px;
+
+        @include title-small;
+    }
+
+    /* company data */
+    .company-data-container {
+        margin-bottom: 20px;
+    }
+
+    /* contract type */
+    .company-name {
+        margin-right: 20px;
+    }
+
+    .company-contract {
+        margin-right: 20px;
+    }
+
+    .company-city {
+        margin-right: 20px;
+    }
+
+    .company-year {}
+
+    .company-content-container {
+        @include clearfix;
+    }
+
+    .company-description-container {
+        float: left;
+        margin-bottom: 40px;
+        width: 50%;
+
+        @media (max-width: $phone-max) {
+            float: none;
+            width: 100%;
+        }
+    }
+
+    /* description */
+    .company-description {
+        @include body-text;
+        margin-bottom: 40px;
+
+    }
+
+    .company-website {
+        a {
+            border: 1px solid $brand-color-light;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+    }
+
+    /* skills */
+    .company-skills-container {
+        float: left;
+        width: 50%;
+
+        @media (max-width: $phone-max) {
+            float: none;
+            width: 100%;
+        }
+    }
+
+    /* projects */
+    .company-projects-container {}
+}

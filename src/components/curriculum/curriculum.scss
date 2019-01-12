@@ -1,0 +1,20 @@
+@import "./../../variables.scss";
+
+.curriculum-container {
+    padding: 20px;
+
+    /* common */
+    .prefix {
+        padding-right: 5px;
+        display: inline-block;
+    }
+
+    .text {
+        color: $brand-color-light;
+        display: inline-block;
+    }
+
+    a {
+        border-bottom: 1px dotted $link-color-primary;
+    }
+}

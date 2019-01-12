@@ -1,0 +1,179 @@
+@import "./../../mixins.scss";
+
+.daily-container {
+    @include clearfix;
+
+    .month-container {
+        @include clearfix;
+
+        margin-bottom: 60px;
+
+        @media (max-width: $desktop-min) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    .daily-item {
+        position: relative;
+        float: left;
+        width: 33.333333%;
+
+        @media (max-width: $tablet-min) {
+            width: 50%;
+        }
+
+        @media (max-width: $phone-min) {
+            width: 100%;
+        }
+
+        &:hover {
+            z-index: 99;
+
+            .daily-image {
+                box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.5);
+            }
+
+            .day {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+            }
+        }
+
+        .daily-image {
+            max-width: 100%;
+            border: 5px solid white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            display: block;
+        }
+
+        .daily-month-name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            box-shadow: none;
+        }
+
+        .month-initial {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 72px;
+            color: #eee;
+            z-index: 1;
+            font-weight: 900;
+            transition: all 0.4s ease-in-out;
+            user-select: none;
+        }
+
+        .day {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            background-color: white;
+            color: $text-color-primary;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            line-height: 30px;
+            font-size: 10px;
+            transition: all .2s ease-in-out;
+            font-weight: 700;
+        }
+    }
+
+    .daily-item-month {
+        &:hover {
+            .daily-image {
+                box-shadow: none;
+            }
+            .month-initial {
+                color: $brand-color-lighter;
+                font-size: 140px;
+            }
+        }
+
+        .daily-image {
+            box-shadow: none;
+        }
+    }
+}
+
+.daily-header {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: -300px;
+
+    .daily-header-description {
+        @include body-text;
+        z-index: 1;
+        position: relative;
+
+        color: white;
+        margin-bottom: 40px;
+
+        a {
+            font-weight: 700;
+        }
+
+        @media (max-width: $phone-min) {
+            display: none;
+        }
+    }
+
+    .daily-header-callout {
+        @include clearfix;
+    }
+
+    .daily-header-callout-title {
+        @include title-small;
+    }
+
+    .daily-header-callout-subtitle {
+        @include subtitle-small;
+
+        color: white;
+    }
+
+    .daily-header-callout-item {
+        float: left;
+        width: 33.3%;
+        margin-top: 40px;
+
+        @media (max-width: $tablet-min) {
+            width: 100%;
+        }
+    }
+
+    .daily-header-callout-item-number {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 40px;
+        line-height: 150px;
+        background-color: $brand-color-light;
+
+        @include title;
+
+        color: white;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .daily-header-callout-item-title {
+        @include subtitle-small;
+
+        text-transform: uppercase;
+    }
+
+    .daily-header-callout-item-description {
+        @include body-text-secondary;
+    }
+}
