@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'gatsby-link';
 
 export default class DailyHeader extends Component {
   render() {
@@ -46,7 +46,7 @@ export default class DailyHeader extends Component {
                 {item.description}
               </div>
             </div>
-            ))}
+          ))}
         </div>
       </div>
     );

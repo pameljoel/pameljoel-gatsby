@@ -5,8 +5,8 @@ import { enableCrisp } from '../crisp/Crisp';
 import DailyHeader from './DailyHeader';
 import DailyItem from './DailyItem';
 import Loading from '../status/Loading';
-import './daily.css';
-import './modal.css';
+import './daily.scss';
+import './modal.scss';
 
 export default class Daily extends Component {
   constructor(props) {
