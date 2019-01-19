@@ -1,0 +1,54 @@
+[
+  {
+      "concept" : [
+        {
+          "name" : "UI",
+          "projects" : ""
+        }
+      ],
+      "design" : [
+        {
+          "name" : "Photoshop"
+        }
+      ],
+      "code" : [
+        {
+          "name" : "html"
+        }
+      ],
+      "motion" : [
+        {
+          "name" : "After effects"
+        }
+      ]
+  }
+]
+
+// - company
+//  - name
+//  - description
+//  - year
+//  - city
+//  - url
+//
+// - progetti
+//  - slug
+//  - title
+//  - date
+//  - description
+//  - category
+//  - url
+//
+// - skill category
+//   - tech
+//   - education
+//   - tags
+//
+// - tech
+//   - year
+//   - where i learn it
+//   - name
+//   - top
+//
+// - education
+//  - school
