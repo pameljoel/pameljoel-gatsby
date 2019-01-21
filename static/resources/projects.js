@@ -10,8 +10,8 @@
     "job": "Lead Front-end developer",
     "sliderId": 0,
     "images": [
-      "mockup-1",
-      "mockup-2"
+      "mockup-1.jpg",
+      "mockup-2.jpg"
     ],
     "tags": [
       "HTML 5",
@@ -40,9 +40,9 @@
     "url": "https://it.rinascimento.com/",
     "sliderId": 1,
     "images": [
-      "mockup-1",
-      "mockup-2",
-      "mockup-3"
+      "mockup-1.jpg",
+      "mockup-2.jpg",
+      "mockup-3.jpg"
     ],
     "tags": [
       "HTML 5",
@@ -67,7 +67,7 @@
     "url": "https://b2b.rinascimento.com/",
     "sliderId": 2,
     "images": [
-      "mockup-1"
+      "mockup-1.jpg"
     ],
     "tags": [
       "HTML 5",
@@ -94,7 +94,7 @@
     "url": "https://www.agro.basf.it/",
     "sliderId": 3,
     "images": [
-      "mockup-1"
+      "mockup-1.jpg"
     ],
     "tags": [
       "First Spirit",
@@ -126,7 +126,7 @@
     "url": "http://www.il-piu-grande-lavoro-sulla-terra.it/home/",
     "sliderId": 4,
     "images": [
-      "mockup-1"
+      "mockup-1.jpg"
     ],
     "tags": [
       "First Spirit",
@@ -148,7 +148,7 @@
     "url": "http://clempad.clementoni.com/it/",
     "sliderId": 5,
     "images": [
-      "mockup-1"
+      "mockup-1.jpg"
     ],
     "tags": [
       "Concept",
@@ -178,7 +178,7 @@
     "job": "Branding & web Design",
     "sliderId": 6,
     "images": [
-      "mockup-1"
+      "mockup-1.jpg"
     ],
     "tags": [
       "HTML 5",
@@ -199,7 +199,7 @@
     "category": "Web Development & Design",
     "job": "Branding & Web Design",
     "images": [
-      "mockup-1"
+      "mockup-1.jpg"
     ],
     "tags": [
       "HTML 5",
@@ -220,7 +220,7 @@
     "category": "Web Design",
     "job": "Graphic Designer",
     "images": [
-      "mockup-1"
+      "mockup-1.jpg"
     ],
     "tags": [
       "Adobe Photoshop",
@@ -240,7 +240,7 @@
     "job": "Graphic Designer",
     "url": "https://www.wim.tv",
     "images": [
-      "mockup-1"
+      "mockup-1.jpg"
     ],
     "tags": [
       "Adobe Photoshop",
