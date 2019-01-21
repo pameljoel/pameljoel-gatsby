@@ -5,7 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.0.76",
+    "@sentry/browser": "^4.3.4",
+    "gatsby": "^2.0.91",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-offline": "^2.0.16",
@@ -19,13 +20,12 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
+    "react-image-lightbox": "^4.4.0",
     "react-minimal-pie-chart": "^3.1.0",
     "react-reveal": "^1.2.2",
-    "react-text-loop": "^1.1.0",
-    "react-tippy": "^1.2.2",
-    "react-image-lightbox": "^4.4.0",
     "react-slick": "^0.22.0",
-    "@sentry/browser": "^4.3.4"
+    "react-text-loop": "^1.1.0",
+    "react-tippy": "^1.2.2"
   },
   "keywords": [
     "gatsby"
