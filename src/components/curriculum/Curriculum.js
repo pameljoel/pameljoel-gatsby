@@ -5,7 +5,7 @@ import Section from './Section';
 import Career from './Career';
 import Education from './Education';
 
-import './curriculum.css';
+import './curriculum.scss';
 
 export default class Curriculum extends Component {
   constructor(props) {

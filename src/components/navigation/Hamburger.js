@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './hamburger.css';
+import './hamburger.scss';
 
 export default class Hamburger extends Component {
   render() {

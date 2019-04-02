@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './closeButton.css';
+import './closeButton.scss';
 
 export default class CloseButton extends Component {
   render() {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Field from './Field';
 
-import './section.css';
+import './section.scss';
 
 export default class Section extends Component {
   render() {

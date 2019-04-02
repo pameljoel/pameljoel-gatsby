@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import './additionalInfo.css';
+import './additionalInfo.scss';
 
 export default class AdditionalInfo extends Component {
   constructor(props) {

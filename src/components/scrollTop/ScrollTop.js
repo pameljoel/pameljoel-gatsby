@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { animateScroll } from 'react-scroll';
 
 import ArrowUp from './arrow-up.svg';
-import './scrollTop.css';
+import './scrollTop.scss';
 
 export default class ScrollTop extends Component {
   constructor(props) {

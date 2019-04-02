@@ -15,23 +15,24 @@
   font-weight: 300;
   letter-spacing: 2px;
   user-select: none;
+  
+  @media (max-width: $phone-max) {
+    font-size: 10px;
+    padding: 10px;
+    line-height: 1;
+  }
 
   &:hover {
     .tag-label {
       &.new {
-          color: white;
-          background-color: darken(#d2fabb, 30%);
+        color: white;
+        background-color: darken(#d2fabb, 30%);
       }
       &.top {
-          color: white;
-          background-color: darken(#dddddd, 30%);
+        color: white;
+        background-color: darken(#dddddd, 30%);
       }
     }
-  }
-
-  @media(max-width: $phone-max){
-    font-size: 10px;
-    padding: 10px;
   }
 }
 

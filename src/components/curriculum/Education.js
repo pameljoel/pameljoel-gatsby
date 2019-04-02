@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import School from './School';
-import './education.css';
+import './education.scss';
 
 export default class Education extends Component {
   render() {

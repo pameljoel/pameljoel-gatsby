@@ -1,12 +1,17 @@
 .error-panel {
+  padding: 100px 0;
+  text-align: center;
 
-    padding: 100px 0;
-    text-align: center;
-}
-
-.error-panel .error-code {
+  .error-code {
     font-size: 120px;
-}
+    line-height: 1;
+  }
 
-.error-panel .error-message {
+  .error-message {
+    margin-bottom: 20px;
+  }
+
+  .big-button-primary {
+    padding: 10px 20px;
+  }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './footer.css';
+import './footer.scss';
 
 const facebookSVG = (
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#3b5999">

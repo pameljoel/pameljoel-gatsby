@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Skill from './skill';
 import InlineSkill from './InlineSkill';
-import './skills.css';
+import './skills.scss';
 
 import "./../../themes/import-red.scss";
 

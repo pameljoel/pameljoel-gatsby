@@ -9,8 +9,8 @@ import Tags from './../tags/Tags';
 import GraphSkills from './../skills/GraphSkills';
 import ErrorBoundary from './../status/ErrorBoundary';
 
-import './home.css';
-import './../card.css';
+import './home.scss';
+import './../card.scss';
 
 const facebookSVG = (
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#3b5999">

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import GraphSkill from './GraphSkill';
 
-import './graphSkills.css';
+import './graphSkills.scss';
 
 export default class GraphSkills extends Component {
   render() {

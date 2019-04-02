@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Tag from './Tag';
-import './tags.css';
+import './tags.scss';
 
 export default class Tags extends Component {
   render() {

@@ -5,7 +5,7 @@ import { enableCrisp, openCrisp } from '../crisp/Crisp'
 
 import Hamburger from './Hamburger'
 
-import './navigation.css'
+import './navigation.scss'
 
 class Navigation extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class Navigation extends Component {
         <div className="desktop-navigation">
           <ul className="main-navigation-branding">
             <li>
-              <Link to="/index">
+              <Link to="/">
                 <div className="nav-logo">
                   <strong>P</strong>
                   amel <strong>J</strong>
@@ -42,7 +42,7 @@ class Navigation extends Component {
           </ul>
           <ul className="main-navigation-links">
             <li>
-              <Link to="/index">
+              <Link to="/">
                 <div className="nav-link">Home</div>
                 <div className="active-bar" />
               </Link>

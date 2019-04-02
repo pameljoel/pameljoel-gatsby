@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Error from './Error';
 import loading from './loading.gif';
-import './loading.css';
+import './loading.scss';
 
 export default class Loading extends Component {
   render() {

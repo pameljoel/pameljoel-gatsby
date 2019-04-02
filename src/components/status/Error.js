@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as Sentry from '@sentry/browser';
 import PropTypes from 'prop-types';
 
-import './error.css';
+import './error.scss';
 
 export default class Error extends Component {
   render() {

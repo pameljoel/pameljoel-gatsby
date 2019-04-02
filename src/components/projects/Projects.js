@@ -7,8 +7,8 @@ import { enableCrisp } from '../crisp/Crisp';
 
 import Project from './Project';
 
-import './projects.css';
-import './../carousel/slick.css';
+import './projects.scss';
+import './../carousel/slick.scss';
 
 export default class Projects extends Component {
   constructor(props) {

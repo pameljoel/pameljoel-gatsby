@@ -74,8 +74,8 @@ export default class Daily extends Component {
   }
 
   createLightboxUrl(day) {
-    const basepath = './images/daily/works/';
-    const { format } = this.state.dailies[day - 1];
+    const basepath = '../images/daily/works/';
+    const { format } = this.state.dailies[day > 0 ? day - 1 : day];
 
     let url = null;
 

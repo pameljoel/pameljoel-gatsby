@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import RelatedProject from './RelatedProject';
 import CloseButton from './../buttons/CloseButton';
 
-import './relatedProjects.css';
+import './relatedProjects.scss';
 
 export default class RelatedProjects extends Component {
   render() {

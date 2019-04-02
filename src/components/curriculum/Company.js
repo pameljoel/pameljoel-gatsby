@@ -4,8 +4,8 @@ import { PropTypes } from 'prop-types';
 import Tags from './../tags/Tags';
 import RelatedProjects from './../carousel/RelatedProjects';
 
-import './company.css';
-import './../card.css';
+import './company.scss';
+import './../card.scss';
 
 export default class Company extends Component {
   constructor(props) {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Company from './Company';
-import './career.css';
+import './career.scss';
 
 export default class Career extends Component {
   render() {

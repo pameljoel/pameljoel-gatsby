@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Footer from '../components/footer/Footer';
 import Navigation from '../components/navigation/Navigation';
 import Curriculum from '../components/Curriculum/Curriculum';
 
 
 const CurriculumPage = () => (
-    <div>
+    <Fragment>
         <Navigation />
         <Curriculum />
         <Footer></Footer>
-    </div>
+    </Fragment>
 )
 
 export default CurriculumPage

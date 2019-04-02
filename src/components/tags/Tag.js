@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
 
-import './tag.css';
+import './tag.scss';
 
 export default class Tag extends Component {
   render() {

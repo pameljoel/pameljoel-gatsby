@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import Tags from './../tags/Tags';
 
-import './school.css';
-import './../card.css';
+import './school.scss';
+import './../card.scss';
 
 export default class School extends Component {
   render() {
