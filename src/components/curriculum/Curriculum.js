@@ -5,6 +5,11 @@ import Section from './Section';
 import Career from './Career';
 import Education from './Education';
 
+import { getData } from '../../helpers';
+import personalJson from './resources/personal.json';
+import educationJson from './resources/education.json';
+import careerJson from './resources/career.json';
+
 import './curriculum.scss';
 
 export default class Curriculum extends Component {
@@ -17,19 +22,18 @@ export default class Curriculum extends Component {
       isLoading: true,
     };
   }
+
   componentDidMount() {
-    fetch('./resources/personal.js')
-      .then(data => data.json())
+
+    getData(personalJson)
       .then(data => this.setState({ personal: data, isLoading: false }))
       .catch((error) => { this.setState({ isLoading: false }); console.error(error); });
 
-    fetch('./resources/education.js')
-      .then(data => data.json())
+    getData(educationJson)
       .then(data => this.setState({ education: data, isLoading: false }))
       .catch((error) => { this.setState({ isLoading: false }); console.error(error); });
 
-    fetch('./resources/career.js')
-      .then(data => data.json())
+    getData(careerJson)
       .then(data => this.setState({ career: data, isLoading: false }))
       .catch((error) => { this.setState({ isLoading: false }); console.error(error); });
   }
@@ -55,7 +59,7 @@ export default class Curriculum extends Component {
               <Education data={this.state.education} />
             </div>
           ) : (
-            <Loading isLoading={this.state.isLoading} />
+              <Loading isLoading={this.state.isLoading} />
             )}
         </div>
       </div>

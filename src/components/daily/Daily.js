@@ -6,8 +6,10 @@ import DailyHeader from './DailyHeader';
 import DailyItem from './DailyItem';
 import Loading from '../status/Loading';
 
+import { getData } from '../../helpers';
 import dailyJson from './resources/daily.json';
 import monthsJson from './resources/months.json';
+
 import './daily.scss';
 import './modal.scss';
 
@@ -32,33 +34,19 @@ export default class Daily extends Component {
   componentDidMount() {
     enableCrisp();
 
-    function getData(data) {
-      return new Promise((resolve, reject) => {
-        resolve(data);
-        reject("errore");
-      })
-    }
-    function getMonths(data) {
-      return new Promise((resolve, reject) => {
-        resolve(data);
-        reject("error");
-      })
-    }
     getData(dailyJson)
       .then(data => this.setState({ dailies: data, isLoading: false }))
       .then(() => {
-        this.addDailyToMonth();
+        getData(monthsJson)
+          .then((data) => {
+            this.setState({ months: data });
+          })
+          .then(() => {
+            this.addDailyToMonth();
+          })
+          .catch(error => console.log(error));
       })
       .catch((error) => { this.setState({ isLoading: false }); console.error(error); });
-
-    getMonths(monthsJson)
-      .then((data) => {
-        this.setState({ months: data });
-      })
-      .then(() => {
-        this.addDailyToMonth();
-      })
-      .catch(error => console.log(error));
   }
 
   openLightBox() {

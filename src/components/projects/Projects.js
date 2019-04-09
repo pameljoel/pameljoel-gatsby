@@ -4,8 +4,10 @@ import Slider from 'react-slick';
 
 import Loading from '../status/Loading';
 import { enableCrisp } from '../crisp/Crisp';
-
 import Project from './Project';
+
+import { getData } from '../../helpers';
+import projectJson from './resources/projects.json';
 
 import './projects.scss';
 import './../carousel/slick.scss';
@@ -21,12 +23,11 @@ export default class Projects extends Component {
 
   componentDidMount() {
     enableCrisp();
-    fetch('./resources/projects.js')
-      .then(data => data.json())
+    getData(projectJson)
       .then(data => this.setState({ projects: data, isLoading: false }))
       .catch((error) => { this.setState({ isLoading: false }); console.error(error); });
   }
-
+  
   render() {
     const settings = {
       dots: true,
@@ -64,7 +65,7 @@ export default class Projects extends Component {
               )}
             </div>
           ) : (
-            <Loading isLoading={this.state.isLoading} />
+              <Loading isLoading={this.state.isLoading} />
             )}
         </div>
       </div>
