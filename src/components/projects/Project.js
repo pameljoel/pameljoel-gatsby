@@ -22,7 +22,7 @@ export default class Project extends Component {
       <article className="project">
         <div className="container">
           <div className="project-header">
-            <img src={`./images/works/${slug}/header.png`} alt={description} />
+            <img src={`/images/works/${slug}/header.png`} alt={description} />
           </div>
 
           <div className="project-date">{date}</div>
@@ -63,7 +63,7 @@ export default class Project extends Component {
               {images.map(image => (
                 <img
                   className="project-image"
-                  src={`./images/works/${slug}/${image}`}
+                  src={`/images/works/${slug}/${image}`}
                   alt={about}
                   key={`project-${slug}-${image}`}
                 />

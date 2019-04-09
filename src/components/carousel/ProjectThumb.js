@@ -6,10 +6,10 @@ export default class ProjectThumb extends Component {
     render() {
         const { project } = this.props;
         return (
-            <Link to="./projects" href="./projects">
+            <Link to="/projects">
                 <img
                     className="project-image"
-                    src={`./images/works/${project.slug}/thumb.jpg`}
+                    src={`/images/works/${project.slug}/thumb.jpg`}
                     alt={project.about}
                 />
             </Link>

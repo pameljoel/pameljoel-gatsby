@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TextLoop from 'react-text-loop';
 import { openCrisp } from './../crisp/Crisp';
-import Link  from 'gatsby-link'
+import Link  from 'gatsby-link';
 import Fade from 'react-reveal/Fade';
 
 import Loading from '../status/Loading';
@@ -73,10 +73,10 @@ export default class Home extends Component {
                   <div className="presentation-tooltip">
                     <div className="image" />
                     <div className="description">
-                      <Link className="name" to="curriculum">
+                      <Link className="name" to="/curriculum">
                         Pamel Joel Beltrè
                       </Link>
-                      <Link className="text" to="curriculum">I am a young web developer, you can find me here:</Link>
+                      <Link className="text" to="/curriculum">I am a young web developer, you can find me here:</Link>
                       <div className="social">
                         <a name="My Linkedin Profile" className="linkedin" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/pameljoel/">{linkedInSVG}</a>
                         <a name="My Facebook Profile" className="facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/pamel.joel">{facebookSVG}</a>
@@ -119,7 +119,7 @@ export default class Home extends Component {
 
                 <div className="company-description">
                   <div className="company-suffix">as</div>
-                  <Link className="company-job-title" to="curriculum">
+                  <Link className="company-job-title" to="/curriculum">
                     <span>UX / Graphic Designer <small>&</small> Front-end Developer</span>
                     <div><small style={{ fontSize: '12px', fontWeight: '300' }}>View my Curriculum Vitae</small></div>
                   </Link>
@@ -127,7 +127,7 @@ export default class Home extends Component {
               </div>
 
               <button className="big-button-secondary">
-                <Link to="projects">See my projects</Link>
+                <Link to="/projects">See my projects</Link>
               </button>
 
               <button className="big-button-primary" onClick={openCrisp}>
