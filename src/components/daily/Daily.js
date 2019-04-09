@@ -88,7 +88,7 @@ export default class Daily extends Component {
   }
 
   createLightboxUrl(day) {
-    const basepath = './images/daily/works/';
+    const basepath = '/images/daily/works/';
     const { format } = this.state.dailies[day > 0 ? day - 1 : day];
 
     let url = null;
@@ -156,7 +156,7 @@ export default class Daily extends Component {
                     <div className="month-initial">
                       {month.name.substring(0, 1)}
                     </div>
-                    <img className="daily-image" src="./images/daily/works/blank.jpg" alt="" />
+                    <img className="daily-image" src="/images/daily/works/blank.jpg" alt="more images coming soon" />
                   </div>
                   {month.dailiesOfTheMonth &&
                     month.dailiesOfTheMonth.length > 0 ? (
@@ -165,14 +165,14 @@ export default class Daily extends Component {
                           description={daily.description}
                           day={daily.day}
                           format={daily.format}
-                          imageSource={`./images/daily/works/${daily.day}.${daily.format}`}
+                          imageSource={`/images/daily/works/${daily.day}.${daily.format}`}
                           key={`daily-${j}`}
                           callback={this.addImageToSlideShow}
                         />
                       ))
                     ) : (
                       <div className="daily-item">
-                        <img className="daily-image" src="./images/daily/works/0.jpg" alt="" />
+                        <img className="daily-image" src="/images/daily/works/0.jpg" alt="" />
                       </div>
                     )}
                 </div>
