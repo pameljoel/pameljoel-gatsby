@@ -1,125 +1,47 @@
-import React, { Component } from 'react'
-import Link  from 'gatsby-link'
+import React, { Component, Fragment } from 'react';
+import { enableCrisp } from '../crisp/Crisp';
 
-import { enableCrisp, openCrisp } from '../crisp/Crisp'
+import MobileNavigation from './MobileNavigation';
+import DesktopNavigation from './DesktopNavigation';
 
-import Hamburger from './Hamburger'
+import './navigation.scss';
 
-import './navigation.scss'
-
-class Navigation extends Component {
+export default class Navigation extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      sidebarOpen: false,
-    }
-    this.toggleSidebar = this.toggleSidebar.bind(this)
+      isMobile: true,
+    };
+    this.isMobile = this.isMobile.bind(this);
   }
-
   componentDidMount() {
-    enableCrisp()
+    this.isMobile();
+    window.addEventListener('resize', this.isMobile);
+    enableCrisp();
   }
 
-  toggleSidebar() {
-    this.setState(prevState => ({ sidebarOpen: !prevState.sidebarOpen }))
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.isMobile);
+  }
+
+  isMobile() {
+    const { isMobile } = this.state;
+    const mobileBreakPoint = 768;
+    const bool = window.innerWidth < mobileBreakPoint;
+    if (bool === isMobile) {
+      return;
+    }
+
+    this.setState({ isMobile: bool });
   }
 
   render() {
     return (
-      <nav className="main-navigation" key="main-navigation">
-        <div className="desktop-navigation">
-          <ul className="main-navigation-branding">
-            <li>
-              <Link to="/">
-                <div className="nav-logo">
-                  <strong>P</strong>
-                  amel <strong>J</strong>
-                  oel <strong>B</strong>
-                  eltrè <small> | Personal Portfolio site</small>
-                </div>
-              </Link>
-            </li>
-          </ul>
-          <ul className="main-navigation-links">
-            <li>
-              <Link to="/">
-                <div className="nav-link">Home</div>
-                <div className="active-bar" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/daily">
-                <div className="nav-link">Daily</div>
-                <div className="active-bar" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/curriculum">
-                <div className="nav-link">CV</div>
-                <div className="active-bar" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/projects">
-                <div className="nav-link">Projects</div>
-                <div className="active-bar" />
-              </Link>
-            </li>
-            <li>
-              <button className="nav-button" onClick={openCrisp}>
-                Contact me
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div className="mobile-navigation">
-          <Hamburger
-            open={this.state.sidebarOpen}
-            callback={this.toggleSidebar}
-          />
-
-          <ul
-            className={`mobile-navigation-links ${
-              this.state.sidebarOpen ? 'open' : ''
-            }`}
-          >
-            <li onClick={this.toggleSidebar}>
-              <Link to="/index">
-                <div className="nav-link">Home</div>
-                <div className="active-bar" />
-              </Link>
-            </li>
-            <li onClick={this.toggleSidebar}>
-              <Link to="/daily">
-                <div className="nav-link">Daily</div>
-                <div className="active-bar" />
-              </Link>
-            </li>
-            <li onClick={this.toggleSidebar}>
-              <Link to="/curriculum">
-                <div className="nav-link">CV</div>
-                <div className="active-bar" />
-              </Link>
-            </li>
-            <li onClick={this.toggleSidebar}>
-              <Link to="/projects">
-                <div className="nav-link">Projects</div>
-                <div className="active-bar" />
-              </Link>
-            </li>
-            <li
-              onClick={() => {
-                this.toggleSidebar()
-                openCrisp()
-              }}
-            >
-              <button className="nav-button">Contact me</button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    )
+      <Fragment>
+        <nav className="main-navigation">
+          {this.state.isMobile ? <MobileNavigation /> : <DesktopNavigation />}
+        </nav >
+      </Fragment>
+    );
   }
 }
-
-export default Navigation

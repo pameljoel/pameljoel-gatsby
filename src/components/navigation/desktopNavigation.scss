@@ -1,0 +1,35 @@
+@import "./../../variables.scss";
+@import "./../../mixins.scss";
+
+.desktop-navigation {
+  @include clearfix;
+
+  .main-navigation-links {
+    float: right;
+    height: 50px;
+    line-height: 50px;
+
+    @media (max-width: $tablet-min) {
+      display: none;
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    .nav-button {
+      padding: 10px 20px;
+      border-radius: 30px;
+      background-color: $brand-color-dark;
+
+      @media (max-width: $phone-max) {
+        padding: 10px;
+      }
+
+      @media (max-width: $phone-min) {
+        padding: 5px;
+        font-size: 14px;
+      }
+    }
+  }
+}
