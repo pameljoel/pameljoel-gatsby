@@ -5,6 +5,9 @@ import { enableCrisp } from '../crisp/Crisp';
 import DailyHeader from './DailyHeader';
 import DailyItem from './DailyItem';
 import Loading from '../status/Loading';
+
+import dailyJson from './resources/daily.json';
+import monthsJson from './resources/months.json';
 import './daily.scss';
 import './modal.scss';
 
@@ -28,16 +31,27 @@ export default class Daily extends Component {
 
   componentDidMount() {
     enableCrisp();
-    fetch('./resources/daily.js')
-      .then(data => data.json())
+
+    function getData(data) {
+      return new Promise((resolve, reject) => {
+        resolve(data);
+        reject("errore");
+      })
+    }
+    function getMonths(data) {
+      return new Promise((resolve, reject) => {
+        resolve(data);
+        reject("error");
+      })
+    }
+    getData(dailyJson)
       .then(data => this.setState({ dailies: data, isLoading: false }))
       .then(() => {
         this.addDailyToMonth();
       })
       .catch((error) => { this.setState({ isLoading: false }); console.error(error); });
 
-    fetch('./resources/months.js')
-      .then(data => data.json())
+    getMonths(monthsJson)
       .then((data) => {
         this.setState({ months: data });
       })
@@ -74,7 +88,7 @@ export default class Daily extends Component {
   }
 
   createLightboxUrl(day) {
-    const basepath = '../images/daily/works/';
+    const basepath = './images/daily/works/';
     const { format } = this.state.dailies[day > 0 ? day - 1 : day];
 
     let url = null;
@@ -165,7 +179,7 @@ export default class Daily extends Component {
               ))}
             </div>
           ) : (
-            <Loading isLoading={this.state.isLoading} />
+              <Loading isLoading={this.state.isLoading} />
             )}
         </div>
       </div>
