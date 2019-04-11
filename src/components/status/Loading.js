@@ -7,9 +7,10 @@ import './loading.scss';
 
 export default class Loading extends Component {
   render() {
+    const { error, isLoading } = this.props;
     return (
       <div className="loading-panel">
-        {this.props.isLoading ? <img src={loading} alt="loading" /> : (this.props.error && <Error message={this.props.error} />)}
+        {isLoading ? <img src={loading} alt="loading" /> : (error && <Error message={error} />)}
       </div>
     );
   }

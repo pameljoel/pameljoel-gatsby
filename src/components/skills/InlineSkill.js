@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class InlineSkill extends Component {
     render() {
-        let name = this.props.name;
-        let percentage = this.props.percentage;
+        const { name, percentage } = this.props;
 
         let divStyle = {
             width: percentage + "%"

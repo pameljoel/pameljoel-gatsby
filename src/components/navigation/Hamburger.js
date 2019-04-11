@@ -4,8 +4,11 @@ import './hamburger.scss';
 
 export default class Hamburger extends Component {
   render() {
+    const { open, callback } = this.props;
     return (
-      <div role="button" aria-label="open sidebar" tabIndex="0" className={`hamburger ${this.props.open ? 'open' : ''}`} onClick={this.props.callback} onKeyPress={this.props.callback}>
+      <div role="button" aria-label="open sidebar" tabIndex="0" className={`hamburger ${open ? 'open' : ''}`}
+        onClick={callback}
+        onKeyPress={callback}>
         <div className="hamburger-box">
           <div className="hamburger-inner" />
         </div>

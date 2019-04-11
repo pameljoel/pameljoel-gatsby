@@ -36,10 +36,11 @@ export default class Navigation extends Component {
   }
 
   render() {
+    const { isMobile } = this.state;
     return (
       <Fragment>
         <nav className="main-navigation">
-          {this.state.isMobile ? <MobileNavigation /> : <DesktopNavigation />}
+          {isMobile ? <MobileNavigation /> : <DesktopNavigation />}
         </nav >
       </Fragment>
     );

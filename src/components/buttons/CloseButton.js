@@ -4,8 +4,9 @@ import './closeButton.scss';
 
 export default class CloseButton extends Component {
   render() {
+    const { callback } = this.props;
     return (
-      <div className="close-button" onClick={this.props.callback}>×</div>
+      <div className="close-button" onClick={callback}>×</div>
     );
   }
 }

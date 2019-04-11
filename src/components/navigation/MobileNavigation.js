@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Link  from 'gatsby-link';
+import Link from 'gatsby-link';
 
 import { openCrisp } from '../crisp/Crisp';
 import Branding from './Branding';
@@ -21,10 +21,11 @@ export default class MobileNavigation extends Component {
   }
 
   render() {
+    const { sidebarOpen } = this.state;
     return (
       <Fragment>
-        <div className={`mobile-navigation ${this.state.sidebarOpen ? 'open' : ''}`}>
-          <Hamburger open={this.state.sidebarOpen} callback={this.toggleSidebar} />
+        <div className={`mobile-navigation ${sidebarOpen ? 'open' : ''}`}>
+          <Hamburger open={sidebarOpen} callback={this.toggleSidebar} />
           <ul className="mobile-navigation-links">
             <li onClick={this.toggleSidebar}>
               <Link to="/">
@@ -58,7 +59,7 @@ export default class MobileNavigation extends Component {
           </ul>
           <Branding />
         </div>
-        <div className={`overlay-layer ${this.state.sidebarOpen ? 'open' : ''}`} key="overlay-layer" onClick={this.toggleSidebar} />
+        <div className={`overlay-layer ${sidebarOpen ? 'open' : ''}`} key="overlay-layer" onClick={this.toggleSidebar} />
       </Fragment>
 
     );

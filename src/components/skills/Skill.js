@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Skill extends Component {
   render() {
-    const { name } = this.props;
-    const { percentage } = this.props;
+    const { name, percentage } = this.props;
 
     const divStyle = {
       width: `${percentage}%`,

@@ -7,44 +7,45 @@ import './../card.scss';
 
 export default class School extends Component {
   render() {
+    const { degree, degreeType, school, city, year, subjects } = this.props.data;
     return (
       <article className="card school-container">
         <header className="school-role">
-          <h1>{this.props.data.degree}</h1>
+          <h1>{degree}</h1>
         </header>
         <div className="school-data-container">
 
           <span className="school-degree-type">
             <span className="prefix">type</span>
             <span className="text">
-              {this.props.data.degreeType}
+              {degreeType}
             </span>
           </span>
 
           <span className="school-name">
             <span className="prefix">at</span>
             <span className="text">
-              {this.props.data.school}
+              {school}
             </span>
           </span>
 
           <span className="school-city">
             <span className="prefix">in</span>
             <span className="text">
-              {this.props.data.city}
+              {city}
             </span>
           </span>
 
           <span className="school-year">
             <span className="prefix">year</span>
             <span className="text">
-              {this.props.data.year}
+              {year}
             </span>
           </span>
         </div>
 
         <div className="school-skills-container">
-          <Tags data={this.props.data.subjects} />
+          <Tags data={subjects} />
         </div>
         <div className="school-projects" />
       </article>

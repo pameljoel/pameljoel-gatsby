@@ -27,8 +27,10 @@ export default class Projects extends Component {
       .then(data => this.setState({ projects: data, isLoading: false }))
       .catch((error) => { this.setState({ isLoading: false }); console.error(error); });
   }
-  
+
   render() {
+    const { selectedProject } = this.props;
+    const { projects, isLoading } = this.state;
     const settings = {
       dots: true,
       infinite: false,
@@ -36,7 +38,7 @@ export default class Projects extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       adaptiveHeight: true,
-      initialSlide: this.props.selectedProject || 0,
+      initialSlide: selectedProject || 0,
     };
     return (
       <div>
@@ -52,20 +54,18 @@ export default class Projects extends Component {
           <div className="big-header-background" />
         </header>
         <div className="projects-container">
-          {!this.state.isLoading && this.state.projects ? (
+          {!isLoading && projects ? (
             <div className="projects">
-              {this.state.projects.length > 0 && (
-                <Slider {...settings}>
-                  {this.state.projects.map(project => (
-                    <div key={`project-slider-${project.slug}`}>
-                      <Project data={project} />
-                    </div>
-                  ))}
-                </Slider>
-              )}
+              <Slider {...settings}>
+                {projects.map(project => (
+                  <div key={`project-slider-${project.slug}`}>
+                    <Project data={project} />
+                  </div>
+                ))}
+              </Slider>
             </div>
           ) : (
-              <Loading isLoading={this.state.isLoading} />
+              <Loading isLoading={isLoading} />
             )}
         </div>
       </div>
@@ -91,6 +91,5 @@ Projects.propTypes = {
 };
 
 Projects.defaultProps = {
-  selectedProject: 0,
-  data: [],
+  selectedProject: 0
 };

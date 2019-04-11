@@ -6,21 +6,22 @@ import './career.scss';
 
 export default class Career extends Component {
   render() {
+    const { data, addSelectedProjectCallback } = this.props;
     return (
       <article className="career-container">
-        {this.props.data &&
+        {data &&
           <div className="career-title">
             <h1>Career</h1>
           </div>
         }
 
         <div className="career-content">
-          {this.props.data && this.props.data.map(item =>
+          {data.map(item =>
             (<Company
               data={item}
               key={item.company + item.year}
               handleClick={this.showRelatedProjects}
-              addSelectedProjectCallback={this.props.addSelectedProjectCallback}
+              addSelectedProjectCallback={addSelectedProjectCallback}
             />))}
         </div>
       </article>

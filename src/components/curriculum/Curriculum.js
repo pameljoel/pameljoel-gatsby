@@ -39,6 +39,8 @@ export default class Curriculum extends Component {
   }
 
   render() {
+    const { isLoading, personal, career, education } = this.state;
+    const { addSelectedProjectCallback } = this.props;
     return (
       <div>
         <header
@@ -52,14 +54,14 @@ export default class Curriculum extends Component {
           <div className="big-header-background" />
         </header>
         <div className="container" >
-          {!this.state.isLoading && (this.state.personal || this.state.career || this.state.education) ? (
+          {!isLoading && (personal || career || education) ? (
             <div className="curriculum-container">
-              <Section data={this.state.personal} />
-              <Career data={this.state.career} addSelectedProjectCallback={this.props.addSelectedProjectCallback} />
-              <Education data={this.state.education} />
+              <Section data={personal} />
+              <Career data={career} addSelectedProjectCallback={addSelectedProjectCallback} />
+              <Education data={education} />
             </div>
           ) : (
-              <Loading isLoading={this.state.isLoading} />
+              <Loading isLoading={isLoading} />
             )}
         </div>
       </div>

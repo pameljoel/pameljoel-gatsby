@@ -27,13 +27,15 @@ export default class ErrorBoundary extends Component {
   }
 
   render() {
+    const { error, children } = this.props;
+    const { hasError } = this.state;
 
-    if (this.state.hasError) {
+    if (hasError) {
       // You can render any custom fallback UI
-      return <div className="loading-panel"><Error message={this.props.error} /> </div>;
+      return <div className="loading-panel"><Error message={error} /></div>;
     }
 
-    return this.props.children;
+    return children;
   }
 }
 

@@ -4,14 +4,14 @@ import ProjectThumb from './ProjectThumb';
 
 export default class RelatedProject extends Component {
   render() {
-    const { project } = this.props;
+    const { project, addSelectedProjectCallback } = this.props;
     return (
       <div
         className="related-project-image"
         role="button"
         tabIndex={0}
-        onClick={() => this.props.addSelectedProjectCallback(project.sliderId)}
-        onKeyDown={() => this.props.addSelectedProjectCallback(project.sliderId)}
+        onClick={() => addSelectedProjectCallback(project.sliderId)}
+        onKeyDown={() => addSelectedProjectCallback(project.sliderId)}
       >
         <ProjectThumb project={project} />
       </div >

@@ -26,10 +26,11 @@ export default class ScrollTop extends Component {
     });
   }
   render() {
+    const { isTop } = this.state;
     return (
       <div
         className={
-          `scroll-to-top ${this.state.isTop ? 'not-visible' : 'visible'}`
+          `scroll-to-top ${isTop ? 'not-visible' : 'visible'}`
         }
         onClick={this.goToTop}
       >

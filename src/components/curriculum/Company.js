@@ -39,40 +39,43 @@ export default class Company extends Component {
   }
 
   render() {
+    const { addSelectedProjectCallback, data } = this.props;
+    const { title, company, contract, city, description, website, skills } = data;
+    const { filteredProjects, selectedTag } = this.state;
     return (
       <article className="card company-container">
-        {this.props.data.title && (
+        {title && (
           <header className="company-role">
-            <h1>{this.props.data.title}</h1>
+            <h1>{title}</h1>
           </header>
         )}
 
         <div className="company-data-container">
-          {this.props.data.company && (
+          {company && (
             <span className="company-name">
               <span className="prefix">@</span>
-              <span className="text">{this.props.data.company}</span>
+              <span className="text">{company}</span>
             </span>
           )}
 
-          {this.props.data.contract && (
+          {contract && (
             <span className="company-contract">
               <span className="prefix">as</span>
-              <span className="text">{this.props.data.contract}</span>
+              <span className="text">{contract}</span>
             </span>
           )}
 
-          {this.props.data.city && (
+          {city && (
             <span className="company-city">
               <span className="prefix">in</span>
-              <span className="text">{this.props.data.city}</span>
+              <span className="text">{city}</span>
             </span>
           )}
 
-          {this.props.data.year && (
+          {year && (
             <span className="company-year">
               <span className="prefix">in</span>
-              <span className="text">{this.props.data.year}</span>
+              <span className="text">{year}</span>
             </span>
           )}
         </div>
@@ -80,18 +83,18 @@ export default class Company extends Component {
         <div className="company-content-container">
           <div className="company-description-container">
             <div className="company-description">
-              {this.props.data.description}
+              {description}
             </div>
-            {this.props.data.website &&
+            {website &&
               <div className="company-website">
-                <a name="visit website" href={this.props.data.website} target="_blank" rel="noopener noreferrer">visit website</a>
+                <a name="visit website" href={website} target="_blank" rel="noopener noreferrer">visit website</a>
               </div>
             }
           </div>
 
           <div className="company-skills-container">
             <Tags
-              data={this.props.data.skills}
+              data={skills}
               handleClick={this.showRelatedProjectsCarousel}
             />
           </div>
@@ -99,10 +102,10 @@ export default class Company extends Component {
 
         <div className="company-projects-container">
           <RelatedProjects
-            projects={this.state.filteredProjects}
+            projects={filteredProjects}
             emptyFilteredProjects={this.emptyFilteredProjects}
-            selected={this.state.selectedTag}
-            addSelectedProjectCallback={this.props.addSelectedProjectCallback}
+            selected={selectedTag}
+            addSelectedProjectCallback={addSelectedProjectCallback}
           />
         </div>
       </article>

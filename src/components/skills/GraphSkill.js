@@ -45,36 +45,38 @@ export default class GraphSkill extends Component {
   }
 
   render() {
+    const { percentage, color, pro, description, name } = this.props;
+    const { showAdditionalInfo } = this.state;
     const chartObject = [{
-      value: this.props.percentage,
-      color: this.props.color,
+      value: percentage,
+      color: color,
     }];
     return (
-      <div className={`skill-graph ${this.props.pro ? 'clickable' : ''}`} >
+      <div className={`skill-graph ${pro ? 'clickable' : ''}`} >
         <div className="skill-graph-image">
           <div className="skill-level-container">
             <div className="skill-level-label">Proficiency: </div>
-            <div className="skill-level">{this.showSkillLevel(this.props.percentage)}</div>
+            <div className="skill-level">{this.showSkillLevel(percentage)}</div>
           </div>
-            <PieChart
-              className="graph-item"
-              data={chartObject}
-              lineWidth={20}
-              rounded
-              totalValue={100}
-              animate
-              animationDuration={5000}
-              animationEasing="ease-in-out"
-            />
+          <PieChart
+            className="graph-item"
+            data={chartObject}
+            lineWidth={20}
+            rounded
+            totalValue={100}
+            animate
+            animationDuration={5000}
+            animationEasing="ease-in-out"
+          />
         </div>
         <article className="skill-graph-text">
           <header className="skill-graph-title" onClick={this.toggleAdditionalInfo}>
-            <h1>{this.props.name}</h1>
+            <h1>{name}</h1>
           </header>
-          <div className="skill-graph-description">{this.props.description}</div>
+          <div className="skill-graph-description">{description}</div>
 
-          {this.state.showAdditionalInfo && this.props.pro &&
-            <AdditionalInfo show={this.state.showAdditionalInfo} description={this.props.pro} />
+          {showAdditionalInfo && pro &&
+            <AdditionalInfo show={showAdditionalInfo} description={pro} />
           }
         </article>
       </div>

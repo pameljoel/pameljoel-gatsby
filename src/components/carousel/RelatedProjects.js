@@ -15,32 +15,35 @@ export default class RelatedProjects extends Component {
       speed: 500,
       slidesToShow: 3,
     };
+    const { projects, selected, emptyFilteredProjects } = this.props;
     return (
       <div className="related-projects">
 
-        {this.props.selected && this.props.projects.length === 0 &&
+        {selected && projects.length === 0 &&
           <div className="related-project-no-result">
-            <CloseButton callback={this.props.emptyFilteredProjects} />
-            There are no featured projects at the moment with <strong>{this.props.selected}</strong>
+            <CloseButton callback={emptyFilteredProjects} />
+            There are no featured projects at the moment with <strong>{selected}</strong>
           </div>
         }
 
-        {this.props.selected && this.props.projects.length > 0 &&
+        {selected && projects.length > 0 &&
           <div className="related-projects-result">
-            <CloseButton callback={this.props.emptyFilteredProjects} />
+            <CloseButton callback={emptyFilteredProjects} />
             <p>
-              Projects with <strong>{this.props.selected}</strong>
+              Projects with <strong>{selected}</strong>
             </p>
             <Slider {...settings}>
-              {this.props.projects.map((project, i) => (
-                <div key={project.slug}>
+              {projects.map((project, i) => {
+                const { slug } = project;
+                return (<div key={slug}>
                   <RelatedProject
                     project={project}
-                    addSelectedProjectCallback={this.props.addSelectedProjectCallback}
+                    addSelectedProjectCallback={addSelectedProjectCallback}
                     index={i}
                   />
                 </div>
-              ))}
+                )
+              })}
             </Slider>
           </div>
         }
@@ -60,5 +63,5 @@ RelatedProject.propTypes = {
 RelatedProject.defaultProps = {
   projects: [],
   selected: null,
-  emptyFilteredProjects() {},
+  emptyFilteredProjects() { },
 };

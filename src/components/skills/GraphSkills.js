@@ -7,17 +7,18 @@ import './graphSkills.scss';
 
 export default class GraphSkills extends Component {
   render() {
+    const { data } = this.props;
     return (
       <div className="skill-graph-container">
-        {this.props.data.map(skill => (
-            <GraphSkill
-              name={skill.name}
-              description={skill.description}
-              percentage={skill.percentage}
-              pro={skill.pro}
-              key={skill.name}
-            />
-          ))}
+        {data.map(skill => (
+          <GraphSkill
+            name={skill.name}
+            description={skill.description}
+            percentage={skill.percentage}
+            pro={skill.pro}
+            key={skill.name}
+          />
+        ))}
       </div>
     );
   }

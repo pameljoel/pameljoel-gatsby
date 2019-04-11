@@ -7,11 +7,12 @@ import './section.scss';
 
 export default class Section extends Component {
   render() {
+    const { data } = this.props;
     return (
       <article className="cv-section">
-        {this.props.data &&
+        {data &&
           <div className="fields-container">
-            {this.props.data.map((item, i) => <Field data={item} key={`field-container-${i}`} />)}
+            {data.map((item, i) => <Field data={item} key={`field-container-${i}`} />)}
           </div>
         }
       </article>

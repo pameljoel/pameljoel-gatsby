@@ -7,17 +7,18 @@ export default class DialyItem extends Component {
     const dailyItemStyle = {
       animationDelay: '1000ms'
     };
+    const { day, imageSource, description, callback } = this.props;
     return (
       <Fade
         bottom
       >
         <div className="daily-item" style={dailyItemStyle}>
-          <div className="day">{this.props.day}</div>
+          <div className="day">{day}</div>
           <img
             className="daily-image"
-            src={this.props.imageSource}
-            alt={this.props.description}
-            onClick={() => this.props.callback(this.props.day)}
+            src={imageSource}
+            alt={description}
+            onClick={() => callback(day)}
           />
         </div>
       </Fade>

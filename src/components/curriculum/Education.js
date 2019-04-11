@@ -6,17 +6,17 @@ import './education.scss';
 
 export default class Education extends Component {
   render() {
+    const { data } = this.props;
     return (
       <article className="education-container">
-        {this.props.data &&
+        {data &&
           <div className="education-title">
             <h1>Education</h1>
           </div>
-
         }
-        {this.props.data &&
+        {data &&
           <div className="education-content">
-            {this.props.data.map(item => <School data={item} key={item.school + item.year} />)}
+            {data.map(item => <School data={item} key={item.school + item.year} />)}
           </div>
         }
       </article>
