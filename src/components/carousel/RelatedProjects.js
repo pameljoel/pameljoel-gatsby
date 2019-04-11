@@ -15,7 +15,7 @@ export default class RelatedProjects extends Component {
       speed: 500,
       slidesToShow: 3,
     };
-    const { projects, selected, emptyFilteredProjects } = this.props;
+    const { projects, selected, emptyFilteredProjects, addSelectedProjectCallback } = this.props;
     return (
       <div className="related-projects">
 

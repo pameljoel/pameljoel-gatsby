@@ -56,13 +56,15 @@ export default class Projects extends Component {
         <div className="projects-container">
           {!isLoading && projects ? (
             <div className="projects">
-              <Slider {...settings}>
-                {projects.map(project => (
-                  <div key={`project-slider-${project.slug}`}>
-                    <Project data={project} />
-                  </div>
-                ))}
-              </Slider>
+              {projects.length > 0 && (
+                <Slider {...settings}>
+                  {projects.map(project => (
+                    <div key={`project-slider-${project.slug}`}>
+                      <Project data={project} />
+                    </div>
+                  ))}
+                </Slider>
+              )}
             </div>
           ) : (
               <Loading isLoading={isLoading} />

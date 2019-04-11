@@ -16,13 +16,16 @@ export default class Career extends Component {
         }
 
         <div className="career-content">
-          {data.map(item =>
-            (<Company
+          {data && data.map(item => {
+            const { year, company } = item;
+            return (<Company
               data={item}
-              key={item.company + item.year}
+              key={company + year}
               handleClick={this.showRelatedProjects}
               addSelectedProjectCallback={addSelectedProjectCallback}
-            />))}
+            />)
+          }
+          )}
         </div>
       </article>
     );

@@ -39,8 +39,7 @@ export default class Company extends Component {
   }
 
   render() {
-    const { addSelectedProjectCallback, data } = this.props;
-    const { title, company, contract, city, description, website, skills } = data;
+    const { addSelectedProjectCallback, data: { title, company, contract, city, year, description, website, skills } } = this.props;
     const { filteredProjects, selectedTag } = this.state;
     return (
       <article className="card company-container">

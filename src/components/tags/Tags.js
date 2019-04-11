@@ -5,8 +5,7 @@ import './tags.scss';
 
 export default class Tags extends Component {
   render() {
-    const { data, handleClick } = this.props;
-    const { tags } = data;
+    const { data: tags, handleClick } = this.props;
     return (
       <div className="tags">
         {tags && tags.map((tag, i) => {
