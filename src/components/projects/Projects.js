@@ -46,7 +46,6 @@ export default class Projects extends Component {
       >
         <div className="big-header-content">
           <h1 className="">PROJECTS</h1>
-          <h2>{this.props.selectedProject}</h2>
           <div className="subtitle">This is a selection of my web projects</div>
         </div>
         <div className="big-header-background" />
