@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import Slider from 'react-slick';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import Slider from 'react-slick'
+import PropTypes from 'prop-types'
 
-import RelatedProject from './RelatedProject';
-import CloseButton from './../buttons/CloseButton';
+import RelatedProject from './RelatedProject'
+import CloseButton from './../buttons/CloseButton'
 
-import './relatedProjects.scss';
+import './relatedProjects.scss'
 
 export default class RelatedProjects extends Component {
   render() {
@@ -14,19 +14,24 @@ export default class RelatedProjects extends Component {
       infinite: false,
       speed: 500,
       slidesToShow: 3,
-    };
-    const { projects, selected, emptyFilteredProjects, addSelectedProjectCallback } = this.props;
+    }
+    const {
+      projects,
+      selected,
+      emptyFilteredProjects,
+      setSelectedProject,
+    } = this.props
     return (
       <div className="related-projects">
-
-        {selected && projects.length === 0 &&
+        {selected && projects.length === 0 && (
           <div className="related-project-no-result">
             <CloseButton callback={emptyFilteredProjects} />
-            There are no featured projects at the moment with <strong>{selected}</strong>
+            There are no featured projects at the moment with{' '}
+            <strong>{selected}</strong>
           </div>
-        }
+        )}
 
-        {selected && projects.length > 0 &&
+        {selected && projects.length > 0 && (
           <div className="related-projects-result">
             <CloseButton callback={emptyFilteredProjects} />
             <p>
@@ -34,34 +39,34 @@ export default class RelatedProjects extends Component {
             </p>
             <Slider {...settings}>
               {projects.map((project, i) => {
-                const { slug } = project;
-                return (<div key={slug}>
-                  <RelatedProject
-                    project={project}
-                    addSelectedProjectCallback={addSelectedProjectCallback}
-                    index={i}
-                  />
-                </div>
+                const { slug } = project
+                return (
+                  <div key={slug}>
+                    <RelatedProject
+                      project={project}
+                      index={i}
+                      setSelectedProject={setSelectedProject}
+                    />
+                  </div>
                 )
               })}
             </Slider>
           </div>
-        }
+        )}
       </div>
-    );
+    )
   }
 }
 
-
-RelatedProject.propTypes = {
+RelatedProjects.propTypes = {
   projects: PropTypes.array,
   selected: PropTypes.string,
   emptyFilteredProjects: PropTypes.func,
-  addSelectedProjectCallback: PropTypes.func.isRequired,
-};
+  setSelectedProject: PropTypes.func,
+}
 
-RelatedProject.defaultProps = {
+RelatedProjects.defaultProps = {
   projects: [],
   selected: null,
-  emptyFilteredProjects() { },
-};
+  setSelectedProject: null
+}

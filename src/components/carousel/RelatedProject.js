@@ -1,27 +1,36 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import ProjectThumb from './ProjectThumb';
+import React, { Component, Fragment } from 'react'
+import PropTypes from 'prop-types'
+import ProjectThumb from './ProjectThumb'
+import { ProjectContext } from '../../Context'
 
-export default class RelatedProject extends Component {
+class RelatedProject extends Component {
   render() {
-    const { project, addSelectedProjectCallback } = this.props;
+    const { setSelectedProject, project } = this.props
     return (
-      <div
-        className="related-project-image"
-        role="button"
-        tabIndex={0}
-        onClick={() => addSelectedProjectCallback(project.sliderId)}
-        onKeyDown={() => addSelectedProjectCallback(project.sliderId)}
-      >
-        <ProjectThumb project={project} />
-      </div >
-    );
+      <Fragment>
+        <div
+          className="related-project-image"
+          role="button"
+          tabIndex={0}
+          onClick={() => setSelectedProject(project.sliderId)}
+          onKeyDown={() => setSelectedProject(project.sliderId)}
+        >
+          <ProjectThumb project={project} />
+        </div>
+      </Fragment>
+    )
   }
 }
 
-RelatedProject.propTypes = {
-  project: PropTypes.shape({
+RelatedProject.contextType = ProjectContext
 
-  }).isRequired,
-  addSelectedProjectCallback: PropTypes.func.isRequired,
-};
+export default RelatedProject
+
+RelatedProject.propTypes = {
+  project: PropTypes.shape({}).isRequired,
+  setSelectedProject: PropTypes.func,
+}
+
+RelatedProject.defaultProps = {
+  setSelectedProject : null
+}

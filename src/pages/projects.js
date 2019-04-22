@@ -1,18 +1,21 @@
-import React from 'react';
-import Footer from '../components/footer/Footer';
-import Navigation from '../components/navigation/Navigation';
-import Projects from '../components/projects/Projects';
+import React from 'react'
+import Projects from '../components/projects/Projects'
+import { PropTypes } from 'prop-types'
 
-import '../index.scss';
-import '../App.scss';
-import '../bigheader.scss';
+import '../index.scss'
+import '../App.scss'
+import '../bigheader.scss'
 
-const ProjectsPage = () => (
-    <div>
-        <Navigation />
-        <Projects />
-        <Footer></Footer>
-    </div>
-)
+const ProjectsPage = props => {
+  return <Projects selectedProject={props.selectedProject} />
+}
+
+ProjectsPage.propTypes = {
+  selectedProject: PropTypes.func,
+}
+
+ProjectsPage.defaultProps = {
+  selectedProject: null,
+}
 
 export default ProjectsPage
