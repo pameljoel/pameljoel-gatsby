@@ -1,13 +1,17 @@
 import React, { Fragment } from 'react'
-import Footer from '../components/footer/Footer'
-import Navigation from '../components/navigation/Navigation'
 import Home from '../components/home/Home'
+import SEO from '../components/seo'
 
 import '../index.scss'
 import '../App.scss'
 import '../bigheader.scss'
 import '../buttons.scss'
 
-const IndexPage = () => <Home />
+const IndexPage = () => (
+  <Fragment>
+    <SEO title="Pamel Joel Beltrè - Front End Designer - React, AngularJS, Javascript, CSS3, HTML5 projects" />
+    <Home />
+  </Fragment>
+)
 
 export default IndexPage

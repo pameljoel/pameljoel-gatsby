@@ -44,7 +44,7 @@
     }, {
         "field": "email",
         "icon": "glyphicon-envelope",
-        "value": "$crisp.push(['do', 'chat:open'])",
+        "value": "window.$crisp.push(['do', 'chat:open'])",
         "linkType" : "email",
         "isLink" : true
     }, {

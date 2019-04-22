@@ -29,7 +29,7 @@ export default class Field extends Component {
 
               {linkType === 'email' &&
                 <div className="field-link">
-                  <a name="visit link" href={value} className="field-answer" onClick={() => openCrisp()}>Instant chat</a>
+                  <a name="visit link" href="#" className="field-answer" onClick={() => openCrisp()}>Instant chat</a>
                 </div>
               }
             </span>

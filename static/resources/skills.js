@@ -1,44 +1,4 @@
-[
-    {
-        "name": "User Experience",
-        "image": "images/home/wireframe.png",
-        "description": "Clean, crisp, readable, easy to navigate interfaces with user driven design.",
-        "tags": [
-            "Pen & Paper",
-            "Vision Boards",
-            "Brainstorming",
-            "Design Management",
-            "Beta testing",
-            "Design Thinking",
-            "Storyboard",
-            "User Portrait",
-            "Lead-User Analysis",
-            "MoodBoards",
-            "Customer Journey",
-            "Workshop"
-        ],
-        "skills": [
-            {
-                "name": "Mockup",
-                "percentage": 95,
-                "level": "awesome",
-                "description": "With quick mockups I can bring your project to life. This helps you be on the same page with your clients and your development team.",
-                "pro": "I can help you quickly bring your project to a tangible form you can show to your clients."
-            },
-            {
-                "name": "Prototyping",
-                "percentage": 75,
-                "description": "Prototypes help you visualize the application flow, it's essential to spot any usability issue early on your project.",
-                "pro": ""
-            },
-            {
-                "name": "UX",
-                "percentage": 90,
-                "description": "Everything is UX, I'll help you polish your user flows and your personas with simplicity in mind.",
-                "pro": ""
-            }
-        ]
-    },
+[    
     {
         "name": "Design",
         "image": "images/home/interface.png",
@@ -158,6 +118,46 @@
                 "name": "AngularJS",
                 "percentage": 85,
                 "description": "My framework of choice for more complex web applications.",
+                "pro": ""
+            }
+        ]
+    },
+    {
+        "name": "User Experience",
+        "image": "images/home/wireframe.png",
+        "description": "Clean, crisp, readable, easy to navigate interfaces with user driven design.",
+        "tags": [
+            "Pen & Paper",
+            "Vision Boards",
+            "Brainstorming",
+            "Design Management",
+            "Beta testing",
+            "Design Thinking",
+            "Storyboard",
+            "User Portrait",
+            "Lead-User Analysis",
+            "MoodBoards",
+            "Customer Journey",
+            "Workshop"
+        ],
+        "skills": [
+            {
+                "name": "Mockup",
+                "percentage": 95,
+                "level": "awesome",
+                "description": "With quick mockups I can bring your project to life. This helps you be on the same page with your clients and your development team.",
+                "pro": "I can help you quickly bring your project to a tangible form you can show to your clients."
+            },
+            {
+                "name": "Prototyping",
+                "percentage": 75,
+                "description": "Prototypes help you visualize the application flow, it's essential to spot any usability issue early on your project.",
+                "pro": ""
+            },
+            {
+                "name": "UX",
+                "percentage": 90,
+                "description": "Everything is UX, I'll help you polish your user flows and your personas with simplicity in mind.",
                 "pro": ""
             }
         ]

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { ProjectContext } from '../Context'
 import Navigation from '../components/navigation/Navigation'
 import Footer from '../components/footer/Footer'
+import ScrollTop from '../components/scrollTop/ScrollTop';
 
 export default class SharedState extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ export default class SharedState extends Component {
     return (
       <Fragment>
         <Navigation />
+        <ScrollTop />
         {cloneElement(Children.only(this.props.children), publicAPI)}
         <Footer />
       </Fragment>

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import SEO from '../components/seo'
 import Projects from '../components/projects/Projects'
 import { PropTypes } from 'prop-types'
 
@@ -7,7 +8,12 @@ import '../App.scss'
 import '../bigheader.scss'
 
 const ProjectsPage = props => {
-  return <Projects selectedProject={props.selectedProject} />
+  return (
+    <Fragment>
+      <SEO title="Pamel Joel Beltrè - Front End Designer - React, AngularJS, Webpack" />
+      <Projects selectedProject={props.selectedProject} />
+    </Fragment>
+  )
 }
 
 ProjectsPage.propTypes = {
