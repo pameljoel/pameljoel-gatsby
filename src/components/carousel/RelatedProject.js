@@ -1,43 +1,36 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import ProjectThumb from './ProjectThumb';
-import { ProjectContext } from '../../Context';
-import SharedState from '../SharedState';
-
-const PassPropsToRelatedProject = (props) => {
-  const { setSelectedProject, project, selectedProject } = props;
-  console.log({ setSelectedProject, project, selectedProject });
-  return (<Fragment>
-    <button onClick={() => setSelectedProject(9)}>click me</button>
-    <div
-      className="related-project-image"
-      role="button"
-      tabIndex={0}
-      onClick={() => setSelectedProject(project.sliderId)}
-      onKeyDown={() => setSelectedProject(project.sliderId)}
-    >
-      value: {selectedProject}
-      <ProjectThumb project={project} />
-    </div >
-  </Fragment>)
-}
+import React, { Component, Fragment } from 'react'
+import PropTypes from 'prop-types'
+import ProjectThumb from './ProjectThumb'
+import { ProjectContext } from '../../Context'
 
 class RelatedProject extends Component {
   render() {
+    const { setSelectedProject, project } = this.props
     return (
-      <SharedState>
-        <PassPropsToRelatedProject project={this.props.project} />
-      </SharedState>
-    );
+      <Fragment>
+        <div
+          className="related-project-image"
+          role="button"
+          tabIndex={0}
+          onClick={() => setSelectedProject(project.sliderId)}
+          onKeyDown={() => setSelectedProject(project.sliderId)}
+        >
+          <ProjectThumb project={project} />
+        </div>
+      </Fragment>
+    )
   }
 }
 
-RelatedProject.contextType = ProjectContext;
+RelatedProject.contextType = ProjectContext
 
-export default RelatedProject;
+export default RelatedProject
 
 RelatedProject.propTypes = {
-  project: PropTypes.shape({
+  project: PropTypes.shape({}).isRequired,
+  setSelectedProject: PropTypes.func,
+}
 
-  }).isRequired
-};
+RelatedProject.defaultProps = {
+  setSelectedProject : null
+}

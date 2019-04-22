@@ -1,18 +1,21 @@
-import React, { Fragment } from 'react';
-import Footer from '../components/footer/Footer';
-import Navigation from '../components/navigation/Navigation';
-import Curriculum from '../components/curriculum/Curriculum';
+import React from 'react'
+import Curriculum from '../components/curriculum/Curriculum'
+import { PropTypes } from 'prop-types'
+import '../index.scss'
+import '../App.scss'
+import '../bigheader.scss'
 
-import '../index.scss';
-import '../App.scss';
-import '../bigheader.scss';
-
-const CurriculumPage = () => (
-    <Fragment>
-        <Navigation />
-        <Curriculum />
-        <Footer></Footer>
-    </Fragment>
+const CurriculumPage = props => (
+  <Curriculum setSelectedProject={props.setSelectedProject} />
 )
+
+CurriculumPage.propTypes = {
+  setSelectedProject: PropTypes.func,
+}
+
+CurriculumPage.defaultProps = {
+  setSelectedProject: null,
+}
+
 
 export default CurriculumPage

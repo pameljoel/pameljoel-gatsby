@@ -1,46 +1,64 @@
-import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
+import React, { Component } from 'react'
+import { PropTypes } from 'prop-types'
 
-import Tags from './../tags/Tags';
-import RelatedProjects from './../carousel/RelatedProjects';
+import Tags from './../tags/Tags'
+import RelatedProjects from './../carousel/RelatedProjects'
 
-import { getData } from '../../helpers';
-import projectsJSON from './resources/projects.json';
+import { getData } from '../../helpers'
+import projectsJSON from './resources/projects.json'
 
-import './company.scss';
-import './../card.scss';
+import './company.scss'
+import './../card.scss'
 
 export default class Company extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       projects: [],
       selectedTag: null,
       filteredProjects: [],
-    };
-    this.showRelatedProjectsCarousel = this.showRelatedProjectsCarousel.bind(this);
-    this.emptyFilteredProjects = this.emptyFilteredProjects.bind(this);
+    }
+    this.showRelatedProjectsCarousel = this.showRelatedProjectsCarousel.bind(
+      this
+    )
+    this.emptyFilteredProjects = this.emptyFilteredProjects.bind(this)
   }
 
   componentDidMount() {
-    getData(projectsJSON)
-      .then(data => this.setState({ projects: data }));
+    getData(projectsJSON).then(data => this.setState({ projects: data }))
   }
 
   emptyFilteredProjects() {
-    this.setState({ selectedTag: null });
+    this.setState({ selectedTag: null })
   }
 
   showRelatedProjectsCarousel(name) {
-    const filteredProjects = [];
-    this.setState({ selectedTag: name });
-    this.state.projects.map(item => item.tags.reduce((prev, tag) => tag === name && filteredProjects.push(item), []));
-    this.setState({ filteredProjects });
+    const filteredProjects = []
+    this.setState({ selectedTag: name })
+    this.state.projects.map(item =>
+      item.tags.reduce(
+        (prev, tag) => tag === name && filteredProjects.push(item),
+        []
+      )
+    )
+    this.setState({ filteredProjects })
   }
 
   render() {
-    const { data: { title, company, contract, city, year, description, website, skills } } = this.props;
-    const { filteredProjects, selectedTag } = this.state;
+    const {
+      data: {
+        title,
+        company,
+        contract,
+        city,
+        year,
+        description,
+        website,
+        skills,
+      },
+      setSelectedProject,
+    } = this.props
+    const { filteredProjects, selectedTag } = this.state
     return (
       <article className="card company-container">
         {title && (
@@ -81,14 +99,19 @@ export default class Company extends Component {
 
         <div className="company-content-container">
           <div className="company-description-container">
-            <div className="company-description">
-              {description}
-            </div>
-            {website &&
+            <div className="company-description">{description}</div>
+            {website && (
               <div className="company-website">
-                <a name="visit website" href={website} target="_blank" rel="noopener noreferrer">visit website</a>
+                <a
+                  name="visit website"
+                  href={website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  visit website
+                </a>
               </div>
-            }
+            )}
           </div>
 
           <div className="company-skills-container">
@@ -103,21 +126,21 @@ export default class Company extends Component {
           <RelatedProjects
             projects={filteredProjects}
             emptyFilteredProjects={this.emptyFilteredProjects}
+            setSelectedProject={setSelectedProject}
             selected={selectedTag}
           />
         </div>
       </article>
-    );
+    )
   }
 }
 
-
 Company.propTypes = {
   data: PropTypes.object,
-  addSelectedProjectCallback: PropTypes.func,
-};
+  setSelectedProject: PropTypes.func,
+}
 
 Company.defaultProps = {
   data: [],
-  addSelectedProjectCallback: null,
-};
+  setSelectedProject: null,
+}
