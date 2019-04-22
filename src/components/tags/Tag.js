@@ -30,11 +30,13 @@ export default class Tag extends Component {
 Tag.propTypes = {
   name: PropTypes.string,
   top: PropTypes.bool,
+  new: PropTypes.bool,
   handleClick: PropTypes.func,
 };
 
 Tag.defaultProps = {
   name: null,
   top: null,
+  new: null,
   handleClick() { return false; },
 };

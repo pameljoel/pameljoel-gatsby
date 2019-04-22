@@ -4,7 +4,7 @@
 .big-header {
     position: relative;
     overflow: hidden;
-    padding-top: 200px;
+    padding-top: 10vh;;
     margin-bottom: -200px;
     padding-bottom: 300px;
     text-align: center;
@@ -148,7 +148,7 @@
 
     .company {
         padding-bottom: 60px;
-        max-width: 300px;
+        max-width: 350px;
         margin: auto;
 
         .company-field {
@@ -171,8 +171,13 @@
             vertical-align: middle;
             padding-left: 10px;
             color: $text-color-primary;
+            font-size: 18px;
             font-weight: 700;
             transition: color .4s ease-in-out;
+            small {
+                font-weight: 400;
+                font-size: 16px;
+            }
 
             &:hover {
                 color: white;

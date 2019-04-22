@@ -12,9 +12,10 @@
   cursor: pointer;
   text-transform: uppercase;
   color: $text-color-primary;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 2px;
   user-select: none;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.1);
   
   @media (max-width: $phone-max) {
     font-size: 10px;
@@ -39,7 +40,6 @@
 .tag:hover {
   background-color: $brand-color-light;
   color: $text-color-white;
-  font-weight: 700;
 }
 
 .tag-label {

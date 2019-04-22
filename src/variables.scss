@@ -1,6 +1,6 @@
 // brand colors
-$brand-color: #2175AA !default;
-$brand-color-dark: #1972F5 !default;
+$brand-color: #2175aa !default;
+$brand-color-dark: #1972f5 !default;
 $brand-color-darker: darken($brand-color-dark, 10%) !default;
 $brand-color-light: #00baff !default;
 $brand-color-lighter: #4fd0ff !default;
@@ -12,15 +12,16 @@ $text-color-muted: #333 !default;
 $text-color-white: white;
 
 // background colors
-$background-color-primary: white !default;
+$background-color-primary: #f4faff !default;
 $background-color-secondary: #eee !default;
 
 // shadow colors
-$shadow-color-primary: rgba(49, 172, 255, 0.2);
-
+$shadow-large: 0 0 40px rgba(49, 172, 255, 0.05);
+$shadow-medium: 0 0 15px rgba(49, 172, 255, 0.1);
+$shadow-small: 2px 2px 5px rgba(49, 172, 255, 0.1);
 
 // border colors
-$border-color-primary: #eee !default;
+$border-color-primary: rgba(49, 172, 255, 0.3) !default;
 $border-color-secondary: #eee !default;
 
 // button colors
