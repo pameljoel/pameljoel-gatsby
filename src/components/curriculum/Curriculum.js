@@ -40,7 +40,6 @@ export default class Curriculum extends Component {
 
   render() {
     const { isLoading, personal, career, education } = this.state;
-    const { addSelectedProjectCallback } = this.props;
     return (
       <div>
         <header
@@ -57,7 +56,7 @@ export default class Curriculum extends Component {
           {!isLoading && (personal || career || education) ? (
             <div className="curriculum-container">
               <Section data={personal} />
-              <Career data={career} addSelectedProjectCallback={addSelectedProjectCallback} />
+              <Career data={career}/>
               <Education data={education} />
             </div>
           ) : (

@@ -15,7 +15,7 @@ export default class RelatedProjects extends Component {
       speed: 500,
       slidesToShow: 3,
     };
-    const { projects, selected, emptyFilteredProjects, addSelectedProjectCallback } = this.props;
+    const { projects, selected, emptyFilteredProjects } = this.props;
     return (
       <div className="related-projects">
 
@@ -38,7 +38,6 @@ export default class RelatedProjects extends Component {
                 return (<div key={slug}>
                   <RelatedProject
                     project={project}
-                    addSelectedProjectCallback={addSelectedProjectCallback}
                     index={i}
                   />
                 </div>

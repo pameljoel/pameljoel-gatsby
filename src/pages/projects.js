@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import Footer from '../components/footer/Footer';
 import Navigation from '../components/navigation/Navigation';
 import Projects from '../components/projects/Projects';
+import { ProjectContext } from '../Context';
+import SharedState from '../components/SharedState';
 
 import '../index.scss';
 import '../App.scss';
 import '../bigheader.scss';
 
-const ProjectsPage = () => (
-    <div>
+const PassPropstoProjectsPage = (props) => {
+    const { selectedProject } = props;
+    return (<div>
         <Navigation />
-        <Projects />
+        <Projects selectedProject={selectedProject} />
         <Footer></Footer>
-    </div>
-)
+    </div>)
+}
 
-export default ProjectsPage
+const ProjectsPage = () => {
+    return (
+        <SharedState>
+            <PassPropstoProjectsPage />
+        </SharedState >
+    )
+}
+
+export default ProjectsPage;

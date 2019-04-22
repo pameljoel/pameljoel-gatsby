@@ -29,7 +29,6 @@ export default class Projects extends Component {
   }
 
   render() {
-    const { selectedProject } = this.props;
     const { projects, isLoading } = this.state;
     const settings = {
       dots: true,
@@ -38,39 +37,38 @@ export default class Projects extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       adaptiveHeight: true,
-      initialSlide: selectedProject || 0,
+      initialSlide: this.props.selectedProject || 0,
     };
-    return (
-      <div>
-
-        <header
-          className="big-header"
-          style={{ marginBottom: '-300px', paddingBottom: '200px' }}
-        >
-          <div className="big-header-content">
-            <h1 className="">PROJECTS</h1>
-            <div className="subtitle">This is a selection of my web projects</div>
-          </div>
-          <div className="big-header-background" />
-        </header>
-        <div className="projects-container">
-          {!isLoading && projects ? (
-            <div className="projects">
-              {projects.length > 0 && (
-                <Slider {...settings}>
-                  {projects.map(project => (
-                    <div key={`project-slider-${project.slug}`}>
-                      <Project data={project} />
-                    </div>
-                  ))}
-                </Slider>
-              )}
-            </div>
-          ) : (
-              <Loading isLoading={isLoading} />
-            )}
+    return (<div>
+      <header
+        className="big-header"
+        style={{ marginBottom: '-300px', paddingBottom: '200px' }}
+      >
+        <div className="big-header-content">
+          <h1 className="">PROJECTS</h1>
+          <h2>{this.props.selectedProject}</h2>
+          <div className="subtitle">This is a selection of my web projects</div>
         </div>
+        <div className="big-header-background" />
+      </header>
+      <div className="projects-container">
+        {!isLoading && projects ? (
+          <div className="projects">
+            {projects.length > 0 && (
+              <Slider {...settings}>
+                {projects.map(project => (
+                  <div key={`project-slider-${project.slug}`}>
+                    <Project data={project} />
+                  </div>
+                ))}
+              </Slider>
+            )}
+          </div>
+        ) : (
+            <Loading isLoading={isLoading} />
+          )}
       </div>
+    </div>
     );
   }
 }

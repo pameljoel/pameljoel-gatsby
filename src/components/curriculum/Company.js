@@ -39,7 +39,7 @@ export default class Company extends Component {
   }
 
   render() {
-    const { addSelectedProjectCallback, data: { title, company, contract, city, year, description, website, skills } } = this.props;
+    const { data: { title, company, contract, city, year, description, website, skills } } = this.props;
     const { filteredProjects, selectedTag } = this.state;
     return (
       <article className="card company-container">
@@ -104,7 +104,6 @@ export default class Company extends Component {
             projects={filteredProjects}
             emptyFilteredProjects={this.emptyFilteredProjects}
             selected={selectedTag}
-            addSelectedProjectCallback={addSelectedProjectCallback}
           />
         </div>
       </article>

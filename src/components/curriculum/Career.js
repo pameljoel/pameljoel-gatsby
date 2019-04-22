@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import Context from '../../Context';
 import Company from './Company';
 import './career.scss';
 
 export default class Career extends Component {
+
   render() {
-    const { data, addSelectedProjectCallback } = this.props;
+    const { data } = this.props;
     return (
       <article className="career-container">
         {data &&
@@ -14,7 +16,6 @@ export default class Career extends Component {
             <h1>Career</h1>
           </div>
         }
-
         <div className="career-content">
           {data && data.map(item => {
             const { year, company } = item;
@@ -22,7 +23,6 @@ export default class Career extends Component {
               data={item}
               key={company + year}
               handleClick={this.showRelatedProjects}
-              addSelectedProjectCallback={addSelectedProjectCallback}
             />)
           }
           )}
@@ -42,11 +42,9 @@ Career.propTypes = {
     website: PropTypes.string,
     year: PropTypes.string,
   })),
-  addSelectedProjectCallback: PropTypes.func,
 };
 
 Career.defaultProps = {
   data: [],
-  addSelectedProjectCallback() { },
 };
 
