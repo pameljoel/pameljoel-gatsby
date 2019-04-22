@@ -65,6 +65,11 @@
             border: 1px solid $brand-color-light;
             padding: 10px 20px;
             border-radius: 30px;
+            transition: all .3s ease-in-out;
+            &:hover{
+                background-color: $brand-color-light;
+                color: white;
+            }
         }
     }
 

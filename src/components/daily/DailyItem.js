@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import Proptypes from 'prop-types';
-import Fade from 'react-reveal/Fade';
+import React, { Component } from 'react'
+import Proptypes from 'prop-types'
+import Fade from 'react-reveal/Fade'
 
 export default class DialyItem extends Component {
   render() {
     const dailyItemStyle = {
-      animationDelay: '1000ms'
-    };
-    const { day, imageSource, description, callback } = this.props;
+      animationDelay: '1000ms',
+    }
+    const { day, imageSource, description, callback } = this.props
     return (
-      <Fade
-        bottom
-      >
+      <Fade bottom>
         <div className="daily-item" style={dailyItemStyle}>
           <div className="day">{day}</div>
           <img
@@ -22,7 +20,7 @@ export default class DialyItem extends Component {
           />
         </div>
       </Fade>
-    );
+    )
   }
 }
 
@@ -31,10 +29,8 @@ DialyItem.propTypes = {
   imageSource: Proptypes.string.isRequired,
   description: Proptypes.string,
   callback: Proptypes.func.isRequired,
-};
-
+}
 
 DialyItem.defaultProps = {
   description: '',
-};
-
+}
