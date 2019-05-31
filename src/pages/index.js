@@ -6,6 +6,7 @@ import '../index.scss'
 import '../App.scss'
 import '../bigheader.scss'
 import '../buttons.scss'
+import '../components/crisp/crisp.scss';
 
 const IndexPage = () => (
   <Fragment>
