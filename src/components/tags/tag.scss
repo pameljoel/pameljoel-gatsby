@@ -15,8 +15,8 @@
   font-weight: 400;
   letter-spacing: 2px;
   user-select: none;
-  box-shadow: 1px 1px 5px rgba(0,0,0,.1);
-  
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+
   @media (max-width: $phone-max) {
     font-size: 10px;
     padding: 10px;
@@ -26,12 +26,12 @@
   &:hover {
     .tag-label {
       &.new {
-        color: white;
-        background-color: darken(#d2fabb, 30%);
+        color: black;
+        background-color: white;
       }
       &.top {
-        color: white;
-        background-color: darken(#dddddd, 30%);
+        color: black;
+        background-color: white;
       }
     }
   }
