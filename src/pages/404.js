@@ -3,9 +3,16 @@ import SEO from '../components/seo'
 
 const NotFoundPage = () => (
   <Fragment>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+
+    <div className="card" >
+      <div className="error-panel">
+        <SEO title="404: Not found" />
+        <h1 className="error-code">NOT FOUND</h1>
+        <div className="error-message">
+          You just hit a route that doesn&#39;t exist... the sadness.
+          </div>
+      </div>
+    </div>
   </Fragment>
 )
 
