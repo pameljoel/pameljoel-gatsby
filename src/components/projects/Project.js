@@ -13,7 +13,7 @@ export default class Project extends Component {
       description,
       images,
       job,
-      mywork,
+      myWork,
       tags,
       slug,
       url,
@@ -75,7 +75,7 @@ export default class Project extends Component {
             <header>
               <h1 className="project-subtitle">About my work</h1>
             </header>
-            <div className="project-my-work">{job && <strong>{job}</strong>} {mywork}</div>
+            <div className="project-my-work">{job && <strong>{job}</strong>} {myWork}</div>
           </article>
 
           <div className="project-tags-container">
