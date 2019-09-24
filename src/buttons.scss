@@ -11,6 +11,10 @@
     transition: all 0.3s ease-in-out;
     margin-bottom: 10px;
 
+    @media (max-width: $phone-min) {
+        width: 100%;
+    }
+
     &:active {
         transform: translateY(1px);
     }
@@ -46,6 +50,10 @@
     margin-right: 20px;
     transition: all 0.3s ease-in-out;
     margin-bottom: 10px;
+
+    @media (max-width: $phone-min) {
+        width: 100%;
+    }
 
     &:hover {
         background-color: white;

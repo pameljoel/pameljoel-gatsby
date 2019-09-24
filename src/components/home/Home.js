@@ -149,28 +149,24 @@ export default class Home extends Component {
                   <span className="company-field">
                     <span className="field-suffix">at </span>
                     <a
-                      href="https://www.quotidiano.net"
+                      href="https://www.lastminute.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="field-name"
                     >
-                      Monrif.net{' '}
-                      <small>
-                        - Quotidiano.net, Il Resto del Carlino, Il Giorno, La
-                        Nazione.
-                      </small>
+                      lastminute.com
                     </a>
                   </span>
 
                   <span className="company-field">
                     <span className="field-suffix">in</span>
                     <a
-                      href="https://goo.gl/maps/fNtZbVLUWvT2"
+                      href="https://goo.gl/maps/YmmGRnJzik7yERsp7"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="field-name"
                     >
-                      Bologna <small>(Italy)</small>
+                      Chiasso <small>(Switzerland)</small>
                     </a>
                   </span>
                 </div>
@@ -179,7 +175,7 @@ export default class Home extends Component {
                   <div className="company-suffix">as</div>
                   <Link className="company-job-title" to="/curriculum">
                     <span>
-                      UX / Graphic Designer <small>&</small> Front-end Developer
+                      Front-end Engineer
                     </span>
                     <div>
                       <small style={{ fontSize: '12px', fontWeight: '300' }}>

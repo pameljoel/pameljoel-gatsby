@@ -201,7 +201,9 @@
     .company-job-title {
       font-family: 'Roboto Slab', serif;
       display: inline-block;
-      padding: 10px 20px;
+      padding: 20px;
+      width: 100%;
+      max-width: 100%;
       border-radius: 30px;
       background-color: rgba(0, 0, 0, 0.2);
       margin-bottom: 10px;
