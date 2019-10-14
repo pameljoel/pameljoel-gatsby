@@ -46,13 +46,11 @@
 
     .school-skills-container {
         float: left;
-        width: 50%;
         margin-bottom: 20px;
 
 
         @media (max-width: $phone-max) {
             float: none;
-            width: 100%;
         }
     }
 }

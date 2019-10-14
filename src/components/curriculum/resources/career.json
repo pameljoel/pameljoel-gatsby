@@ -1,6 +1,53 @@
-[
+[  
   {
-    "year": "2017 - today",
+  "year": "2019 - today",
+  "title": "Front end engineer",
+  "company": "lastminute.com",
+  "city": "Chiasso, Switzerland",
+  "website": "https://www.lastminute.com",
+  "description": "Lastminute.com is among the worldwide leaders in the online travel industry and operates a portfolio of well-known brands such as lastminute.com, Volagratis, Rumbo, weg.de, Bravofly, Jetcost and Hotelscan.",
+  "skills": [
+    {
+      "name": "React",
+      "top": true
+    },
+    {
+      "name": "Mobx",
+      "new": true
+    },
+    {
+      "name": "Typescript",
+      "new": true
+    },
+    {
+      "name": "HTML 5",
+      "top": true
+    },
+    {
+      "name": "CSS 3",
+      "top": true
+    },
+    {
+      "name": "Javascript"
+    },
+    {
+      "name": "ES6"
+    },
+    {
+      "name": "Web standards"
+    },
+    {
+      "name": "SCSS",
+      "new": true
+    },
+    {
+      "name": "Webpack",
+      "new": true
+    }
+  ]
+},
+  {
+    "year": "2017 - 2019",
     "title": "Graphic Designer & Front-End Developer",
     "company": "Monrif.Net",
     "city": "Bologna",

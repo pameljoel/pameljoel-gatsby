@@ -5,7 +5,7 @@ import './career.scss'
 
 export default class Career extends Component {
   render() {
-    const { data, setSelectedProject } = this.props
+    const { data, setSelectedProject } = this.props;
     return (
       <article className="career-container">
         {data && (
