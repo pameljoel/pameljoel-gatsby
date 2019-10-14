@@ -1,9 +1,12 @@
 import React, { Component, cloneElement, Children, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import * as Sentry from '@sentry/browser';
 import { ProjectContext } from '../Context'
 import Navigation from '../components/navigation/Navigation'
 import Footer from '../components/footer/Footer'
 import ScrollTop from '../components/scrollTop/ScrollTop';
+
+Sentry.init({dsn: "https://9ad1e40b5209458cb212458aad59cf3f@sentry.io/1779398"});
 
 export default class SharedState extends Component {
   constructor(props) {
