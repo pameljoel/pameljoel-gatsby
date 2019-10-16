@@ -79,6 +79,7 @@ export default class Home extends Component {
                 <h2>Ciao,</h2>
               </TextLoop>
 
+              <Fade big cascade>
               <div className="subtitle">
                 My name is
                 <strong className="name">
@@ -125,74 +126,81 @@ export default class Home extends Component {
                   </div>
                 </strong>
               </div>
+              </Fade>
 
-              <div className="job">
-                <div className="job-suffix">
-                  <span>I'am a</span>
+              <Fade big cascade>
+                <div className="job">
+                  <div className="job-suffix">
+                    <span>I'am a</span>
+                  </div>
+                  <div className="job-title">
+                    <TextLoop speed={1000} adjustingSpeed={2000}>
+                      <h1>Full stack Designer</h1>
+                      <h1>Graphic Designer</h1>
+                      <h1>UX Designer</h1>
+                      <h1>Front-end Developer</h1>
+                    </TextLoop>
+                  </div>
                 </div>
-                <div className="job-title">
-                  <TextLoop speed={1000} adjustingSpeed={2000}>
-                    <h1>Full stack Designer</h1>
-                    <h1>Graphic Designer</h1>
-                    <h1>UX Designer</h1>
-                    <h1>Front-end Developer</h1>
-                  </TextLoop>
-                </div>
-              </div>
+              </Fade>
 
-              <div className="company">
-                <div className="company-suffix">
-                  Right now, I am working here:
-                </div>
+              <Fade big cascade>
+                <div className="company">
+                  <div className="company-suffix">
+                    Right now, I am working here:
+                  </div>
 
-                <div className="company-description">
-                  <span className="company-field">
-                    <span className="field-suffix">at </span>
-                    <a
-                      href="https://www.lastminute.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="field-name"
-                    >
-                      lastminute.com
-                    </a>
-                  </span>
-
-                  <span className="company-field">
-                    <span className="field-suffix">in</span>
-                    <a
-                      href="https://goo.gl/maps/YmmGRnJzik7yERsp7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="field-name"
-                    >
-                      Chiasso <small>(Switzerland)</small>
-                    </a>
-                  </span>
-                </div>
-
-                <div className="company-description">
-                  <div className="company-suffix">as</div>
-                  <Link className="company-job-title" to="/curriculum">
-                    <span>
-                      Front-end Engineer
+                  <div className="company-description">
+                    <span className="company-field">
+                      <span className="field-suffix">at </span>
+                      <a
+                        href="https://www.lastminute.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="field-name"
+                      >
+                        lastminute.com
+                      </a>
                     </span>
-                    <div>
-                      <small style={{ fontSize: '12px', fontWeight: '300' }}>
-                        View my Curriculum Vitae
-                      </small>
-                    </div>
-                  </Link>
+
+                    <span className="company-field">
+                      <span className="field-suffix">in</span>
+                      <a
+                        href="https://goo.gl/maps/YmmGRnJzik7yERsp7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="field-name"
+                      >
+                        Chiasso <small>(Switzerland)</small>
+                      </a>
+                    </span>
+                  </div>
+
+                  <div className="company-description">
+                    <div className="company-suffix">as</div>
+                    <Link className="company-job-title" to="/curriculum">
+                      <span>Front-end Engineer</span>
+                      <div>
+                        <small style={{ fontSize: '12px', fontWeight: '300' }}>
+                          View my Curriculum Vitae
+                        </small>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              </Fade>
 
-              <button className="big-button-secondary">
-                <Link to="/projects">See my projects</Link>
-              </button>
+              <Fade big cascade>
+                <button className="big-button-secondary">
+                  <Link to="/projects">See my projects</Link>
+                </button>
+              </Fade>
 
-              <button className="big-button-primary" onClick={openCrisp}>
-                <div>Contact me</div>
-              </button>
+              <Fade big cascade>
+                <button className="big-button-primary" onClick={openCrisp}>
+                  <div>Contact me</div>
+                </button>
+              </Fade>
             </div>
 
             {arrowDownSVG}

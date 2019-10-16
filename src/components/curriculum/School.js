@@ -52,6 +52,6 @@ School.propTypes = {
     school: PropTypes.string,
     city: PropTypes.string,
     year: PropTypes.string,
-    subjects: PropTypes.string,
+    subjects: PropTypes.arrayOf(PropTypes.string),
   }),
 }
