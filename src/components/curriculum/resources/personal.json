@@ -48,12 +48,6 @@
         "linkType" : "email",
         "isLink" : true
     }, {
-        "field": "website",
-        "icon": "glyphicon-globe",
-        "value": "http://www.pameljoel.it",
-        "linkType" : "href",
-        "isLink" : true
-    }, {
         "field": "Linkedin",
         "icon": "glyphicon-globe",
         "value": "https://www.linkedin.com/in/pamel-joel-beltr%C3%A8-01a6474/",
