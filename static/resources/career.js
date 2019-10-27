@@ -1,4 +1,4 @@
-[  
+[
   {
   "year": "2019 - today",
   "title": "Front end engineer",
@@ -38,11 +38,10 @@
     },
     {
       "name": "SCSS",
-      "new": true
+      "top": true
     },
     {
-      "name": "Webpack",
-      "new": true
+      "name": "Webpack"
     }
   ]
 },
