@@ -17,7 +17,7 @@ const ProjectsPage = props => {
 }
 
 ProjectsPage.propTypes = {
-  selectedProject: PropTypes.func,
+  selectedProject: PropTypes.number,
 }
 
 ProjectsPage.defaultProps = {
