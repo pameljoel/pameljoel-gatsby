@@ -9,5 +9,16 @@ describe("Header", () => {
       .create(<Header siteTitle="Default Starter" />)
       .toJSON()
     expect(tree).toMatchSnapshot()
+  });
+
+  it('should not be null', () => {
+    const wrapper = shallow(<Header />);
+    expect(wrapper).not.toBeNull;
+  });
+
+  it('should not have length', () => {
+    const wrapper = shallow(<Header />);
+    expect(wrapper.length).toBe(1);
   })
 })
+

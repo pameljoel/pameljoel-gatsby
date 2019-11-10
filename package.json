@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@sentry/browser": "^4.3.4",
+    "enzyme": "^3.10.0",
     "gatsby": "^2.0.91",
     "gatsby-plugin-layout": "^1.0.14",
     "gatsby-plugin-manifest": "^2.0.9",
@@ -36,11 +37,15 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-\    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:update": "jest --updateSnapshot"
   },
   "devDependencies": {
     "babel-jest": "^24.9.0",
     "babel-preset-gatsby": "^0.2.20",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.17.1",
