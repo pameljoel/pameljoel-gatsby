@@ -73,7 +73,7 @@ export default class Home extends Component {
         <ErrorBoundary>
           <header className="big-header home">
             <div className="big-header-content">
-              <TextLoop speed={5500}>
+              <TextLoop interval={10000}>
                 <h2>HELLO,</h2>
                 <h2>Hola,</h2>
                 <h2>Ciao,</h2>
@@ -134,7 +134,7 @@ export default class Home extends Component {
                     <span>I'am a</span>
                   </div>
                   <div className="job-title">
-                    <TextLoop speed={1000} adjustingSpeed={2000}>
+                    <TextLoop interval={1000} adjustingSpeed={2000}>
                       <h1>Full stack Designer</h1>
                       <h1>Graphic Designer</h1>
                       <h1>UX Designer</h1>
