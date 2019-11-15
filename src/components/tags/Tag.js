@@ -7,18 +7,18 @@ import './tag.scss';
 
 export default class Tag extends Component {
   render() {
-    const { name, top, new: newskill, handleClick } = this.props;
+    const { name, top, new: newSkill, handleClick } = this.props;
 
     return (
       <div className="tag" onClick={() => handleClick(name)}>
-        {name}
+        <span className="tag__name">{name}</span>
         {top && (
           <Tooltip
             title={`<strong>${name}</strong> <small>is one of my strong skills</small>`} position="top" trigger="mouseenter">
             <span className="tag-label top">top</span>
           </Tooltip>
         )}
-        {newskill && (
+        {newSkill && (
           <Tooltip title={`<small>I learned</small> <strong>${name}</strong> <small>during this work experience</small>`} position="top" trigger="mouseenter">
             <span className="tag-label new">new</span>
           </Tooltip>)}

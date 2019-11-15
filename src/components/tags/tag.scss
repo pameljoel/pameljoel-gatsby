@@ -23,6 +23,10 @@
     line-height: 1;
   }
 
+  .tag__name {
+    line-height: 23px;
+  }
+
   &:hover {
     .tag-label {
       &.new {
