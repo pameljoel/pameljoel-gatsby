@@ -18,3 +18,13 @@ window.matchMedia = jest.fn().mockImplementation(query => {
     removeListener: jest.fn(),
   };
 });
+
+window.fetch = jest.fn().mockImplementation(json => {
+  return {
+    then: jest.fn(),
+    response: json,
+  };
+});
+
+
+const fetch = (json) => json;
