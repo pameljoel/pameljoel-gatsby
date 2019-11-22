@@ -51,7 +51,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      blocks: null,
+      sections: null,
       isLoading: true,
     }
   }
@@ -59,7 +59,7 @@ export default class Home extends Component {
   componentDidMount() {
     fetch('./resources/skills.js')
       .then(data => data.json())
-      .then(data => this.setState({ blocks: data, isLoading: false }))
+      .then(data => this.setState({ sections: data, isLoading: false }))
       .catch(error => {
         this.setState({ isLoading: false })
         console.error(error)
@@ -67,7 +67,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const { blocks, isLoading } = this.state
+    const { sections, isLoading } = this.state
     return (
       <div>
         <ErrorBoundary>
@@ -210,16 +210,16 @@ export default class Home extends Component {
         <ErrorBoundary isLoading={isLoading}>
           <div className="container">
             <div className="homepage-container">
-              {!isLoading && blocks ? (
-                blocks.map(block => (
-                  <Fade big cascade key={block.name}>
+              {!isLoading && sections ? (
+                sections.map(section => (
+                  <Fade big cascade key={section.name}>
                     <div className="card">
-                      <h2 className="title">{block.name}</h2>
-                      <div className="description">{block.description}</div>
-                      <GraphSkills data={block.skills} color="#E38627" />
-                      <h3>Other {block.name} skills:</h3>
+                      <h2 className="title">{section.name}</h2>
+                      <div className="description">{section.description}</div>
+                      <GraphSkills data={section.skills} color="#E38627" />
+                      <h3>Other {section.name} skills:</h3>
                       <div className="tags">
-                        <Tags data={block.tags} />
+                        <Tags data={section.tags} />
                       </div>
                     </div>
                   </Fade>

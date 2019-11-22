@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@sentry/browser": "^5.7.1",
+    "enzyme": "^3.10.0",
     "gatsby": "^2.0.91",
     "gatsby-plugin-layout": "^1.0.14",
     "gatsby-plugin-manifest": "^2.0.9",
@@ -36,15 +37,24 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:update": "jest --updateSnapshot"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
+    "babel-jest": "^24.9.0",
+    "babel-preset-gatsby": "^0.2.20",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint-plugin-import": "^2.17.1",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.15.2"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.15.2",
+    "react-test-renderer": "^16.11.0"
   },
   "repository": {
     "type": "git",
