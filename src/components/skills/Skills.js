@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Skill from './skill';
 import InlineSkill from './InlineSkill';
 import './skills.scss';
@@ -31,4 +32,14 @@ export default class Tags extends Component {
             </div>
         )
     }
+}
+
+Tags.propTypes = {
+  data: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      percentage: PropTypes.string,
+    })),
+    type: PropTypes.string,
+  })
 }
