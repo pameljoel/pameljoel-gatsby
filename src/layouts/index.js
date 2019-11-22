@@ -5,7 +5,6 @@ import { ProjectContext } from '../Context'
 import Navigation from '../components/navigation/Navigation'
 import Footer from '../components/footer/Footer'
 import ScrollTop from '../components/scrollTop/ScrollTop';
-import { setSelectedProject } from '../utils/http';
 
 Sentry.init({dsn: "https://9ad1e40b5209458cb212458aad59cf3f@sentry.io/1779398"});
 
