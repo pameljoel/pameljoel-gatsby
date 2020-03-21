@@ -158,7 +158,6 @@ const StaticContent = () => {
   )
 }
 
-
 const createSections = (sections) => sections.map(section => {
   const { name, description, skills, tags } = section;
   return (
