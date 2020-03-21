@@ -158,26 +158,6 @@ const StaticContent = () => {
   )
 }
 
-const Sections = (sections) => {
-  if (!sections) return;
-  
-  sections.map(section => {
-      const { name, description, skills, tags } = section
-      return (
-        <Fade big cascade key={name}>
-          <div className="card">
-            <h2 className="title">{name}</h2>
-            <div className="description">{description}</div>
-            <GraphSkills data={skills} color="#E38627" />
-            <h3>Other {name} skills:</h3>
-            <div className="tags">
-              <Tags data={tags} />
-            </div>
-          </div>
-        </Fade>
-      )
-    })
-}
 export default class Home extends Component {
   constructor(props) {
     super(props)
@@ -208,7 +188,22 @@ export default class Home extends Component {
               {isLoading ? (
                 <Loading isLoading={this.state.isLoading} />
               ) : (
-                <Sections sections={sections} />
+                sections && sections.map(section => {
+                  const { name, description, skills, tags } = section;
+                  return (
+                    <Fade big cascade key={name}>
+                      <div className="card">
+                        <h2 className="title">{name}</h2>
+                        <div className="description">{description}</div>
+                        <GraphSkills data={skills} color="#E38627" />
+                        <h3>Other {name} skills:</h3>
+                        <div className="tags">
+                          <Tags data={tags} />
+                        </div>
+                      </div>
+                    </Fade>
+                  )
+                })
               )}
             </div>
           </div>
