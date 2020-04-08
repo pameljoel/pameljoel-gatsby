@@ -3,8 +3,6 @@ import GraphSkills from '../skills/GraphSkills'
 import Tags from '../tags/Tags'
 import React from 'react'
 import PropTypes from 'prop-types'
-import GraphSkill from '../skills/GraphSkill'
-import Tag from '../tags/Tag'
 
 const Section = (props) => {
   const { name, description, skills, tags } = props;
@@ -23,7 +21,7 @@ const Section = (props) => {
   )
 }
 
-Section.PropTypes = {
+Section.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
   skills: PropTypes.arrayOf({
