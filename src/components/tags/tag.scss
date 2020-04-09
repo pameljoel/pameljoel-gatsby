@@ -18,13 +18,18 @@
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 
   @media (max-width: $phone-max) {
+    display: flex;
     font-size: 10px;
     padding: 10px;
     line-height: 1;
+    flex-grow: 1;
   }
 
-  .tag__name {
+  &__name {
     line-height: 23px;
+  }
+
+  &__tooltip {
   }
 
   &:hover {

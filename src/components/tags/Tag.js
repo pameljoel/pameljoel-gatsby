@@ -14,6 +14,7 @@ export default class Tag extends Component {
         <span className="tag__name">{name}</span>
         {top && (
           <Tooltip
+            className="tag__tooltip"
             title={`<strong>${name}</strong> <small>is one of my strong skills</small>`} position="top" trigger="mouseenter">
             <span className="tag-label top">top</span>
           </Tooltip>

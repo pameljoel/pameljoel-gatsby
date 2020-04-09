@@ -1,3 +1,11 @@
-.tags {}
+@import "./../../variables.scss";
+
+.tags {
+  @media(max-width: $phone-max) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
 
 
