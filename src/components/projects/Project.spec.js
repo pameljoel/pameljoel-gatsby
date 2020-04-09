@@ -2,7 +2,7 @@ import React from 'react';
 import Project from './Project';
 
 
-import projectsStub from './resources/projects.json';
+import projectsStub from '../../../static/resources/projects.json';
 
 const project = projectsStub[1];
 

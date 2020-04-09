@@ -5,7 +5,7 @@ import Tags from './../tags/Tags'
 import RelatedProjects from './../carousel/RelatedProjects'
 
 import { getData } from '../../helpers'
-import projectsJSON from './resources/projects.json'
+import projectsJSON from '../../../static/resources/projects.json'
 
 import './company.scss'
 import './../card.scss'

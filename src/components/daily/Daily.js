@@ -8,8 +8,8 @@ import DailyItem from './DailyItem';
 import Loading from '../status/Loading';
 
 import { getData } from '../../helpers';
-import dailyJson from './resources/daily.json';
-import monthsJson from './resources/months.json';
+import dailyJson from '../../../static/resources/daily.json';
+import monthsJson from '../../../static/resources/months.json';
 
 import './daily.scss';
 import './modal.scss';

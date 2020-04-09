@@ -7,7 +7,7 @@ import { enableCrisp } from '../crisp/Crisp';
 import Project from './Project';
 
 import { getData } from '../../helpers';
-import projectJson from './resources/projects.json';
+import projectJson from '../../../static/resources/projects.json';
 
 import './projects.scss';
 import './../carousel/slick.scss';

@@ -5,6 +5,8 @@ import ErrorBoundary from './../status/ErrorBoundary'
 import './home.scss'
 import HomeStaticContent from './HomeStaticContent';
 import Section from './Section';
+import { getData } from '../../helpers'
+import skills from '../../../static/resources/skills.json';
 
 const createSections = (sections) => sections.map(section => {
   const { name, description, skills, tags } = section;
@@ -21,8 +23,7 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    fetch('./resources/skills.js')
-      .then(data => data.json())
+    getData(skills)
       .then(data => this.setState({ sections: data, isLoading: false }))
       .catch(error => {
         this.setState({ isLoading: false })
@@ -31,7 +32,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const { sections, isLoading } = this.state
+    const { sections, isLoading } = this.state;
     return (
       <div>
         <HomeStaticContent />

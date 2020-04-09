@@ -24,17 +24,8 @@ const Section = (props) => {
 Section.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
-  skills: PropTypes.arrayOf({
-    name: PropTypes.string,
-    description: PropTypes.string,
-    percentage: PropTypes.string,
-    pro: PropTypes.string,
-  }),
-  tags: PropTypes.arrayOf({
-    name: PropTypes.string,
-    top: PropTypes.bool,
-    new:  PropTypes.bool,
-  })
+  skills: PropTypes.array,
+  tags: PropTypes.array,
 }
 
 export default Section;
