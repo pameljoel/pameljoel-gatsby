@@ -23,14 +23,12 @@ export default class AdditionalInfo extends Component {
   render() {
     const { show, title, description } = this.props;
     const { animate } = this.state;
-    return (
-      show ? (
-        <div className={`skill-additional-info ${animate ? 'animate' : ''}`}>
-          <div className="skill-additional-info-icon" >{title}</div>
-          <div className="skill-additional-info-text">{description}</div>
-        </div>
-      ) : (null)
-    );
+    return show ? (
+      <div className={`skill-additional-info ${animate ? 'animate' : ''}`}>
+        <div className="skill-additional-info-icon">{title}</div>
+        <div className="skill-additional-info-text">{description}</div>
+      </div>
+    ) : null;
   }
 }
 
@@ -43,4 +41,3 @@ AdditionalInfo.propTypes = {
 AdditionalInfo.defaultProps = {
   title: 'How can I help you?',
 };
-

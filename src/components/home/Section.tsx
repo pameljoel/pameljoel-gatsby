@@ -1,9 +1,9 @@
-import Fade from 'react-reveal/Fade';
+import Fade from 'react-reveal';
 import GraphSkills from '../skills/GraphSkills';
 import Tags from '../tags/Tags';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { section } from '../../types/index';
+import { section } from '../../types';
 
 const Section = (props: section) => {
   const { name, description, skills, tags } = props;
