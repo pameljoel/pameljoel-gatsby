@@ -1,31 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
 
 import './tag.scss';
 
-export default class Tag extends Component {
-  render() {
-    const { name, top, new: newSkill, handleClick } = this.props;
+const showToolTip = ({ description, name }) => {
+  return (
+    <Tooltip
+      className="tag__tooltip"
+      title={description}
+      position="top"
+      trigger="mouseenter"
+    >
+      <span className={`tag-label ${name}`}>{name}</span>
+    </Tooltip>
+  );
+};
 
-    return (
-      <div className="tag" onClick={() => handleClick(name)}>
-        <span className="tag__name">{name}</span>
-        {top && (
-          <Tooltip
-            className="tag__tooltip"
-            title={`<strong>${name}</strong> <small>is one of my strong skills</small>`} position="top" trigger="mouseenter">
-            <span className="tag-label top">top</span>
-          </Tooltip>
-        )}
-        {newSkill && (
-          <Tooltip title={`<small>I learned</small> <strong>${name}</strong> <small>during this work experience</small>`} position="top" trigger="mouseenter">
-            <span className="tag-label new">new</span>
-          </Tooltip>)}
-      </div>
-    );
-  }
+export default function Tag(props) {
+  const { name, top, new: newSkill, handleClick } = props;
+
+  const hasTooltip = top || newSkill;
+  const topSkillTitle = `<strong>${name}</strong> <small>is one of my strong skills</small>`;
+  const newSkillTitle = `<small>I learned</small> <strong>${name}</strong> <small>during this work experience</small>`;
+  const tooltips = {
+    TOP: {
+      name: 'top',
+      description: topSkillTitle,
+    },
+    NEW: {
+      name: 'new',
+      description: newSkillTitle,
+    },
+  };
+
+  const tooltipText = top ? tooltips.TOP : tooltips.NEW;
+
+  return (
+    <div className="tag" onClick={() => handleClick(name)}>
+      <span className="tag__name">{name}</span>
+      {hasTooltip && showToolTip(tooltipText)}
+    </div>
+  );
 }
 
 Tag.propTypes = {
@@ -39,5 +56,7 @@ Tag.defaultProps = {
   name: null,
   top: null,
   new: null,
-  handleClick() { return false; },
+  handleClick() {
+    return false;
+  },
 };
