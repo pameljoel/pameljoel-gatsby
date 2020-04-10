@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
-import Home from '../components/home/Home'
+import Home from '../components/home/Home.tsx'
 import SEO from '../components/seo'
 
 import '../index.scss'
 import '../App.scss'
 import '../bigheader.scss'
 import '../buttons.scss'
-import '../components/crisp/crisp.scss';
+import '../components/crisp/crisp.scss'
 
 const IndexPage = () => (
   <Fragment>
