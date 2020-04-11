@@ -15,7 +15,9 @@ export default class GraphSkill extends Component {
   }
 
   toggleAdditionalInfo() {
-    this.setState(prevState => ({ showAdditionalInfo: !prevState.showAdditionalInfo }));
+    this.setState((prevState) => ({
+      showAdditionalInfo: !prevState.showAdditionalInfo,
+    }));
   }
 
   showSkillLevel(percentage) {
@@ -47,12 +49,14 @@ export default class GraphSkill extends Component {
   render() {
     const { percentage, color, pro, description, name } = this.props;
     const { showAdditionalInfo } = this.state;
-    const chartObject = [{
-      value: percentage,
-      color: color,
-    }];
+    const chartObject = [
+      {
+        value: percentage,
+        color: color,
+      },
+    ];
     return (
-      <div className={`skill-graph ${pro ? 'clickable' : ''}`} >
+      <div className={`skill-graph ${pro ? 'clickable' : ''}`}>
         <div className="skill-graph-image">
           <div className="skill-level-container">
             <div className="skill-level-label">Proficiency: </div>
@@ -70,14 +74,17 @@ export default class GraphSkill extends Component {
           />
         </div>
         <article className="skill-graph-text">
-          <header className="skill-graph-title" onClick={this.toggleAdditionalInfo}>
+          <header
+            className="skill-graph-title"
+            onClick={this.toggleAdditionalInfo}
+          >
             <h1>{name}</h1>
           </header>
           <div className="skill-graph-description">{description}</div>
 
-          {showAdditionalInfo && pro &&
+          {showAdditionalInfo && pro && (
             <AdditionalInfo show={showAdditionalInfo} description={pro} />
-          }
+          )}
         </article>
       </div>
     );

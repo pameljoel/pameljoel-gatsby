@@ -7,7 +7,7 @@ import HomeStaticContent from './HomeStaticContent';
 import Section from './Section';
 import { getData } from '../../helpers';
 import skillsJson from '../../../static/resources/skills.json';
-import { sections } from '../../types/index';
+import { sections } from '../../types';
 
 type props = {};
 
@@ -18,7 +18,7 @@ type state = {
 
 const createSections = (sections: sections) =>
   sections.map((section) => {
-    const { name, description, skills, tags } = section
+    const { name, description, skills, tags } = section;
     return (
       <Section
         key={name}
@@ -52,7 +52,7 @@ export default class Home extends Component {
   render() {
     const { sections, isLoading }: state = this.state;
     return (
-      <div>
+      <div data-test="home">
         <HomeStaticContent />
         <ErrorBoundary isLoading={isLoading}>
           <div className="container">
