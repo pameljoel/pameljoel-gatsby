@@ -7,7 +7,6 @@ import { section } from '../../types';
 
 const Section = (props: section) => {
   const { name, description, skills, tags } = props;
-  console.log('Section', { name, description, skills, tags });
   return (
     <Fade big cascade key={name} data-test="section">
       <div className="card">
