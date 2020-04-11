@@ -9,7 +9,7 @@ import React from 'react'
 const StaticContent = () => {
   return (
     <ErrorBoundary>
-      <header className="big-header home">
+      <header className="big-header home" data-test="static">
         <div className="big-header-content">
           <TextLoop interval={10000}>
             <h2>HELLO,</h2>
