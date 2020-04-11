@@ -17,32 +17,32 @@ export default class DesktopNavigation extends Component {
         </ul>
         <ul className="main-navigation-links">
           <li>
-            <Link to="/" activeClassName="active" >
+            <Link to="/" activeClassName="active">
               <div className="nav-link">Home</div>
               <div className="active-bar" />
             </Link>
           </li>
           <li>
-            <Link to="/daily"  activeClassName="active" >
+            <Link to="/daily" activeClassName="active">
               <div className="nav-link">Daily</div>
               <div className="active-bar" />
             </Link>
           </li>
           <li>
-            <Link to="/curriculum" activeClassName="active" >
+            <Link to="/curriculum" activeClassName="active">
               <div className="nav-link">CV</div>
               <div className="active-bar" />
             </Link>
           </li>
           <li>
-            <Link to="/projects" activeClassName="active" >
+            <Link to="/projects" activeClassName="active">
               <div className="nav-link">Projects</div>
               <div className="active-bar" />
             </Link>
           </li>
           <li>
             <button className="nav-button" onClick={openCrisp}>
-                Contact me
+              Contact me
             </button>
           </li>
         </ul>

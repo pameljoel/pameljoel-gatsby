@@ -17,7 +17,7 @@ export default class MobileNavigation extends Component {
   }
 
   toggleSidebar() {
-    this.setState(prevState => ({ sidebarOpen: !prevState.sidebarOpen }));
+    this.setState((prevState) => ({ sidebarOpen: !prevState.sidebarOpen }));
   }
 
   render() {
@@ -28,40 +28,46 @@ export default class MobileNavigation extends Component {
           <Hamburger open={sidebarOpen} callback={this.toggleSidebar} />
           <ul className="mobile-navigation-links">
             <li onClick={this.toggleSidebar}>
-              <Link to="/">
+              <Link to="/" activeClassName="active">
                 <div className="nav-link">Home</div>
                 <div className="active-bar" />
               </Link>
             </li>
             <li onClick={this.toggleSidebar}>
-              <Link to="/daily">
+              <Link to="/daily" activeClassName="active">
                 <div className="nav-link">Daily</div>
                 <div className="active-bar" />
               </Link>
             </li>
             <li onClick={this.toggleSidebar}>
-              <Link to="/curriculum">
+              <Link to="/curriculum" activeClassName="active">
                 <div className="nav-link">CV</div>
                 <div className="active-bar" />
               </Link>
             </li>
             <li onClick={this.toggleSidebar}>
-              <Link to="/projects">
+              <Link to="/projects" activeClassName="active">
                 <div className="nav-link">Projects</div>
                 <div className="active-bar" />
               </Link>
             </li>
-            <li onClick={() => { this.toggleSidebar(); openCrisp(); }}>
-              <button className="nav-button" >
-                Contact me
-              </button>
+            <li
+              onClick={() => {
+                this.toggleSidebar();
+                openCrisp();
+              }}
+            >
+              <button className="nav-button">Contact me</button>
             </li>
           </ul>
           <Branding />
         </div>
-        <div className={`overlay-layer ${sidebarOpen ? 'open' : ''}`} key="overlay-layer" onClick={this.toggleSidebar} />
+        <div
+          className={`overlay-layer ${sidebarOpen ? 'open' : ''}`}
+          key="overlay-layer"
+          onClick={this.toggleSidebar}
+        />
       </Fragment>
-
     );
   }
 }

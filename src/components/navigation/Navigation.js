@@ -41,7 +41,7 @@ export default class Navigation extends Component {
       <Fragment>
         <nav className="main-navigation">
           {isMobile ? <MobileNavigation /> : <DesktopNavigation />}
-        </nav >
+        </nav>
       </Fragment>
     );
   }
