@@ -16,6 +16,7 @@
   letter-spacing: 2px;
   user-select: none;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
 
   @media (max-width: $phone-max) {
     display: flex;
