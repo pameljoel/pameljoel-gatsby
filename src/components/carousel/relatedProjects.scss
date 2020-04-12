@@ -1,90 +1,104 @@
 @import "./../../mixins.scss";
 
-.related-projects {
-    position: relative;
-    padding-top: 40px;
+$dots-offset-bottom: 40px;
 
-    .related-project-image {
-        img, .project-image {
-            max-width: 100%;
-        }
+.related-projects {
+  position: relative;
+  padding-top: 40px;
+  margin-bottom: $dots-offset-bottom / 2;
+
+  &__result {
+    header {
+      margin-bottom: 10px;
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+
+    &.slick-prev {
+      transform: translateX(50%);
+      left: -40px;
     }
 
-    .related-projects-result {}
-    .related-project-no-result {}
-    .slick-arrow {
+    &.slick-next {
+      transform: translateX(-50%);
+      right: -40px;
+    }
+  }
+
+  .slick-slide {
+    padding: 10px;
+    transition: all .3s ease-in-out;
+
+    img {
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
+      border-radius: 20px;
+      border: 10px solid white;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        border: 4px solid $brand-color-light;
+      }
+    }
+  }
+
+  .slick-slide.slick-active {
+
+    img {
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .slick-slider .slick-dots {
+    position: absolute;
+    top: auto;
+    bottom: -($dots-offset-bottom);
+    transform: translateY(-50%);
+
+    @media (max-width: $phone-max) {
+      display: none !important;
+    }
+
+    li {
+      position: relative;
+
+      &.slick-active {
+        button {
+          background: rgba(0, 0, 0, 0.4);
+        }
+      }
+
+      button {
+        background: #ddd;
+        max-width: 20px;
+        max-height: 20px;
         position: absolute;
         top: 50%;
-        width: 24px;
-        height: 24px;
-        transform: translateY(-50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
 
-        &.slick-prev {
-            transform: translateX(50%);
-            left: -40px;
-        }
-
-        &.slick-next {
-            transform: translateX(-50%);
-            right: -40px;
-        }
-    }
-
-    .slick-slide {
-      padding: 10px;
-        transition: all .3s ease-in-out;
-      img {
-        box-shadow: 1px 1px 10px rgba(0,0,0,.2);
-        border-radius: 20px;
-        border: 10px solid white;
-        transition: all .3s ease-in-out;
-
-        &:hover {
-          border: 4px solid $brand-color-light;
+        &::before {
+          font-size: 18px;
         }
       }
     }
+  }
+}
 
-    .slick-slide.slick-active {
+.related-project {
+  &-image {
+    img, .project-image {
+      max-width: 100%;
 
-        img {
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-        }
+      @media (max-width: $phone-max) {
+        margin: auto;
+      }
     }
-
-    .slick-slider .slick-dots {
-        position: absolute;
-        top: auto;
-        bottom: -40px;
-        transform: translateY(-50%);
-
-        @media (max-width: $phone-max) {
-            display: none !important;
-        }
-
-        li {
-            position: relative;
-
-            &.slick-active {
-                button {
-                    background: rgba(0, 0, 0, 0.4);
-                }
-            }
-
-            button {
-                background: #ddd;
-                max-width: 20px;
-                max-height: 20px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                border-radius: 50%;
-
-                &::before {
-                    font-size: 18px;
-                }
-            }
-        }
-    }
+  }
 }
