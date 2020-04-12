@@ -1,11 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
+import { tagObj, tooltip } from '../../types';
 
 import './tag.scss';
 
-const showToolTip = ({ description, name }) => {
+type props = tagObj;
+
+const showToolTip = (tooltip: tooltip) => {
+  const { description, name } = tooltip;
   return (
     <Tooltip
       className="tag__tooltip"
@@ -18,7 +21,7 @@ const showToolTip = ({ description, name }) => {
   );
 };
 
-export default function Tag(props) {
+export default function Tag(props: props) {
   const { name, top, new: newSkill, handleClick } = props;
 
   const hasTooltip = top || newSkill;
@@ -38,25 +41,9 @@ export default function Tag(props) {
   const tooltipText = top ? tooltips.TOP : tooltips.NEW;
 
   return (
-    <div className="tag" onClick={() => handleClick(name)}>
+    <div className="tag" onClick={() => handleClick && handleClick(name)}>
       <span className="tag__name">{name}</span>
       {hasTooltip && showToolTip(tooltipText)}
     </div>
   );
 }
-
-Tag.propTypes = {
-  name: PropTypes.string,
-  top: PropTypes.bool,
-  new: PropTypes.bool,
-  handleClick: PropTypes.func,
-};
-
-Tag.defaultProps = {
-  name: null,
-  top: null,
-  new: null,
-  handleClick() {
-    return false;
-  },
-};
