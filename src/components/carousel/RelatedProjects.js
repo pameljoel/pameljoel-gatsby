@@ -23,6 +23,51 @@ const settings = {
   ],
 };
 
+const showResults = (props) => {
+  const {
+    projects,
+    selected,
+    emptyFilteredProjects,
+    setSelectedProject,
+  } = props;
+  return (
+    <div className="related-projects__results">
+      <ResultsHeader
+        hasResults={true}
+        selected={selected}
+        callback={emptyFilteredProjects}
+      />
+      <Slider {...settings}>
+        {projects.map((project, i) => {
+          const { slug } = project;
+          return (
+            <div key={slug}>
+              <RelatedProject
+                project={project}
+                index={i}
+                setSelectedProject={setSelectedProject}
+              />
+            </div>
+          );
+        })}
+      </Slider>
+    </div>
+  );
+};
+
+const showNoResults = (props) => {
+  const { selected, emptyFilteredProjects } = props;
+  return (
+    <div className="related-projects__results">
+      <ResultsHeader
+        hasResults={false}
+        selected={selected}
+        callback={emptyFilteredProjects}
+      />
+    </div>
+  );
+};
+
 const ResultsHeader = (props) => {
   const { hasResults, callback, selected } = props;
   const resultsText = `Featured projects with `;
@@ -46,41 +91,23 @@ export default class RelatedProjects extends Component {
       emptyFilteredProjects,
       setSelectedProject,
     } = this.props;
+
+    const hasResults = !!selected && projects.length > 0;
+    const hasNoResults = !!selected && projects.length === 0;
     return (
       <div className="related-projects">
-        {selected && projects.length === 0 && (
-          <div className="related-projects__results">
-            <ResultsHeader
-              hasResults={false}
-              selected={selected}
-              callback={emptyFilteredProjects}
-            />
-          </div>
-        )}
-
-        {selected && projects.length > 0 && (
-          <div className="related-projects__results">
-            <ResultsHeader
-              hasResults={true}
-              selected={selected}
-              callback={emptyFilteredProjects}
-            />
-            <Slider {...settings}>
-              {projects.map((project, i) => {
-                const { slug } = project;
-                return (
-                  <div key={slug}>
-                    <RelatedProject
-                      project={project}
-                      index={i}
-                      setSelectedProject={setSelectedProject}
-                    />
-                  </div>
-                );
-              })}
-            </Slider>
-          </div>
-        )}
+        {hasResults &&
+          showResults({
+            projects,
+            selected,
+            emptyFilteredProjects,
+            setSelectedProject,
+          })}
+        {hasNoResults &&
+          showNoResults({
+            selected,
+            emptyFilteredProjects,
+          })}
       </div>
     );
   }
