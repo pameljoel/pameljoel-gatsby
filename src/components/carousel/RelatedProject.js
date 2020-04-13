@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
-import ProjectThumb from './ProjectThumb'
-import { ProjectContext } from '../../Context'
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import ProjectThumb from './ProjectThumb';
+import { ProjectContext } from '../../Context';
 
 class RelatedProject extends Component {
   render() {
-    const { setSelectedProject, project } = this.props
+    const { setSelectedProject, project } = this.props;
     return (
       <Fragment>
         <div
@@ -18,19 +18,19 @@ class RelatedProject extends Component {
           <ProjectThumb project={project} />
         </div>
       </Fragment>
-    )
+    );
   }
 }
 
-RelatedProject.contextType = ProjectContext
+RelatedProject.contextType = ProjectContext;
 
-export default RelatedProject
+export default RelatedProject;
 
 RelatedProject.propTypes = {
   project: PropTypes.shape({}).isRequired,
   setSelectedProject: PropTypes.func,
-}
+};
 
 RelatedProject.defaultProps = {
-  setSelectedProject : null
-}
+  setSelectedProject: null,
+};

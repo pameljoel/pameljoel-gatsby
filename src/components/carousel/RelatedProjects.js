@@ -28,11 +28,12 @@ const ResultsHeader = (props) => {
   const resultsText = `Featured projects with `;
   const noResultsText = `There are no featured projects at the moment with `;
   const text = hasResults ? resultsText : noResultsText;
+  const resultsClass = hasResults ? 'has-results' : 'no-results';
 
   return (
-    <header>
+    <header className={resultsClass}>
       <CloseButton callback={callback} />
-      {text} <strong>{selected}</strong>
+      {text} <strong>{selected}</strong>.
     </header>
   );
 };
@@ -48,7 +49,7 @@ export default class RelatedProjects extends Component {
     return (
       <div className="related-projects">
         {selected && projects.length === 0 && (
-          <div className="related-projects__result">
+          <div className="related-projects__results">
             <ResultsHeader
               hasResults={false}
               selected={selected}
@@ -58,7 +59,7 @@ export default class RelatedProjects extends Component {
         )}
 
         {selected && projects.length > 0 && (
-          <div className="related-projects__result">
+          <div className="related-projects__results">
             <ResultsHeader
               hasResults={true}
               selected={selected}

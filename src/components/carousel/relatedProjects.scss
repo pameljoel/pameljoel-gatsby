@@ -4,12 +4,23 @@ $dots-offset-bottom: 40px;
 
 .related-projects {
   position: relative;
-  padding-top: 40px;
+  padding-top: 20px;
   margin-bottom: $dots-offset-bottom / 2;
 
-  &__result {
+  &__results {
     header {
       margin-bottom: 10px;
+
+      &.no-results {
+        background-color: rgba(255,0,0,0.05);
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      &.has-results {
+
+      }
+
     }
   }
 
