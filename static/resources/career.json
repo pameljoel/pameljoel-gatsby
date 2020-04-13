@@ -9,23 +9,23 @@
   "skills": [
     {
       "name": "React",
-      "top": true
+      "topSkill": true
     },
     {
       "name": "Mobx",
-      "new": true
+      "newSkill": true
     },
     {
       "name": "Typescript",
-      "new": true
+      "newSkill": true
     },
     {
       "name": "HTML 5",
-      "top": true
+      "topSkill": true
     },
     {
       "name": "CSS 3",
-      "top": true
+      "topSkill": true
     },
     {
       "name": "Javascript"
@@ -38,7 +38,7 @@
     },
     {
       "name": "SCSS",
-      "top": true
+      "topSkill": true
     },
     {
       "name": "Webpack"
@@ -55,27 +55,27 @@
     "skills": [
       {
         "name": "Adobe Photoshop",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "React",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Sketch",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Adobe Illustrator",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "HTML 5",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "CSS 3",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "Javascript"
@@ -85,26 +85,26 @@
       },
       {
         "name": "Wordpress",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Social Media Marketing"
       },
       {
         "name": "GitLab",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "SCSS",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Webpack",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Docker",
-        "new": true
+        "newSkill": true
       }
     ]
   },
@@ -119,23 +119,23 @@
     "skills": [
       {
         "name": "Adobe Photoshop",
-        "top": true
+        "topSkill": true
       },
       {
         "name": ".NET",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Adobe Illustrator",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "HTML 5",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "CSS 3",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "Javascript"
@@ -145,11 +145,11 @@
       },
       {
         "name": "SVN",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "LESS",
-        "new": true
+        "newSkill": true
       }
     ]
   },
@@ -163,57 +163,57 @@
     "skills": [
       {
         "name": "Adobe Photoshop",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "Adobe After Effects"
       },
       {
         "name": "Adobe Illustrator",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "HTML 5",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "CSS 3",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "Javascript"
       },
       {
         "name": "AngularJS",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Wordpress",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Grunt",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "GIT",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "First Spirit",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "jQuery",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "SASS",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "NPM",
-        "new": true
+        "newSkill": true
       }
     ]
   },
@@ -242,19 +242,19 @@
       },
       {
         "name": "HTML 5",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "CSS 3",
-        "top": true
+        "topSkill": true
       },
       {
         "name": "Javascript",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Social Media Marketing",
-        "new": true
+        "newSkill": true
       }
     ]
   },
@@ -275,11 +275,11 @@
       },
       {
         "name": "HTML 5",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "CSS 3",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "email design & template"
@@ -337,18 +337,18 @@
       },
       {
         "name": "Offset Printing",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Tipography",
-        "new": true
+        "newSkill": true
       },
       {
         "name": "Mac OS"
       },
       {
         "name": "Xerox printing software",
-        "new": true
+        "newSkill": true
       }
     ]
   },

@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Company from './Company'
-import './career.scss'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Company from './Company';
+import './career.scss';
 
 export default class Career extends Component {
   render() {
@@ -15,20 +15,19 @@ export default class Career extends Component {
         )}
         <div className="career-content">
           {data &&
-            data.map(item => {
-              const { year, company } = item
+            data.map((item) => {
+              const { year, company } = item;
               return (
                 <Company
                   data={item}
                   key={company + year}
-                  handleClick={this.showRelatedProjects}
                   setSelectedProject={setSelectedProject}
                 />
-              )
+              );
             })}
         </div>
       </article>
-    )
+    );
   }
 }
 
@@ -41,8 +40,8 @@ Career.propTypes = {
       skills: PropTypes.arrayOf(
         PropTypes.shape({
           name: PropTypes.string,
-          top: PropTypes.bool,
-          new: PropTypes.bool,
+          topSkill: PropTypes.bool,
+          newSkill: PropTypes.bool,
         })
       ),
       title: PropTypes.string,
@@ -51,9 +50,9 @@ Career.propTypes = {
     })
   ),
   setSelectedProject: PropTypes.func,
-}
+};
 
 Career.defaultProps = {
   data: [],
   setSelectedProject: null,
-}
+};

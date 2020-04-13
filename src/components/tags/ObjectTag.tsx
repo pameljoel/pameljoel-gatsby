@@ -21,10 +21,10 @@ const showToolTip = (tooltip: tooltip) => {
   );
 };
 
-export default function Tag(props: props) {
-  const { name, top, new: newSkill, handleClick } = props;
+export default function ObjectTag(props: props) {
+  const { name, topSkill, newSkill, handleClick } = props;
 
-  const hasTooltip = top || newSkill;
+  const hasTooltip = topSkill || newSkill;
   const topSkillTitle = `<strong>${name}</strong> <small>is one of my strong skills</small>`;
   const newSkillTitle = `<small>I learned</small> <strong>${name}</strong> <small>during this work experience</small>`;
   const tooltips = {
@@ -38,7 +38,7 @@ export default function Tag(props: props) {
     },
   };
 
-  const tooltipText = top ? tooltips.TOP : tooltips.NEW;
+  const tooltipText = topSkill ? tooltips.TOP : tooltips.NEW;
 
   return (
     <div className="tag" onClick={() => handleClick && handleClick(name)}>

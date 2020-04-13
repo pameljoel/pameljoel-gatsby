@@ -1,47 +1,47 @@
-import React, { Component } from 'react'
-import { PropTypes } from 'prop-types'
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
-import Tags from './../tags/Tags'
-import RelatedProjects from './../carousel/RelatedProjects'
+import Tags from './../tags/Tags';
+import RelatedProjects from './../carousel/RelatedProjects';
 
-import { getData } from '../../helpers'
-import projectsJSON from '../../../static/resources/projects.json'
+import { getData } from '../../helpers';
+import projectsJSON from '../../../static/resources/projects.json';
 
-import './company.scss'
-import './../card.scss'
+import './company.scss';
+import './../card.scss';
 
 export default class Company extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       projects: [],
       selectedTag: null,
       filteredProjects: [],
-    }
+    };
     this.showRelatedProjectsCarousel = this.showRelatedProjectsCarousel.bind(
       this
-    )
-    this.emptyFilteredProjects = this.emptyFilteredProjects.bind(this)
+    );
+    this.emptyFilteredProjects = this.emptyFilteredProjects.bind(this);
   }
 
   componentDidMount() {
-    getData(projectsJSON).then(data => this.setState({ projects: data }))
+    getData(projectsJSON).then((data) => this.setState({ projects: data }));
   }
 
   emptyFilteredProjects() {
-    this.setState({ selectedTag: null })
+    this.setState({ selectedTag: null });
   }
 
   showRelatedProjectsCarousel(name) {
-    const filteredProjects = []
-    this.setState({ selectedTag: name })
-    this.state.projects.map(item =>
+    const filteredProjects = [];
+    this.setState({ selectedTag: name });
+    this.state.projects.map((item) =>
       item.tags.reduce(
         (prev, tag) => tag === name && filteredProjects.push(item),
         []
       )
-    )
-    this.setState({ filteredProjects })
+    );
+    this.setState({ filteredProjects });
   }
 
   render() {
@@ -57,8 +57,8 @@ export default class Company extends Component {
         skills,
       },
       setSelectedProject,
-    } = this.props
-    const { filteredProjects, selectedTag } = this.state
+    } = this.props;
+    const { filteredProjects, selectedTag } = this.state;
     return (
       <article className="card company-container">
         {title && (
@@ -131,16 +131,16 @@ export default class Company extends Component {
           />
         </div>
       </article>
-    )
+    );
   }
 }
 
 Company.propTypes = {
   data: PropTypes.object,
   setSelectedProject: PropTypes.func,
-}
+};
 
 Company.defaultProps = {
   data: [],
   setSelectedProject: null,
-}
+};
