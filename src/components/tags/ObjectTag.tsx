@@ -15,6 +15,7 @@ const showToolTip = (tooltip: tooltip) => {
       title={description}
       position="top"
       trigger="mouseenter"
+      data-test={`tooltip-${name}`}
     >
       <span className={`tag-label ${name}`}>{name}</span>
     </Tooltip>
