@@ -36,12 +36,6 @@
         "linkType" : "none",
         "isLink" : false
     }, {
-        "field": "fiscal code",
-        "icon": "glyphicon-info-sign",
-        "value": "BLTPLJ86M23Z505A",
-        "linkType" : "none",
-        "isLink" : false
-    }, {
         "field": "email",
         "icon": "glyphicon-envelope",
         "value": "window.$crisp.push(['do', 'chat:open'])",
