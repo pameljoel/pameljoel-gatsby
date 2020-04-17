@@ -251,7 +251,16 @@
   color: transparent;
   border: 0;
   outline: none;
-  background: transparent;
+
+  background-color: rgba(221,221,221,.5);
+  max-width: 20px;
+  max-height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
 }
 
 .slick-dots li button:hover,

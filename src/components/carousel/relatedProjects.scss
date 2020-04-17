@@ -6,6 +6,10 @@ $dots-offset-bottom: 40px;
   position: relative;
   padding-top: 20px;
 
+  @media (min-width: $phone-max) and (max-width: $desktop-max) {
+    margin-bottom: $dots-offset-bottom /2;
+  }
+
   &__results {
     header {
       margin-bottom: 10px;
