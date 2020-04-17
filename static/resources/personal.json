@@ -12,7 +12,7 @@
         "linkType" : "none",
         "isLink" : false
     }, {
-        "field": "Born",
+        "field": "Born in",
         "icon": "glyphicon-baby-formula",
         "value": "Dominican Republic",
         "linkType" : "none",

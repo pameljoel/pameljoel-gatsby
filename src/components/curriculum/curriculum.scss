@@ -3,6 +3,10 @@
 .curriculum-container {
     padding: 20px;
 
+    @media(max-width: $phone-min){
+      padding: 10px;
+    }
+
     /* common */
     .prefix {
         padding-right: 5px;

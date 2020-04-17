@@ -7,6 +7,22 @@
     @media(max-width: $tablet-min){
         padding: 0;
     }
+
+  .fields-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+
+    .field-container {
+      width: 50%;
+      &:nth-child(odd) {
+        text-align: right;
+      }
+      &:nth-child(even) {
+        text-align: left;
+      }
+    }
+  }
 }
 
 .cv-section:after {
