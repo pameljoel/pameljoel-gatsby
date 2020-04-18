@@ -7,20 +7,41 @@ import { section } from '../../types';
 
 const Section = (props: section) => {
   const { name, description, skills, tags } = props;
+
+  const sectionTitle = name ? (
+    <h2 className="title" data-test="section-title">
+      {name}
+    </h2>
+  ) : null;
+
+  const sectionDescription = description ? (
+    <div className="description" data-test="section-description">
+      {description}
+    </div>
+  ) : null;
+
+  const sectionSkills = skills ? (
+    <div data-test="section-skills">
+      <GraphSkills skills={skills} />
+    </div>
+  ) : null;
+
+  const sectionTags = tags ? (
+    <div data-test="section-tags">
+      <h3>Other {name} skills:</h3>
+      <div className="tags">
+        <Tags data={tags} />
+      </div>
+    </div>
+  ) : null;
+
   return (
     <Fade big cascade key={name} data-test="section">
       <div className="card">
-        <h2 className="title" data-test="section-title">
-          {name}
-        </h2>
-        <div className="description" data-test="section-description">
-          {description}
-        </div>
-        <GraphSkills skills={skills} />
-        <h3>Other {name} skills:</h3>
-        <div className="tags">
-          <Tags data={tags} />
-        </div>
+        {sectionTitle}
+        {sectionDescription}
+        {sectionSkills}
+        {sectionTags}
       </div>
     </Fade>
   );

@@ -1,30 +1,107 @@
-import React from 'react'
+import React from 'react';
+import { shallow } from 'enzyme';
 import Section from './Section';
+import GraphSkills from '../skills/GraphSkills';
+import Tags from '../tags/Tags';
 
 describe('Section', () => {
-  const props = {
-    name: "Section name",
-    description: "Section description",
-    skills: [],
-    tags: []
-  }
-  const { name, description, skills, tags } = props;
-  const wrapper = shallow(<Section name={name} description={description} skills={skills} tags={tags}/>);
-  const selector = '[data-test="section"]';
-  const title_selector = '[data-test="section-title"]';
-  const description_selector = '[data-test="section-description"]';
+  let wrapper;
+  let component;
+  const SECTION_SELECTOR = '[data-test="section"]';
+  const TITLE_SELECTOR = '[data-test="section-title"]';
+  const DESCRIPTION_SELECTOR = '[data-test="section-description"]';
+  const SKILLS_SELECTOR = '[data-test="section-skills"]';
+  const TAGS_SELECTOR = '[data-test="section-tags"]';
 
-  const component = wrapper.find(selector);
+  const oneSkills = [
+    {
+      name: 'React',
+      description: 'an UI library',
+      percentage: '50',
+      pro: true,
+    },
+  ];
+  const oneTag = [
+    {
+      name: 'React',
+      description: 'an UI library',
+      percentage: '50',
+      topSkill: true,
+      newSkill: false,
+    },
+  ];
+
+  const defaultProps = {
+    name: 'Section name',
+    description: 'Section description',
+    skills: oneSkills,
+    tags: oneTag,
+  };
+
+  const createWrapper = (props = {}) => {
+    const {
+      name = defaultProps.name,
+      description = defaultProps.description,
+      skills = defaultProps.skills,
+      tags = defaultProps.tags,
+    } = props;
+
+    return shallow(
+      <Section
+        name={name}
+        description={description}
+        skills={skills}
+        tags={tags}
+      />
+    );
+  };
+
+  beforeEach(() => {
+    wrapper = createWrapper();
+    component = wrapper.find(SECTION_SELECTOR);
+  });
 
   it('renders', () => {
     expect(component.length).toBe(1);
-  })
+  });
 
-  it('has a title', () => {
-    expect(wrapper.find(title_selector).text()).toBe(name);
-  })
+  describe('title', () => {
+    it('has a title', () => {
+      expect(wrapper.find(TITLE_SELECTOR).length).toBe(1);
+    });
+    it('title text is expected', () => {
+      expect(wrapper.find(TITLE_SELECTOR).text()).toBe(defaultProps.name);
+    });
+  });
 
-  it('has a description', () => {
-    expect(wrapper.find(description_selector).text()).toBe(description);
-  })
-})
+  describe('description', () => {
+    it('has a title', () => {
+      expect(wrapper.find(DESCRIPTION_SELECTOR).length).toBe(1);
+    });
+    it('has a description', () => {
+      expect(wrapper.find(DESCRIPTION_SELECTOR).text()).toBe(
+        defaultProps.description
+      );
+    });
+  });
+
+  describe('skills', () => {
+    it('has a skills section', () => {
+      expect(wrapper.find(SKILLS_SELECTOR).length).toBe(1);
+    });
+
+    it('renders skills', () => {
+      expect(wrapper.find(GraphSkills).length).toBe(1);
+    });
+  });
+
+  describe('tags', () => {
+    it('has a tags section', () => {
+      expect(wrapper.find(TAGS_SELECTOR).length).toBe(1);
+    });
+
+    it('renders tags', () => {
+      expect(wrapper.find(Tags).length).toBe(1);
+    });
+  });
+});
