@@ -6,7 +6,7 @@ import './home.scss';
 import HomeStaticContent from './HomeStaticContent';
 import Section from './Section';
 import { getData } from '../../helpers';
-import skillsJson from '../../../static/resources/skills.json';
+import categoriesJson from '../../../static/resources/categories.json';
 import { sections } from '../../types';
 
 type props = {};
@@ -41,7 +41,7 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    getData(skillsJson)
+    getData(categoriesJson)
       .then((data) => this.setState({ sections: data, isLoading: false }))
       .catch((error) => {
         this.setState({ isLoading: false });
