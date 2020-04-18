@@ -1,10 +1,13 @@
+export type skillsList = [skillName];
+export type skillName = string;
+
 export type skills = [skill];
 
 export type skill = {
   name: string;
   percentage: number;
   description: string;
-  pro: boolean;
+  hint: string;
 };
 
 export type tags = [tag];

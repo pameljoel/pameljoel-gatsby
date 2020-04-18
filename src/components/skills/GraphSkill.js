@@ -47,7 +47,7 @@ export default class GraphSkill extends Component {
   }
 
   render() {
-    const { percentage, color, pro, description, name } = this.props;
+    const { percentage, color, hints, description, name } = this.props;
     const { showAdditionalInfo } = this.state;
     const chartObject = [
       {
@@ -56,7 +56,7 @@ export default class GraphSkill extends Component {
       },
     ];
     return (
-      <div className={`skill-graph ${pro ? 'clickable' : ''}`}>
+      <div className={`skill-graph ${hints ? 'clickable' : ''}`}>
         <div className="skill-graph-image">
           <div className="skill-level-container">
             <div className="skill-level-label">Proficiency: </div>
@@ -82,8 +82,8 @@ export default class GraphSkill extends Component {
           </header>
           <div className="skill-graph-description">{description}</div>
 
-          {showAdditionalInfo && pro && (
-            <AdditionalInfo show={showAdditionalInfo} description={pro} />
+          {showAdditionalInfo && hints && (
+            <AdditionalInfo show={showAdditionalInfo} description={hints} />
           )}
         </article>
       </div>
@@ -94,12 +94,12 @@ export default class GraphSkill extends Component {
 GraphSkill.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  pro: PropTypes.string,
+  hints: PropTypes.string,
   percentage: PropTypes.number.isRequired,
   color: PropTypes.string,
 };
 
 GraphSkill.defaultProps = {
-  pro: '',
+  hints: '',
   color: '#E38627',
 };
