@@ -1,7 +1,11 @@
 @import "./../../variables.scss";
 @import "./../../mixins.scss";
 
-.skill-graph-container {
+$beginner: #eee;
+$intermediate: #f3f6d8;
+$expert: #e3f6ee;
+
+.skill-container {
     @include clearfix;
 
     margin-bottom: 40px;
@@ -34,7 +38,7 @@
 
         &.clickable {
 
-            .skill-graph-title {
+            .skill__title {
                 cursor: pointer;
                 &:hover {
                     h1:after {
@@ -136,7 +140,46 @@
         }
     }
 
-    .skill-graph-text {
+  .skill__experience {
+    background-color: #e3f6ee;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+
+    &--beginner {
+      background-color: $beginner;
+    }
+    &--intermediate {
+      background-color: $intermediate;
+    }
+    &--expert {
+      background-color: $expert;
+    }
+  }
+
+  .skill__title {
+    h1 {
+      margin-top: 0;
+
+      @include title-small;
+
+      margin-bottom: 10px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .skill__description {
+    @include body-text-secondary;
+
+    color: $text-color-primary;
+  }
+
+    .skill__text {
         text-align: left;
 
         @media (min-width: $phone-min) {
@@ -153,23 +196,7 @@
             width: 75%;
         }
 
-        .skill-graph-title {
-            h1 {
-                margin-top: 0;
 
-                @include title-small;
-
-                margin-bottom: 10px;
-                display: inline-block;
-                vertical-align: middle;
-            }
-        }
-
-        .skill-graph-description {
-            @include body-text-secondary;
-
-            color: $text-color-primary;
-        }
     }
 
     svg path {

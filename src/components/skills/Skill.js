@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PieChart from 'react-minimal-pie-chart';
+import { Tooltip } from 'react-tippy';
+import 'react-tippy/dist/tippy.css';
 
 import AdditionalInfo from './AdditionalInfo';
+
+const skillLevel = (percentage) => {
+  if (percentage >= 90) {
+    return 'Expert';
+  }
+
+  if (percentage >= 75) {
+    return 'Proficient';
+  }
+
+  if (percentage >= 50) {
+    return 'Competent';
+  }
+
+  return 'Learning';
+};
 
 export default class Skill extends Component {
   constructor(props) {
@@ -20,72 +38,120 @@ export default class Skill extends Component {
     }));
   }
 
-  showSkillLevel(percentage) {
-    let skillLevel;
-
-    if (percentage >= 90) {
-      skillLevel = 'Expert';
-      return skillLevel;
-    }
-
-    if (percentage >= 75) {
-      skillLevel = 'Proficient';
-      return skillLevel;
-    }
-
-    if (percentage >= 50) {
-      skillLevel = 'Competent';
-      return skillLevel;
-    }
-
-    if (percentage >= 25) {
-      skillLevel = 'Learning';
-      return skillLevel;
-    }
-
-    return skillLevel;
-  }
-
   render() {
-    const { percentage, color, hints, description, name } = this.props;
+    const {
+      percentage,
+      color,
+      hint,
+      description,
+      name,
+      startDate,
+      endDate,
+    } = this.props;
     const { showAdditionalInfo } = this.state;
+    const hasAdditionalInfo = showAdditionalInfo && hint;
     const chartObject = [
       {
         value: percentage,
         color: color,
       },
     ];
-    return (
-      <div className={`skill-graph ${hints ? 'clickable' : ''}`}>
-        <div className="skill-graph-image">
-          <div className="skill-level-container">
-            <div className="skill-level-label">Proficiency: </div>
-            <div className="skill-level">{this.showSkillLevel(percentage)}</div>
-          </div>
-          <PieChart
-            className="graph-item"
-            data={chartObject}
-            lineWidth={20}
-            rounded
-            totalValue={100}
-            animate
-            animationDuration={5000}
-            animationEasing="ease-in-out"
-          />
-        </div>
-        <article className="skill-graph-text">
-          <header
-            className="skill-graph-title"
-            onClick={this.toggleAdditionalInfo}
-          >
-            <h1>{name}</h1>
-          </header>
-          <div className="skill-graph-description">{description}</div>
 
-          {showAdditionalInfo && hints && (
-            <AdditionalInfo show={showAdditionalInfo} description={hints} />
-          )}
-        </article>
+    const graph = (
+      <div className="skill-graph-image" data-test="skill-graph">
+        <div className="skill-level-container">
+          <div className="skill-level-label">Proficiency: </div>
+          <div className="skill-level">{skillLevel(percentage)}</div>
+        </div>
+        <PieChart
+          className="graph-item"
+          data={chartObject}
+          lineWidth={20}
+          rounded
+          totalValue={100}
+          animate
+          animationDuration={5000}
+          animationEasing="ease-in-out"
+        />
+      </div>
+    );
+
+    const additionalInfo = hasAdditionalInfo && (
+      <div data-test="skill-additional-info">
+        <AdditionalInfo show={showAdditionalInfo} description={hint} />
+      </div>
+    );
+
+    const getExperience = (startDate, endDate) => {
+      const now = new Date().getFullYear();
+      const end = endDate ? endDate : now;
+      return end - startDate;
+    };
+
+    const experienceClass = () => {
+      const experience = getExperience(startDate, endDate);
+      const baseClass = 'skill__experience';
+      if (experience < 2) return baseClass + '--beginner';
+      if (experience < 5) return baseClass + '--intermediate';
+      return baseClass + '--expert';
+    };
+
+    const experienceTooltip = () => {
+      const base = `I have been professionally using <strong>${name}</strong>`;
+      return endDate
+        ? base + ` from ${startDate} to ${endDate}`
+        : base + ` since ${startDate}`;
+    };
+
+    const skillExperience = startDate && (
+      <div
+        className={`skill__experience ${experienceClass()}`}
+        data-test="skill-experience"
+      >
+        <Tooltip
+          className="tag__tooltip"
+          title={experienceTooltip()}
+          position="top"
+          trigger="mouseenter"
+          data-test={`tooltip-${name}`}
+          arrow={true}
+        >
+          {getExperience(startDate, endDate)} years{' '}
+        </Tooltip>
+      </div>
+    );
+
+    const skillTitle = name && (
+      <header
+        className="skill__title"
+        onClick={this.toggleAdditionalInfo}
+        data-test="skill-title"
+      >
+        <h1>{name}</h1>
+        {skillExperience}
+      </header>
+    );
+
+    const skillDescription = description && (
+      <div className="skill__description" data-test="skill-description">
+        {description}
+      </div>
+    );
+
+    const skillText = (
+      <article className="skill__text" data-test="skill-text">
+        {skillTitle}
+        {skillDescription}
+        {additionalInfo}
+      </article>
+    );
+
+    const cssClass = hint ? 'clickable' : '';
+
+    return (
+      <div className={`skill-graph ${cssClass}`} data-test="skill">
+        {graph}
+        {skillText}
       </div>
     );
   }
@@ -94,12 +160,12 @@ export default class Skill extends Component {
 Skill.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  hints: PropTypes.string,
+  hint: PropTypes.string,
   percentage: PropTypes.number.isRequired,
   color: PropTypes.string,
 };
 
 Skill.defaultProps = {
-  hints: '',
+  hint: '',
   color: '#E38627',
 };

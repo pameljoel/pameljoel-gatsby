@@ -1,6 +1,6 @@
 import React from 'react';
-import { skill, skills, skillsList } from '../../types';
 import Skill from './Skill';
+import { skill, skills, skillsList } from '../../types';
 import skillsJson from '../../../static/resources/skills.json';
 import { filterSkills } from '../utils/skills';
 import './skills.scss';
@@ -20,7 +20,15 @@ const renderSkills = (props: renderSkillsProps) => {
 
   return skills
     ? skills.map((skill: skill) => {
-        const { name, description, percentage, hint } = skill;
+        const {
+          name,
+          description,
+          percentage,
+          hint,
+          startDate,
+          endDate,
+        } = skill;
+
         return (
           <Skill
             name={name}
@@ -28,6 +36,8 @@ const renderSkills = (props: renderSkillsProps) => {
             percentage={percentage}
             hint={hint}
             key={name}
+            startDate={startDate}
+            endDate={endDate}
           />
         );
       })
@@ -37,8 +47,6 @@ const renderSkills = (props: renderSkillsProps) => {
 export default function Skills(props: props) {
   const { list }: { list: skillsList } = props;
   return (
-    <div className="skill-graph-container">
-      {renderSkills({ skillsJson, list })}
-    </div>
+    <div className="skill-container">{renderSkills({ skillsJson, list })}</div>
   );
 }

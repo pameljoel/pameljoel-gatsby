@@ -7,7 +7,9 @@ export type skill = {
   name: string;
   percentage: number;
   description: string;
-  hint: string;
+  hint?: string;
+  startDate?: number;
+  endDate?: number;
 };
 
 export type tags = tag[];

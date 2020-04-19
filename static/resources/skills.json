@@ -2,97 +2,130 @@
   {
     "name":"UI",
     "percentage":95,
+    "startDate": 2013,
+    "endDate": 2019,
     "description":"UI is knowing the patterns that make an interface usable and familiar to the users, and the ability to make it look good.",
     "hint":""
   },
   {
     "name":"Photoshop",
     "percentage":99,
+    "startDate": 2004,
+    "endDate": 2019,
     "description":"I have been working with Adobe Photoshop for at least 10 years, so I have extensive knowledge of the software.",
     "hint":""
   },
   {
     "name":"Illustrator",
     "percentage":85,
+    "startDate": 2004,
+    "endDate": 2019,
     "description":"My workflow involves using Illustrator in all the vector artworks such as logos and icons",
     "hint":""
   },
   {
     "name":"Indesign",
     "percentage":90,
+    "startDate": 2012,
+    "endDate": 2014,
     "description":"I use Indesign when I need a presentation that makes a good impression.",
     "hint":""
   },
   {
     "name":"After Effects",
     "percentage":75,
+    "startDate": 2013,
+    "endDate": 2014,
     "description":"I use after effects for interaction design and animations.",
     "hint":""
   },
   {
     "name":"Icon Design",
     "percentage":90,
+    "startDate": 2013,
+    "endDate": 2019,
     "description":"Pixel perfect vector icon design that loooks sharp on the browser",
     "hint":""
   },
   {
     "name":"Flat Design",
     "percentage":95,
+    "startDate": 2013,
+    "endDate": 2019,
     "description":"I love simplicity and flat design is more than just a fade.",
     "hint":""
   },
   {
     "name":"HTML 5",
     "percentage":95,
+    "startDate": 2013,
     "description":"Semantic and clean HTML 5 markup. I  work with accessibility in mind.",
     "hint":""
   },
   {
     "name":"CSS 3",
     "percentage":95,
+    "startDate": 2013,
     "description":"Organized Cascade style sheets using the latest conventions like BEM or atomic CSS.",
     "hint":""
   },
   {
     "name":"SASS",
     "percentage":90,
+    "startDate": 2014,
     "description":"SASS is my preprocessor of choice, I prefer to keep it light with only the bare minimum of variables and mixins to help theming",
     "hint":""
   },
   {
     "name":"Javascript",
     "percentage":85,
+    "startDate": 2014,
     "description":"My programming language of choice, I love JS, you can easily find me in conventions near Bologna.",
     "hint":""
   },
   {
     "name":"React",
     "percentage":85,
-    "description":"My library of choice for quick prototyping and modular development.",
+    "startDate": 2017,
+    "description":"My library of choice for building user interfaces",
     "hint":""
   },
   {
     "name":"AngularJS",
     "percentage":85,
-    "description":"My framework of choice for more complex web applications.",
+    "startDate": 2016,
+    "endDate": 2017,
+    "description":"some years ago this was my framework of choice for web applications.",
     "hint":""
   },
   {
     "name":"Mockup",
     "percentage":95,
-    "level":"awesome",
+    "startDate": 2013,
+    "endDate": 2019,
     "description":"With quick mockups I can bring your project to life. This helps you be on the same page with your clients and your development team.",
     "hint":"I can help you quickly bring your project to a tangible form you can show to your clients."
   },
   {
     "name":"Prototyping",
     "percentage":75,
+    "startDate": 2013,
+    "endDate": 2019,
     "description":"Prototypes help you visualize the application flow, it's essential to spot any usability issue early on your project.",
     "hint":""
   },
   {
     "name":"UX",
     "percentage":90,
+    "startDate": 2017,
+    "endDate": 2019,
+    "description":"Everything is UX, I'll help you polish your user flows and your personas with simplicity in mind.",
+    "hint":""
+  },
+  {
+    "name":"Functional Programming",
+    "percentage":90,
+    "startDate": 2017,
     "description":"Everything is UX, I'll help you polish your user flows and your personas with simplicity in mind.",
     "hint":""
   }
