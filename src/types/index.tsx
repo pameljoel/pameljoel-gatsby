@@ -1,7 +1,7 @@
-export type skillsList = [skillName];
+export type skillsList = skillName[];
 export type skillName = string;
 
-export type skills = [skill];
+export type skills = skill[];
 
 export type skill = {
   name: string;
@@ -10,7 +10,7 @@ export type skill = {
   hint: string;
 };
 
-export type tags = [tag];
+export type tags = tag[];
 
 export type tagObj = {
   name: string;
@@ -21,7 +21,7 @@ export type tagObj = {
 
 export type tag = string;
 
-export type sections = [section];
+export type sections = section[];
 
 export type section = {
   name: string;
@@ -34,3 +34,13 @@ export type tooltip = {
   description: string;
   name: string;
 };
+
+interface NodeJS {
+  global: Global;
+}
+
+interface Global {
+  shallow: () => {};
+  render: () => {};
+  mount: () => {};
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { skill, skills, skillsList } from '../../types';
 import GraphSkill from './GraphSkill';
 import skillsJson from '../../../static/resources/skills.json';
-
+import { filterSkills } from '../utils/skills';
 import './graphSkills.scss';
 
 type props = {
@@ -14,19 +14,9 @@ type renderSkillsProps = {
   stringArray: skillsList;
 };
 
-const filterSkills = ({
-  stringArray,
-  skillsJson,
-}: {
-  stringArray: skillsList;
-  skillsJson: skills;
-}) => {
-  return skillsJson.filter((skill: skill) => stringArray.includes(skill.name));
-};
-
 const RenderSkills = (props: renderSkillsProps) => {
   const { skillsJson, stringArray } = props;
-  const skills = filterSkills({ stringArray, skillsJson });
+  const skills = filterSkills(stringArray, skillsJson);
 
   return skills
     ? skills.map((skill: skill) => {
