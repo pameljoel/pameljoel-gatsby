@@ -97,7 +97,7 @@ export default class Skill extends Component {
     };
 
     const experienceTooltip = () => {
-      const base = `I have been professionally using <strong>${name}</strong>`;
+      const base = `I have been working with <strong>${name}</strong>`;
       return endDate
         ? base + ` from ${startDate} to ${endDate}`
         : base + ` since ${startDate}`;
