@@ -24,8 +24,11 @@ export default class Projects extends Component {
   componentDidMount() {
     enableCrisp();
     getData(projectJson)
-      .then(data => this.setState({ projects: data, isLoading: false }))
-      .catch((error) => { this.setState({ isLoading: false }); console.error(error); });
+      .then((data) => this.setState({ projects: data, isLoading: false }))
+      .catch((error) => {
+        this.setState({ isLoading: false });
+        console.error(error);
+      });
   }
 
   render() {
@@ -38,57 +41,70 @@ export default class Projects extends Component {
       slidesToScroll: 1,
       adaptiveHeight: true,
       initialSlide: this.props.selectedProject || 0,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            dots: false,
+          },
+        },
+      ],
     };
-    return (<div>
-      <header
-        className="big-header"
-        style={{ marginBottom: '-300px', paddingBottom: '200px' }}
-      >
-        <div className="big-header-content">
-          <h1 className="">PROJECTS</h1>
-          <div className="subtitle">This is a selection of my web projects</div>
-        </div>
-        <div className="big-header-background" />
-      </header>
-      <div className="projects-container">
-        {!isLoading && projects ? (
-          <div className="projects">
-            {projects.length > 0 && (
-              <Slider {...settings}>
-                {projects.map(project => (
-                  <div key={`project-slider-${project.slug}`}>
-                    <Project data={project} />
-                  </div>
-                ))}
-              </Slider>
-            )}
+    return (
+      <div>
+        <header
+          className="big-header"
+          style={{ marginBottom: '-300px', paddingBottom: '200px' }}
+        >
+          <div className="big-header-content">
+            <h1 className="">PROJECTS</h1>
+            <div className="subtitle">
+              This is a selection of my web projects
+            </div>
           </div>
-        ) : (
+          <div className="big-header-background" />
+        </header>
+        <div className="projects-container">
+          {!isLoading && projects ? (
+            <div className="projects">
+              {projects.length > 0 && (
+                <Slider {...settings}>
+                  {projects.map((project) => (
+                    <div key={`project-slider-${project.slug}`}>
+                      <Project data={project} />
+                    </div>
+                  ))}
+                </Slider>
+              )}
+            </div>
+          ) : (
             <Loading isLoading={isLoading} />
           )}
+        </div>
       </div>
-    </div>
     );
   }
 }
 
 Projects.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    about: PropTypes.string,
-    category: PropTypes.string,
-    date: PropTypes.string,
-    description: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.string),
-    job: PropTypes.string,
-    mywork: PropTypes.string,
-    name: PropTypes.string,
-    sliderId: PropTypes.number,
-    slug: PropTypes.string,
-    tags: PropTypes.arrayOf(PropTypes.string),
-  })),
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      about: PropTypes.string,
+      category: PropTypes.string,
+      date: PropTypes.string,
+      description: PropTypes.string,
+      images: PropTypes.arrayOf(PropTypes.string),
+      job: PropTypes.string,
+      mywork: PropTypes.string,
+      name: PropTypes.string,
+      sliderId: PropTypes.number,
+      slug: PropTypes.string,
+      tags: PropTypes.arrayOf(PropTypes.string),
+    })
+  ),
   selectedProject: PropTypes.number,
 };
 
 Projects.defaultProps = {
-  selectedProject: 0
+  selectedProject: 0,
 };
