@@ -11,12 +11,12 @@ type props = {
 
 type renderSkillsProps = {
   skillsJson: skills;
-  stringArray: skillsList;
+  list: skillsList;
 };
 
-const RenderSkills = (props: renderSkillsProps) => {
-  const { skillsJson, stringArray } = props;
-  const skills = filterSkills(stringArray, skillsJson);
+const renderSkills = (props: renderSkillsProps) => {
+  const { skillsJson, list } = props;
+  const skills = filterSkills(list, skillsJson);
 
   return skills
     ? skills.map((skill: skill) => {
@@ -38,9 +38,7 @@ export default function Skills(props: props) {
   const { list }: { list: skillsList } = props;
   return (
     <div className="skill-graph-container">
-      {/*
-      // @ts-ignore */}
-      <RenderSkills skillsJson={skillsJson} stringArray={list} />
+      {renderSkills({ skillsJson, list })}
     </div>
   );
 }
