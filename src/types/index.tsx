@@ -26,7 +26,7 @@ export type sections = section[];
 export type section = {
   name: string;
   description: string;
-  skills: skills;
+  skills: skillsList;
   tags: tags;
 };
 

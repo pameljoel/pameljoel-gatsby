@@ -1,5 +1,5 @@
 import Fade from 'react-reveal';
-import GraphSkills from '../skills/GraphSkills';
+import Skills from '../skills/Skills';
 import Tags from '../tags/Tags';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -22,7 +22,7 @@ const Section = (props: section) => {
 
   const sectionSkills = skills ? (
     <div data-test="section-skills">
-      <GraphSkills skills={skills} />
+      <Skills list={skills} />
     </div>
   ) : null;
 

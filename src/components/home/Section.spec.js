@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Section from './Section';
-import GraphSkills from '../skills/GraphSkills';
+import Skills from '../skills/Skills';
 import Tags from '../tags/Tags';
 
 describe('Section', () => {
@@ -91,7 +91,7 @@ describe('Section', () => {
     });
 
     it('renders skills', () => {
-      expect(wrapper.find(GraphSkills).length).toBe(1);
+      expect(wrapper.find(Skills).length).toBe(1);
     });
   });
 

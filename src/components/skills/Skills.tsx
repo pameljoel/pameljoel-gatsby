@@ -1,12 +1,12 @@
 import React from 'react';
 import { skill, skills, skillsList } from '../../types';
-import GraphSkill from './GraphSkill';
+import Skill from './Skill';
 import skillsJson from '../../../static/resources/skills.json';
 import { filterSkills } from '../utils/skills';
-import './graphSkills.scss';
+import './skills.scss';
 
 type props = {
-  skills: skillsList;
+  list: skillsList;
 };
 
 type renderSkillsProps = {
@@ -22,7 +22,7 @@ const RenderSkills = (props: renderSkillsProps) => {
     ? skills.map((skill: skill) => {
         const { name, description, percentage, hint } = skill;
         return (
-          <GraphSkill
+          <Skill
             name={name}
             description={description}
             percentage={percentage}
@@ -34,13 +34,13 @@ const RenderSkills = (props: renderSkillsProps) => {
     : null;
 };
 
-export default function GraphSkills(props: props) {
-  const { skills }: { skills: skillsList } = props;
+export default function Skills(props: props) {
+  const { list }: { list: skillsList } = props;
   return (
     <div className="skill-graph-container">
       {/*
       // @ts-ignore */}
-      <RenderSkills skillsJson={skillsJson} stringArray={skills} />
+      <RenderSkills skillsJson={skillsJson} stringArray={list} />
     </div>
   );
 }
