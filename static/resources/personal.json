@@ -44,7 +44,7 @@
     }, {
         "field": "website",
         "icon": "glyphicon-globe",
-        "value": "http://www.pameljoel.it",
+        "value": "http://www.pameljoel.com",
         "linkType" : "href",
         "isLink" : true
     }, {
