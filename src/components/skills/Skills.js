@@ -1,45 +1,69 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Skill from './skill';
 import InlineSkill from './InlineSkill';
 import './skills.scss';
 
-import "./../../themes/import-red.scss";
+import './../../themes/import-red.scss';
 
-export default class Tags extends Component {
-    render() {
-        const { data, type } = this.props.data;
+const RenderDefaultSkill = (skills) => {
+  return skills.map((skill, i) => {
+    return (
+      <Skill
+        name={skill.name}
+        percentage={skill.percentage}
+        key={'skill-default-' + i}
+      />
+    );
+  });
+};
 
-        return (
-            <div className="skills">
-                {type === 'default' &&
-                    data.map((skill, i) => {
-                        return <Skill name={skill.name} percentage={skill.percentage} key={"skill-default-" + i} />
-                    })
-                }
+const RenderInlineSkill = (skills) => {
+  return skills.map((skill, i) => {
+    return (
+      <InlineSkill
+        name={skill.name}
+        percentage={skill.percentage}
+        key={'skill-inline-' + i}
+      />
+    );
+  });
+};
 
-                {type === 'inline' &&
-                    data.map((skill, i) => {
-                        return <InlineSkill name={skill.name} percentage={skill.percentage} key={"skill-inline-" + i} />
-                    })
-                }
+const RenderSkillWithGraph = (skills) => {
+  return skills.map((skill, i) => {
+    return (
+      <Skill
+        name={skill.name}
+        percentage={skill.percentage}
+        key={'skill-graph-' + i}
+      />
+    );
+  });
+};
 
-                {type === 'graph' &&
-                    data.map((skill, i) => {
-                        return <Skill name={skill.name} percentage={skill.percentage} key={"skill-graph-" + i} />
-                    })
-                }
-            </div>
-        )
-    }
-}
+const Skills = () => {
+  const { data, type } = this.props.data;
 
-Tags.propTypes = {
+  return (
+    <div className="skills">
+      {type === 'default' && <RenderDefaultSkill skills={data} />}
+      {type === 'inline' && <RenderInlineSkill skills={data} />}
+      {type === 'graph' && <RenderSkillWithGraph skills={data} />}
+    </div>
+  );
+};
+
+Skills.propTypes = {
   data: PropTypes.shape({
-    data: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string,
-      percentage: PropTypes.string,
-    })),
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        percentage: PropTypes.string,
+      })
+    ),
     type: PropTypes.string,
-  })
-}
+  }),
+};
+
+export default Skills;
