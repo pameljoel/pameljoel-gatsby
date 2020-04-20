@@ -39,7 +39,7 @@
       "Social Media Marketing",
       "skewmorphism"
     ],
-    "skills": ["UI","Photoshop","Illustrator","Icon Design","InDesign", "Flat Design","After Effects"]
+    "skills": ["UI", "Sketch","Photoshop","Illustrator","Icon Design","InDesign", "Flat Design","After Effects"]
   }, {
     "name": "User Experience",
     "image": "images/home/wireframe.png",
@@ -58,6 +58,6 @@
       "Customer Journey",
       "Workshop"
     ],
-    "skills": ["Mockup","Prototyping", "UX"]
+    "skills": ["Mockups","Prototyping", "UX"]
   }
 ]

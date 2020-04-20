@@ -12,14 +12,22 @@
     "percentage":99,
     "startDate": 2004,
     "endDate": 2019,
-    "description":"I have been working with Adobe Photoshop for at least 10 years, so I have extensive knowledge of the software.",
+    "description":"I have been working with Adobe Photoshop for more than 10 years, so I have extensive knowledge of the software.",
+    "hint":""
+  },
+  {
+    "name":"Sketch",
+    "percentage":99,
+    "startDate": 2017,
+    "endDate": 2019,
+    "description":"Sketch is the best tool to quickly and efficiently design modular UI",
     "hint":""
   },
   {
     "name":"Illustrator",
     "percentage":85,
     "startDate": 2004,
-    "endDate": 2019,
+    "endDate": 2007,
     "description":"My workflow involves using Illustrator in all the vector artworks such as logos and icons",
     "hint":""
   },
@@ -99,7 +107,7 @@
     "hint":""
   },
   {
-    "name":"Mockup",
+    "name":"Mockups",
     "percentage":95,
     "startDate": 2013,
     "endDate": 2019,
