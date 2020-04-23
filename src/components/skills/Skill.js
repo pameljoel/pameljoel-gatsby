@@ -6,6 +6,12 @@ import 'react-tippy/dist/tippy.css';
 
 import AdditionalInfo from './AdditionalInfo';
 
+export const getExperience = (startDate, endDate) => {
+  const now = new Date().getFullYear();
+  const end = endDate ? endDate : now;
+  return end - startDate;
+};
+
 const skillLevel = (percentage) => {
   if (percentage >= 90) {
     return 'Expert';
@@ -81,12 +87,6 @@ export default class Skill extends Component {
         <AdditionalInfo show={showAdditionalInfo} description={hint} />
       </div>
     );
-
-    const getExperience = (startDate, endDate) => {
-      const now = new Date().getFullYear();
-      const end = endDate ? endDate : now;
-      return end - startDate;
-    };
 
     const experienceClass = () => {
       const experience = getExperience(startDate, endDate);

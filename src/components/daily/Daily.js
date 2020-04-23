@@ -4,7 +4,6 @@ import 'react-image-lightbox/style.css';
 
 import { enableCrisp } from '../crisp/Crisp';
 import DailyHeader from './DailyHeader';
-import DailyItem from './DailyItem';
 import Loading from '../status/Loading';
 
 import { getData } from '../../helpers';
@@ -13,6 +12,17 @@ import monthsJson from '../../../static/resources/months.json';
 
 import './daily.scss';
 import './modal.scss';
+import { showResults } from './partials/month';
+
+const header = (
+  <header className="big-header">
+    <div className="big-header-content">
+      <h1 className="">DAILY</h1>
+      <div className="subtitle">One design a day</div>
+    </div>
+    <div className="big-header-background" />
+  </header>
+);
 
 export default class Daily extends Component {
   constructor(props) {
@@ -70,8 +80,7 @@ export default class Daily extends Component {
     const monthsCopy = months;
 
     monthsCopy.map((month) => {
-      const monthCopy = month;
-      monthCopy.dailiesOfTheMonth = [];
+      month.dailiesOfTheMonth = [];
       return dailiesCopy.map((daily) =>
         daily.day > month.start && daily.day <= month.start + month.days
           ? month.dailiesOfTheMonth.push(daily)
@@ -84,16 +93,61 @@ export default class Daily extends Component {
 
   createLightboxUrl(day) {
     const { dailies } = this.state;
-    const basepath = '/images/daily/works/';
+    const basePath = '/images/daily/works/';
     const { format } = dailies[day > 0 ? day - 1 : day];
 
     let url = null;
 
     if (day > 0) {
-      url = `${basepath}${day}.${format}`;
+      url = `${basePath}${day}.${format}`;
     }
 
     return url;
+  }
+
+  renderLightBox() {
+    const { day, dailies, lightboxUrl } = this.state;
+    const prevDay = day - 1;
+    const nextDay = day + 1;
+
+    const getPrevDay = () =>
+      this.setState((prevState) => ({
+        day: prevDay,
+        lightboxUrl: this.createLightboxUrl(prevState.day - 1),
+      }));
+
+    const getNextDay = () =>
+      this.setState((prevState) => ({
+        day: nextDay,
+        lightboxUrl: this.createLightboxUrl(prevState.day + 1),
+      }));
+
+    const closeLightBox = () => this.setState({ isLightboxOpen: false });
+    return (
+      <Lightbox
+        mainSrc={lightboxUrl}
+        nextSrc={this.createLightboxUrl(day)}
+        prevSrc={this.createLightboxUrl(day)}
+        onCloseRequest={() => closeLightBox()}
+        onMovePrevRequest={() => getPrevDay()}
+        onMoveNextRequest={() => getNextDay()}
+        shouldAnimate
+        imageTitle={`Daily #${day}`}
+        imageCaption={dailies[prevDay].description}
+      />
+    );
+  }
+
+  renderDailies() {
+    const { months } = this.state;
+
+    return (
+      <div className="daily-container">
+        {months.map((month) => {
+          return showResults(month, this.addImageToSlideShow);
+        })}
+      </div>
+    );
   }
 
   addImageToSlideShow(day) {
@@ -105,86 +159,23 @@ export default class Daily extends Component {
   }
 
   render() {
-    const { isLightboxOpen, lightboxUrl, day, dailies, months, isLoading } = this.state;
+    const { isLightboxOpen, lightboxUrl, dailies, isLoading } = this.state;
+    const hasLightbox = isLightboxOpen && lightboxUrl;
+    const showDailies = !isLoading && dailies;
+    const lightbox = hasLightbox && this.renderLightBox();
+    const daily = showDailies ? (
+      this.renderDailies()
+    ) : (
+      <Loading isLoading={isLoading} />
+    );
+
     return (
       <div>
-        <header className="big-header">
-          <div className="big-header-content">
-            <h1 className="">DAILY</h1>
-            <div className="subtitle">One design a day</div>
-          </div>
-          <div className="big-header-background" />
-        </header>
+        {header}
         <div className="container">
           <DailyHeader />
-          {isLightboxOpen && lightboxUrl && (
-            <Lightbox
-              mainSrc={lightboxUrl}
-              nextSrc={this.createLightboxUrl(day)}
-              prevSrc={this.createLightboxUrl(day)}
-              onCloseRequest={() => this.setState({ isLightboxOpen: false })}
-              onMovePrevRequest={() => {
-                this.setState((prevState) => ({
-                  day: prevState.day - 1,
-                  lightboxUrl: this.createLightboxUrl(prevState.day - 1),
-                }));
-              }}
-              onMoveNextRequest={() => {
-                this.setState((prevState) => ({
-                  day: prevState.day + 1,
-                  lightboxUrl: this.createLightboxUrl(prevState.day + 1),
-                }));
-              }}
-              shouldAnimate
-              imageTitle={`Daily #${day}`}
-              imageCaption={dailies[day - 1].description}
-            />
-          )}
-          {!isLoading && dailies ? (
-            <div className="daily-container">
-              {months.map((month, i) => (
-                <div
-                  className={`month-container ${month.name}`}
-                  key={`${month.name}-${i}`}
-                >
-                  <div className="daily-item daily-item-month">
-                    <div className="daily-month-name">{month.name}</div>
-                    <div className="month-initial">
-                      {month.name.substring(0, 1)}
-                    </div>
-                    <img
-                      className="daily-image"
-                      src="/images/daily/works/blank.jpg"
-                      alt="more images coming soon"
-                    />
-                  </div>
-                  {month.dailiesOfTheMonth &&
-                  month.dailiesOfTheMonth.length > 0 ? (
-                    month.dailiesOfTheMonth.map((daily, j) => (
-                      <DailyItem
-                        description={daily.description}
-                        day={daily.day}
-                        format={daily.format}
-                        imageSource={`/images/daily/works/${daily.day}.${daily.format}`}
-                        key={`daily-${j}`}
-                        callback={this.addImageToSlideShow}
-                      />
-                    ))
-                  ) : (
-                    <div className="daily-item">
-                      <img
-                        className="daily-image"
-                        src="/images/daily/works/0.jpg"
-                        alt=""
-                      />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          ) : (
-            <Loading isLoading={isLoading} />
-          )}
+          {lightbox}
+          {daily}
         </div>
       </div>
     );

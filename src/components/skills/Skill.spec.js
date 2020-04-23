@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Skill from './Skill';
+import Skill, { getExperience } from './Skill';
 
 let wrapper;
 const descriptionDefault = 'description';
@@ -49,7 +49,7 @@ describe('Skill', () => {
   });
 
   describe('experience', () => {
-    const selector = '[data-test="skill-experience"]';
+    const selector = '[data-test="skill-experience"] ';
     it('renders', () => {
       expect(wrapper.find(selector).length).toBe(1);
     });
@@ -91,6 +91,13 @@ describe('Skill', () => {
       it('renders', () => {
         expect(wrapper.find(selector).length).toBe(1);
       });
+    });
+  });
+
+  describe('getExperience', () => {
+    describe('5 years', () => {
+      const experience = getExperience(2000, 2005);
+      expect(experience).toBe(5);
     });
   });
 });
