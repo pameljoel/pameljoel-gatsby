@@ -36,7 +36,7 @@ export default class Daily extends Component {
     enableCrisp();
 
     getData(dailyJson)
-      .then(data => this.setState({ dailies: data, isLoading: false }))
+      .then((data) => this.setState({ dailies: data, isLoading: false }))
       .then(() => {
         getData(monthsJson)
           .then((data) => {
@@ -45,9 +45,12 @@ export default class Daily extends Component {
           .then(() => {
             this.addDailyToMonth();
           })
-          .catch(error => console.log(error));
+          .catch((error) => console.log(error));
       })
-      .catch((error) => { this.setState({ isLoading: false }); console.error(error); });
+      .catch((error) => {
+        this.setState({ isLoading: false });
+        console.error(error);
+      });
   }
 
   openLightBox() {
@@ -59,26 +62,30 @@ export default class Daily extends Component {
   }
 
   addDailyToMonth() {
-    if (!this.state.dailies || !this.state.months) {
+    const { dailies, months } = this.state;
+    if (!dailies || !months) {
       return;
     }
-    const dailiesCopy = this.state.dailies;
-    const monthsCopy = this.state.months;
+    const dailiesCopy = dailies;
+    const monthsCopy = months;
 
     monthsCopy.map((month) => {
       const monthCopy = month;
       monthCopy.dailiesOfTheMonth = [];
-      return dailiesCopy.map(daily => (daily.day > month.start && daily.day <= month.start + month.days
-        ? month.dailiesOfTheMonth.push(daily)
-        : null));
+      return dailiesCopy.map((daily) =>
+        daily.day > month.start && daily.day <= month.start + month.days
+          ? month.dailiesOfTheMonth.push(daily)
+          : null
+      );
     });
 
     this.setState({ months: monthsCopy });
   }
 
   createLightboxUrl(day) {
+    const { dailies } = this.state;
     const basepath = '/images/daily/works/';
-    const { format } = this.state.dailies[day > 0 ? day - 1 : day];
+    const { format } = dailies[day > 0 ? day - 1 : day];
 
     let url = null;
 
@@ -98,6 +105,7 @@ export default class Daily extends Component {
   }
 
   render() {
+    const { isLightboxOpen, lightboxUrl, day, dailies, months, isLoading } = this.state;
     return (
       <div>
         <header className="big-header">
@@ -107,35 +115,34 @@ export default class Daily extends Component {
           </div>
           <div className="big-header-background" />
         </header>
-        <div className="container" >
+        <div className="container">
           <DailyHeader />
-          {this.state.isLightboxOpen && this.state.lightboxUrl && (
+          {isLightboxOpen && lightboxUrl && (
             <Lightbox
-              mainSrc={this.state.lightboxUrl}
-              nextSrc={this.createLightboxUrl(this.state.day)}
-              prevSrc={this.createLightboxUrl(this.state.day)}
+              mainSrc={lightboxUrl}
+              nextSrc={this.createLightboxUrl(day)}
+              prevSrc={this.createLightboxUrl(day)}
               onCloseRequest={() => this.setState({ isLightboxOpen: false })}
               onMovePrevRequest={() => {
-                this.setState(prevState => ({
+                this.setState((prevState) => ({
                   day: prevState.day - 1,
                   lightboxUrl: this.createLightboxUrl(prevState.day - 1),
                 }));
-              }
-              }
+              }}
               onMoveNextRequest={() => {
-                this.setState(prevState => ({
+                this.setState((prevState) => ({
                   day: prevState.day + 1,
                   lightboxUrl: this.createLightboxUrl(prevState.day + 1),
                 }));
               }}
               shouldAnimate
-              imageTitle={`Daily #${this.state.day}`}
-              imageCaption={this.state.dailies[this.state.day - 1].description}
+              imageTitle={`Daily #${day}`}
+              imageCaption={dailies[day - 1].description}
             />
           )}
-          {!this.state.isLoading && this.state.dailies ? (
+          {!isLoading && dailies ? (
             <div className="daily-container">
-              {this.state.months.map((month, i) => (
+              {months.map((month, i) => (
                 <div
                   className={`month-container ${month.name}`}
                   key={`${month.name}-${i}`}
@@ -145,31 +152,39 @@ export default class Daily extends Component {
                     <div className="month-initial">
                       {month.name.substring(0, 1)}
                     </div>
-                    <img className="daily-image" src="/images/daily/works/blank.jpg" alt="more images coming soon" />
+                    <img
+                      className="daily-image"
+                      src="/images/daily/works/blank.jpg"
+                      alt="more images coming soon"
+                    />
                   </div>
                   {month.dailiesOfTheMonth &&
-                    month.dailiesOfTheMonth.length > 0 ? (
-                      month.dailiesOfTheMonth.map((daily, j) => (
-                        <DailyItem
-                          description={daily.description}
-                          day={daily.day}
-                          format={daily.format}
-                          imageSource={`/images/daily/works/${daily.day}.${daily.format}`}
-                          key={`daily-${j}`}
-                          callback={this.addImageToSlideShow}
-                        />
-                      ))
-                    ) : (
-                      <div className="daily-item">
-                        <img className="daily-image" src="/images/daily/works/0.jpg" alt="" />
-                      </div>
-                    )}
+                  month.dailiesOfTheMonth.length > 0 ? (
+                    month.dailiesOfTheMonth.map((daily, j) => (
+                      <DailyItem
+                        description={daily.description}
+                        day={daily.day}
+                        format={daily.format}
+                        imageSource={`/images/daily/works/${daily.day}.${daily.format}`}
+                        key={`daily-${j}`}
+                        callback={this.addImageToSlideShow}
+                      />
+                    ))
+                  ) : (
+                    <div className="daily-item">
+                      <img
+                        className="daily-image"
+                        src="/images/daily/works/0.jpg"
+                        alt=""
+                      />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           ) : (
-              <Loading isLoading={this.state.isLoading} />
-            )}
+            <Loading isLoading={isLoading} />
+          )}
         </div>
       </div>
     );
