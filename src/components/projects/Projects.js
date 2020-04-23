@@ -34,21 +34,13 @@ export default class Projects extends Component {
   render() {
     const { projects, isLoading } = this.state;
     const settings = {
-      dots: true,
+      dots: false,
       infinite: false,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       adaptiveHeight: true,
       initialSlide: this.props.selectedProject || 0,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            dots: false,
-          },
-        },
-      ],
     };
     return (
       <div>
