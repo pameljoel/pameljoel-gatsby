@@ -50,3 +50,17 @@ export const showResults = (month, callback) => {
     </div>
   );
 };
+
+export const setDailyInMonth = (dailies = [], month = {}) => {
+  const array = [];
+
+  dailies.map((daily) => {
+    const { day } = daily;
+    const { start, days } = month;
+    const isDayInRange = day > start && day <= start + days;
+
+    isDayInRange && array.push(daily);
+  });
+
+  return array;
+};
