@@ -8,7 +8,7 @@ import Loading from '../status/Loading';
 import { showResults } from './partials/month';
 import { addDailiesToMonths } from './partials/months';
 import { createLightboxUrl } from './partials/lightbox';
-import Header from './partials/header';
+import Header from './partials/Header';
 import { getData } from '../../helpers';
 
 import dailyJson from '../../../static/resources/daily.json';
