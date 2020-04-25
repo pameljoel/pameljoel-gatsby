@@ -5,14 +5,14 @@ import DailyHeader from './DailyHeader';
 import Loading from '../status/Loading';
 import { showResults } from './partials/month';
 import { addImagesToMonths } from './partials/months';
-import { createLightBoxUrl } from './partials/lightBox';
+import { createLightBoxUrl } from './partials/lightbox';
 import Header from './partials/Header';
-import { getData, getDataAsync } from '../../helpers';
+import { getDataAsync } from '../../helpers';
 
 import dailyJson from '../../../static/resources/daily.json';
 import monthsJson from '../../../static/resources/months.json';
 
-import 'react-image-lightBox/style.css';
+import 'react-image-lightbox/style.css';
 import './daily.scss';
 import './modal.scss';
 
