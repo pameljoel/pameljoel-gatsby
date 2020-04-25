@@ -6,26 +6,30 @@ import './career.scss';
 export default class Career extends Component {
   render() {
     const { data, setSelectedProject } = this.props;
+
+    const title = data && (
+      <div className="career-title">
+        <h1>Career</h1>
+      </div>
+    );
+
+    const company = (item) => {
+      const { year, company } = item;
+      return (
+        <Company
+          data={item}
+          key={company + year}
+          setSelectedProject={setSelectedProject}
+        />
+      );
+    };
+
+    const content = data && data.map((item) => company(item));
+
     return (
       <article className="career-container">
-        {data && (
-          <div className="career-title">
-            <h1>Career</h1>
-          </div>
-        )}
-        <div className="career-content">
-          {data &&
-            data.map((item) => {
-              const { year, company } = item;
-              return (
-                <Company
-                  data={item}
-                  key={company + year}
-                  setSelectedProject={setSelectedProject}
-                />
-              );
-            })}
-        </div>
+        {title}
+        <div className="career-content">{content}</div>
       </article>
     );
   }
