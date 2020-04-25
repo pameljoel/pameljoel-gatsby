@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { enableCrisp } from '../crisp/Crisp';
 
 import MobileNavigation from './MobileNavigation';
@@ -6,42 +6,35 @@ import DesktopNavigation from './DesktopNavigation';
 
 import './navigation.scss';
 
-export default class Navigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMobile: true,
-    };
-    this.isMobile = this.isMobile.bind(this);
-  }
-  componentDidMount() {
-    this.isMobile();
-    enableCrisp();
+const Navigation = () => {
+  const [isMobile, setIsMobile] = useState(true);
 
-    window.addEventListener('resize', this.isMobile);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.isMobile);
-  }
-
-  isMobile() {
+  const checkIsMobile = () => {
     const mobileBreakPoint = 768;
     const bool = window.innerWidth < mobileBreakPoint;
 
-    this.setState({ isMobile: bool });
-  }
+    setIsMobile(bool);
+  };
 
-  HandleNavigation() {
-    const { isMobile } = this.state;
+  useEffect(() => {
+    checkIsMobile();
+    enableCrisp();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  });
+
+  const HandleNavigation = () => {
     return isMobile ? <MobileNavigation /> : <DesktopNavigation />;
-  }
+  };
 
-  render() {
-    return (
-      <Fragment>
-        <nav className="main-navigation">{this.HandleNavigation()}</nav>
-      </Fragment>
-    );
-  }
-}
+  return (
+    <Fragment>
+      <nav className="main-navigation">{HandleNavigation()}</nav>
+    </Fragment>
+  );
+};
+
+export default Navigation;
