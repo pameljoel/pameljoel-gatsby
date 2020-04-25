@@ -1,4 +1,4 @@
-export const createLightboxUrl = (day, dailies) => {
+export const createLightBoxUrl = (day, dailies) => {
   const basePath = '/images/daily/works/';
   const { format } = dailies[day > 0 ? day - 1 : day];
 

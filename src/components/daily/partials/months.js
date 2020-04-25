@@ -1,6 +1,6 @@
 import { setDailyInMonth } from './month';
 
-export const addDailiesToMonths = (months, dailies) => {
+export const addImagesToMonths = (months, dailies) => {
   if (!dailies || !months) return;
 
   months.map((month) => {
