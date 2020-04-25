@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 
@@ -83,35 +83,33 @@ const ResultsHeader = (props) => {
   );
 };
 
-export default class RelatedProjects extends Component {
-  render() {
-    const {
-      projects,
-      selected,
-      emptyFilteredProjects,
-      setSelectedProject,
-    } = this.props;
+const RelatedProjects = (props) => {
+  const {
+    projects,
+    selected,
+    emptyFilteredProjects,
+    setSelectedProject,
+  } = props;
 
-    const hasResults = !!selected && projects.length > 0;
-    const hasNoResults = !!selected && projects.length === 0;
-    return (
-      <div className="related-projects">
-        {hasResults &&
-          showResults({
-            projects,
-            selected,
-            emptyFilteredProjects,
-            setSelectedProject,
-          })}
-        {hasNoResults &&
-          showNoResults({
-            selected,
-            emptyFilteredProjects,
-          })}
-      </div>
-    );
-  }
-}
+  const hasResults = !!selected && projects.length > 0;
+  const hasNoResults = !!selected && projects.length === 0;
+  return (
+    <div className="related-projects">
+      {hasResults &&
+        showResults({
+          projects,
+          selected,
+          emptyFilteredProjects,
+          setSelectedProject,
+        })}
+      {hasNoResults &&
+        showNoResults({
+          selected,
+          emptyFilteredProjects,
+        })}
+    </div>
+  );
+};
 
 RelatedProjects.propTypes = {
   projects: PropTypes.array,
@@ -125,3 +123,5 @@ RelatedProjects.defaultProps = {
   selected: null,
   setSelectedProject: null,
 };
+
+export default RelatedProjects;
