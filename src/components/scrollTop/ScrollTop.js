@@ -1,41 +1,36 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { animateScroll } from 'react-scroll';
 
 import ArrowUp from './arrow-up.svg';
 import './scrollTop.scss';
 
-export default class ScrollTop extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isTop: true,
-    };
-  }
+const ScrollTop = () => {
+  const [isTop, setIsTop] = useState(true);
 
-  goToTop() {
+  const goToTop = () => {
     animateScroll.scrollTo(0, 0);
-  }
+  };
 
-  componentDidMount() {
+  useEffect(() => {
     document.addEventListener('scroll', () => {
-      const isTop = window.scrollY < 300;
-      if (isTop !== this.state.isTop) {
-        this.setState({ isTop });
+      const viewportHeight = window.outerHeight;
+      const isAboveTheFold = window.scrollY < viewportHeight / 2;
+
+      if (isAboveTheFold !== isTop) {
+        setIsTop(isAboveTheFold);
       }
     });
-  }
-  render() {
-    const { isTop } = this.state;
-    return (
-      <div
-        className={
-          `scroll-to-top ${isTop ? 'not-visible' : 'visible'}`
-        }
-        onClick={this.goToTop}
-      >
-        <img src={ArrowUp} alt="arrow up" />
-      </div>
-    );
-  }
-}
+  });
+
+  return (
+    <div
+      className={`scroll-to-top ${isTop ? 'not-visible' : 'visible'}`}
+      onClick={goToTop}
+    >
+      <img src={ArrowUp} alt="arrow up" />
+    </div>
+  );
+};
+
+export default ScrollTop;
