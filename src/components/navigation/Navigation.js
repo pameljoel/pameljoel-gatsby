@@ -16,8 +16,9 @@ export default class Navigation extends Component {
   }
   componentDidMount() {
     this.isMobile();
-    window.addEventListener('resize', this.isMobile);
     enableCrisp();
+
+    window.addEventListener('resize', this.isMobile);
   }
 
   componentWillUnmount() {
@@ -25,23 +26,21 @@ export default class Navigation extends Component {
   }
 
   isMobile() {
-    const { isMobile } = this.state;
     const mobileBreakPoint = 768;
     const bool = window.innerWidth < mobileBreakPoint;
-    if (bool === isMobile) {
-      return;
-    }
 
     this.setState({ isMobile: bool });
   }
 
-  render() {
+  HandleNavigation() {
     const { isMobile } = this.state;
+    return isMobile ? <MobileNavigation /> : <DesktopNavigation />;
+  }
+
+  render() {
     return (
       <Fragment>
-        <nav className="main-navigation">
-          {isMobile ? <MobileNavigation /> : <DesktopNavigation />}
-        </nav>
+        <nav className="main-navigation">{this.HandleNavigation()}</nav>
       </Fragment>
     );
   }
