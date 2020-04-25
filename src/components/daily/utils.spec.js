@@ -1,4 +1,4 @@
-import { setDailyInMonth } from './month';
+import { setDailyInMonth } from './utils';
 
 const emptyArray = [];
 

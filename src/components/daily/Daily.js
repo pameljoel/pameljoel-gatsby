@@ -3,10 +3,9 @@ import Lightbox from 'react-image-lightbox';
 import { enableCrisp } from '../crisp/Crisp';
 import DailyHeader from './DailyHeader';
 import Loading from '../status/Loading';
-import { showResults } from './partials/month';
-import { addImagesToMonths } from './partials/months';
-import { createLightBoxUrl } from './partials/lightbox';
-import Header from './partials/Header';
+import Months from './Months';
+import { addImagesToMonths, createLightBoxUrl } from './utils';
+import Header from './Header';
 import { getDataAsync } from '../../helpers';
 
 import dailyJson from '../../../static/resources/daily.json';
@@ -44,26 +43,23 @@ const Daily = () => {
 
   useEffect(() => {
     enableCrisp();
-  });
-
-  useEffect(() => {
     getData().catch((error) => console.log(error));
   }, [images, months]);
 
+  const prevDay = day - 1;
+  const nextDay = day + 1;
+
+  const getPrevDay = () => {
+    setDay(prevDay);
+    setLightBoxUrl(createLightBoxUrl(prevDay, images));
+  };
+
+  const getNextDay = () => {
+    setDay(nextDay);
+    setLightBoxUrl(createLightBoxUrl(nextDay, images));
+  };
+
   const renderLightBox = () => {
-    const prevDay = day - 1;
-    const nextDay = day + 1;
-
-    const getPrevDay = () => {
-      setDay(prevDay);
-      setLightBoxUrl(createLightBoxUrl(prevDay, images));
-    };
-
-    const getNextDay = () => {
-      setDay(nextDay);
-      setLightBoxUrl(createLightBoxUrl(nextDay, images));
-    };
-
     return (
       <Lightbox
         mainSrc={lightBoxUrl}
@@ -85,21 +81,15 @@ const Daily = () => {
     openLightBox();
   };
 
-  const renderImages = () => {
-    return (
-      <div className="daily-container">
-        {months &&
-          months.map((month) => {
-            return showResults(month, addImageToSlideShow);
-          })}
-      </div>
-    );
-  };
-
   const hasLightBox = isLightBoxOpen && lightBoxUrl;
   const showImages = !isLoading && images;
   const lightBox = hasLightBox && renderLightBox();
-  const daily = showImages ? renderImages() : <Loading isLoading={isLoading} />;
+
+  const daily = showImages ? (
+    <Months months={months} callback={addImageToSlideShow} />
+  ) : (
+    <Loading isLoading={isLoading} />
+  );
 
   return (
     <div>

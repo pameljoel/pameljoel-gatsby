@@ -1,8 +1,31 @@
 import React from 'react';
-import DailyItem from '../DailyItem';
-import { showNoResults } from './day';
+import DailyItem from './Image';
 
 const basePath = '/images/daily/works/';
+
+export const setDailyInMonth = (dailies = [], month = {}) => {
+  const array = [];
+
+  dailies.map((daily) => {
+    const { day } = daily;
+    const { start, days } = month;
+    const isDayInRange = day > start && day <= start + days;
+
+    isDayInRange && array.push(daily);
+  });
+
+  return array;
+};
+
+export const addImagesToMonths = (months, dailies) => {
+  if (!dailies || !months) return;
+
+  months.map((month) => {
+    month.dailiesOfTheMonth = setDailyInMonth(dailies, month);
+  });
+
+  return months;
+};
 
 export const showMonthName = (month) => {
   const { name } = month;
@@ -38,29 +61,21 @@ export const showMonthImages = (month, callback) => {
   });
 };
 
-export const showResults = (month, callback) => {
-  const { dailiesOfTheMonth, name, days } = month;
-  const hasDaily = dailiesOfTheMonth && dailiesOfTheMonth.length > 0;
-  const classToAdd = `month-container ${name}`;
-  const id = `daily-${name}-${days}`;
-  return (
-    <div className={classToAdd} key={id}>
-      {showMonthName(month)}
-      {hasDaily ? showMonthImages(month, callback) : showNoResults}
-    </div>
-  );
+export const createLightBoxUrl = (day, dailies) => {
+  const basePath = '/images/daily/works/';
+  const { format } = dailies[day > 0 ? day - 1 : day];
+
+  let url = null;
+
+  if (day > 0) {
+    url = `${basePath}${day}.${format}`;
+  }
+
+  return url;
 };
 
-export const setDailyInMonth = (dailies = [], month = {}) => {
-  const array = [];
-
-  dailies.map((daily) => {
-    const { day } = daily;
-    const { start, days } = month;
-    const isDayInRange = day > start && day <= start + days;
-
-    isDayInRange && array.push(daily);
-  });
-
-  return array;
-};
+export const showNoResults = (
+  <div className="daily-item">
+    <img className="daily-image" src={`${basePath}/0.jpg`} alt="" />
+  </div>
+);
