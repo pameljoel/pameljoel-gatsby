@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Loading from '../status/Loading';
 import { PropTypes } from 'prop-types';
 
@@ -45,57 +45,58 @@ const Content = (props) => {
   );
 };
 
-export default class Curriculum extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      personal: null,
-      education: null,
-      career: null,
-      isLoading: true,
-    };
-  }
+const Curriculum = (props) => {
+  const { setSelectedProject } = props;
+  const [personal, setPersonal] = useState(null);
+  const [education, setEducation] = useState(null);
+  const [career, setCareer] = useState(null);
+  const [isLoading, setLoading] = useState(true);
 
-  componentDidMount() {
+  const logError = (error) => {
+    this.setState({ isLoading: false });
+    console.error(error);
+  };
+
+  useEffect(() => {
     getData(personalJson)
-      .then((data) => this.setState({ personal: data, isLoading: false }))
-      .catch((error) => {
-        this.setState({ isLoading: false });
-        console.error(error);
-      });
+      .then((data) => {
+        setPersonal(data);
+        setLoading(false);
+      })
+      .catch((error) => logError(error));
+  }, [personal]);
 
+  useEffect(() => {
     getData(educationJson)
-      .then((data) => this.setState({ education: data, isLoading: false }))
-      .catch((error) => {
-        this.setState({ isLoading: false });
-        console.error(error);
-      });
+      .then((data) => {
+        setEducation(data);
+        setLoading(false);
+      })
+      .catch((error) => logError(error));
+  }, [education]);
 
+  useEffect(() => {
     getData(careerJson)
-      .then((data) => this.setState({ career: data, isLoading: false }))
-      .catch((error) => {
-        this.setState({ isLoading: false });
-        console.error(error);
-      });
-  }
+      .then((data) => {
+        setCareer(data);
+        setLoading(false);
+      })
+      .catch((error) => logError(error));
+  }, [career]);
 
-  render() {
-    const { setSelectedProject } = this.props;
-    const { isLoading, personal, career, education } = this.state;
-    return (
-      <div>
-        <StaticHeader />
-        <Content
-          isLoading={isLoading}
-          personal={personal}
-          career={career}
-          education={education}
-          setSelectedProject={setSelectedProject}
-        />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <StaticHeader />
+      <Content
+        isLoading={isLoading}
+        personal={personal}
+        career={career}
+        education={education}
+        setSelectedProject={setSelectedProject}
+      />
+    </div>
+  );
+};
 
 Curriculum.propTypes = {
   setSelectedProject: PropTypes.func,
@@ -104,3 +105,5 @@ Curriculum.propTypes = {
 Curriculum.defaultProps = {
   setSelectedProject: null,
 };
+
+export default Curriculum;
