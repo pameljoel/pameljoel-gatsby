@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { PropTypes } from 'prop-types';
 
 import Tags from './../tags/Tags';
@@ -14,6 +14,7 @@ const Company = (props) => {
   const [projects, setProjects] = useState([]);
   const [selectedTag, setSelectedTag] = useState(null);
   const [filteredProjects, setFilteredProjects] = useState([]);
+  const relatedProjectsRef = useRef();
 
   getData(projectsJSON).then((data) => setProjects(data));
 
@@ -21,17 +22,26 @@ const Company = (props) => {
     setSelectedTag(null);
   };
 
+  const scrollTo = (ref) => {
+    ref.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+  };
+
   const showRelatedProjectsCarousel = (name) => {
     const filteredProjects = [];
     setSelectedTag(name);
 
-    projects.map((item) =>
-      item.tags.reduce(
-        (prev, tag) => tag === name && filteredProjects.push(item),
-        []
-      )
-    );
+    const filterByTagName = (project) =>
+      project.tags.forEach(
+        (tag) => tag === name && filteredProjects.push(project)
+      );
+
+    projects.map((project) => filterByTagName(project));
+
     setFilteredProjects(filteredProjects);
+    scrollTo(relatedProjectsRef);
   };
 
   const {
@@ -108,7 +118,7 @@ const Company = (props) => {
         </div>
       </div>
 
-      <div className="company-projects-container">
+      <div className="company-projects-container" ref={relatedProjectsRef}>
         <RelatedProjects
           projects={filteredProjects}
           emptyFilteredProjects={emptyFilteredProjects}
