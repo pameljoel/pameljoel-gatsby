@@ -4,3 +4,6 @@ export function getData(data) {
     reject('errore');
   });
 }
+export async function getDataAsync(data) {
+  return data;
+}
