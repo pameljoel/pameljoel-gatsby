@@ -28,13 +28,16 @@
       "topSkill": true
     },
     {
-      "name": "JavaScript"
+      "name": "JavaScript",
+      "topSkill": true
     },
     {
-      "name": "ES6"
+      "name": "ES6",
+      "topSkill": true
     },
     {
-      "name": "TDD"
+      "name": "TDD",
+      "newSkill": true
     },
     {
       "name": "SCSS",
@@ -162,26 +165,26 @@
     "description": "Esis is a software development and Consulting company from Bologna with more than 30 years experience in the market.",
     "skills": [
       {
-        "name": "Photoshop",
-        "topSkill": true
+        "name": "Photoshop"
       },
       {
-        "name": "Adobe After Effects"
+        "name": "After Effects"
       },
       {
-        "name": "Illustrator",
-        "topSkill": true
+        "name": "Illustrator"
       },
       {
-        "name": "HTML 5",
-        "topSkill": true
+        "name": "HTML 5"
       },
       {
-        "name": "CSS 3",
-        "topSkill": true
+        "name": "CSS 3"
       },
       {
         "name": "JavaScript"
+      },
+      {
+        "name": "GIT",
+        "newSkill": true
       },
       {
         "name": "AngularJS",
@@ -193,14 +196,6 @@
       },
       {
         "name": "Grunt",
-        "newSkill": true
-      },
-      {
-        "name": "GIT",
-        "newSkill": true
-      },
-      {
-        "name": "First Spirit",
         "newSkill": true
       },
       {
@@ -229,28 +224,23 @@
         "name": "Photoshop"
       },
       {
-        "name": "Adobe Indesign"
-      },
-      {
-        "name": "Adobe Acrobat"
+        "name": "Indesign"
       },
       {
         "name": "Illustrator"
       },
       {
-        "name": "Adobe After Effects"
-      },
-      {
-        "name": "HTML 5",
-        "topSkill": true
-      },
-      {
-        "name": "CSS 3",
-        "topSkill": true
+        "name": "HTML 5"
       },
       {
         "name": "JavaScript",
         "newSkill": true
+      },
+      {
+        "name": "CSS 3"
+      },
+      {
+        "name": "After Effects"
       },
       {
         "name": "Social Media Marketing",
@@ -282,7 +272,10 @@
         "newSkill": true
       },
       {
-        "name": "email design & template"
+        "name": "email design"
+      },
+      {
+        "name": "email template"
       },
       {
         "name": "DEM"
@@ -324,7 +317,7 @@
     "title": "Designer & Typographer",
     "company": "Tipografia Luppi",
     "city": "Mantova",
-    "description": "Tipografia Luppi is a small typography studio based in Mantova, they do all kind of typography work from offset printing to logo design, brochure design, business card design.",
+    "description": "Tipografia Luppi is a small typography studio based in Mantova, Luppi does all kind of typography work from offset printing to logo design, brochure design and business card design.",
     "skills": [
       {
         "name": "Photoshop"
@@ -357,7 +350,7 @@
     "title": "Graphics Guy",
     "company": "Denny Service",
     "city": "Mirandola",
-    "description": "Denny Service is a printing company in Mirandola (MO), they print and create all kinds of graphic projects.",
+    "description": "Denny Service is a small printing business in Mirandola (MO), they print and design many different type of derivables.",
     "skills": [
       {
         "name": "Illustrator"
@@ -366,7 +359,7 @@
         "name": "Photoshop"
       },
       {
-        "name": "Printing Processes"
+        "name": "Printing Process"
       }
     ]
   }
