@@ -1,5 +1,5 @@
 import React from 'react';
-import { showMonthImages, showMonthName, showNoResults } from './utils';
+import { showMonthImages, showMonthName } from './utils';
 
 const Month = (props) => {
   const { month, callback } = props;
@@ -8,10 +8,20 @@ const Month = (props) => {
   const classToAdd = `month-container ${name}`;
   const id = `daily-${name}-${days}`;
 
+  const MonthGrid = () => {
+    return (
+      hasDaily && (
+        <>
+          {showMonthName(month)}
+          {showMonthImages(month, callback)}
+        </>
+      )
+    );
+  };
+
   return (
     <div className={classToAdd} key={id}>
-      {showMonthName(month)}
-      {hasDaily ? showMonthImages(month, callback) : showNoResults}
+      <MonthGrid />
     </div>
   );
 };

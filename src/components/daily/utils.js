@@ -34,11 +34,6 @@ export const showMonthName = (month) => {
     <div className="daily-item daily-item-month">
       <div className="daily-month-name">{name}</div>
       <div className="month-initial">{nameLetter}</div>
-      <img
-        className="daily-image"
-        src={`${basePath}blank.jpg`}
-        alt="more images coming soon"
-      />
     </div>
   );
 };
