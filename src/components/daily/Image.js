@@ -8,17 +8,15 @@ const Image = (props) => {
   };
   const { day, imageSource, description, callback } = props;
   return (
-    <Fade bottom>
-      <div className="daily-item" style={dailyItemStyle}>
-        <div className="day">{day}</div>
-        <img
-          className="daily-image"
-          src={imageSource}
-          alt={description}
-          onClick={() => callback(day)}
-        />
-      </div>
-    </Fade>
+    <div className="daily-item" style={dailyItemStyle}>
+      <div className="day">{day}</div>
+      <img
+        className="daily-image"
+        src={imageSource}
+        alt={description}
+        onClick={() => callback(day)}
+      />
+    </div>
   );
 };
 
