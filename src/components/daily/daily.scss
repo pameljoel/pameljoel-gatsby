@@ -88,6 +88,10 @@
   }
 
   .daily-item-month {
+
+    @media (max-width: $phone-min) {
+      min-height: 100px;
+    }
     &:hover {
       .daily-image {
         box-shadow: none;
