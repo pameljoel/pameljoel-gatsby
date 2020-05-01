@@ -82,7 +82,7 @@ Projects.propTypes = {
       description: PropTypes.string,
       images: PropTypes.arrayOf(PropTypes.string),
       job: PropTypes.string,
-      mywork: PropTypes.string,
+      myWork: PropTypes.string,
       name: PropTypes.string,
       sliderId: PropTypes.number,
       slug: PropTypes.string,
