@@ -54,7 +54,7 @@
     "description": "Monrif.net is the digital branch of the Monrif Group, it is responsable for managing some of the biggest Italian online newspaper platforms such as quotidiano.net, Il Resto del Carlino, La Nazione, Il Giorno and many others",
     "skills": [
       {
-        "name": "Adobe Photoshop",
+        "name": "Photoshop",
         "topSkill": true
       },
       {
@@ -66,7 +66,7 @@
         "newSkill": true
       },
       {
-        "name": "Adobe Illustrator",
+        "name": "Illustrator",
         "topSkill": true
       },
       {
@@ -118,7 +118,7 @@
     "description": "Enduance is a web agency that specializes on ecommerce platforms B2B and B2C, it manages platforms like rinascimento.com, one of the bigest italian clothing ecommerce websites and many others",
     "skills": [
       {
-        "name": "Adobe Photoshop",
+        "name": "Photoshop",
         "topSkill": true
       },
       {
@@ -126,7 +126,7 @@
         "newSkill": true
       },
       {
-        "name": "Adobe Illustrator",
+        "name": "Illustrator",
         "topSkill": true
       },
       {
@@ -162,14 +162,14 @@
     "description": "Esis is a software development and Consulting company from Bologna with more than 30 years experience in the market.",
     "skills": [
       {
-        "name": "Adobe Photoshop",
+        "name": "Photoshop",
         "topSkill": true
       },
       {
         "name": "Adobe After Effects"
       },
       {
-        "name": "Adobe Illustrator",
+        "name": "Illustrator",
         "topSkill": true
       },
       {
@@ -226,7 +226,7 @@
     "description": "Sherbet Lemon is one of my personal projects, It's a web agency that focus on illustrative and web based projects, we tried to express our approach on design, an approach that is based on simplicity of communication with an added \"friendish\" vibe to it.",
     "skills": [
       {
-        "name": "Adobe Photoshop"
+        "name": "Photoshop"
       },
       {
         "name": "Adobe Indesign"
@@ -235,7 +235,7 @@
         "name": "Adobe Acrobat"
       },
       {
-        "name": "Adobe Illustrator"
+        "name": "Illustrator"
       },
       {
         "name": "Adobe After Effects"
@@ -268,10 +268,10 @@
     "description": "Koinema is a web agency based in Bologna, they work for important clients such as Dolce & Gabbana, Versave, Ferrero, and many more.",
     "skills": [
       {
-        "name": "Adobe Photoshop"
+        "name": "Photoshop"
       },
       {
-        "name": "Adobe Illustrator"
+        "name": "Illustrator"
       },
       {
         "name": "HTML 5",
@@ -297,10 +297,10 @@
     "description": "Tipografia Luppi is a small typography studio based in Mantova, they do all kind of typography work from offset printing to logo design, brochure design, business card design.",
     "skills": [
       {
-        "name": "Adobe Photoshop"
+        "name": "Photoshop"
       },
       {
-        "name": "Adobe Illustrator"
+        "name": "Illustrator"
       },
       {
         "name": "Macromedia Freehand"
@@ -327,10 +327,10 @@
     "description": "Tipografia Luppi is a small typography studio based in Mantova, they do all kind of typography work from offset printing to logo design, brochure design, business card design.",
     "skills": [
       {
-        "name": "Adobe Photoshop"
+        "name": "Photoshop"
       },
       {
-        "name": "Adobe Illustrator"
+        "name": "Illustrator"
       },
       {
         "name": "Macromedia Freehand MX"
@@ -360,10 +360,10 @@
     "description": "Denny Service is a printing company in Mirandola (MO), they print and create all kinds of graphic projects.",
     "skills": [
       {
-        "name": "Adobe Illustrator"
+        "name": "Illustrator"
       },
       {
-        "name": "Adobe Photoshop"
+        "name": "Photoshop"
       },
       {
         "name": "Printing Processes"
