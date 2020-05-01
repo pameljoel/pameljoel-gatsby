@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Pamel Joel Beltrè - Personal Portfolio site`,
-    description: `I am a front end designer, I specialize in UI/UX Design and Javascript development with React / AngularJS`,
+    description: `I am a front end designer, I specialize in UI/UX Design and JavaScript development with React / AngularJS`,
     author: `@pameljoel`,
   },
   plugins: [

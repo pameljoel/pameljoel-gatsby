@@ -28,13 +28,13 @@
       "topSkill": true
     },
     {
-      "name": "Javascript"
+      "name": "JavaScript"
     },
     {
       "name": "ES6"
     },
     {
-      "name": "Web standards"
+      "name": "TDD"
     },
     {
       "name": "SCSS",
@@ -78,7 +78,7 @@
         "topSkill": true
       },
       {
-        "name": "Javascript"
+        "name": "JavaScript"
       },
       {
         "name": "jQuery"
@@ -138,7 +138,7 @@
         "topSkill": true
       },
       {
-        "name": "Javascript"
+        "name": "JavaScript"
       },
       {
         "name": "jQuery"
@@ -181,7 +181,7 @@
         "topSkill": true
       },
       {
-        "name": "Javascript"
+        "name": "JavaScript"
       },
       {
         "name": "AngularJS",
@@ -249,7 +249,7 @@
         "topSkill": true
       },
       {
-        "name": "Javascript",
+        "name": "JavaScript",
         "newSkill": true
       },
       {

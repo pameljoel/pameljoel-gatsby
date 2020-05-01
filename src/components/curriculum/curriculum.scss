@@ -16,6 +16,7 @@
     .text {
         color: $brand-color-light;
         display: inline-block;
+        border-bottom: 1px dashed #eee;
     }
 
     a {

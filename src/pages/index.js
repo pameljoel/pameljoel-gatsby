@@ -10,7 +10,7 @@ import '../components/crisp/crisp.scss'
 
 const IndexPage = () => (
   <Fragment>
-    <SEO title="Pamel Joel Beltrè - Front End Designer - React, AngularJS, Javascript, CSS3, HTML5 projects" />
+    <SEO title="Pamel Joel Beltrè - Front End Designer - React, AngularJS, JavaScript, CSS3, HTML5 projects" />
     <Home />
   </Fragment>
 )
