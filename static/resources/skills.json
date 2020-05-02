@@ -78,7 +78,7 @@
     "hint":""
   },
   {
-    "name":"SASS",
+    "name":"SCSS",
     "percentage":90,
     "startDate": 2014,
     "description":"SASS is my preprocessor of choice, I prefer to keep it light with only the bare minimum of variables and mixins to help theming",

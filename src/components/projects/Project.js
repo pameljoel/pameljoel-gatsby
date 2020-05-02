@@ -49,6 +49,20 @@ export default class Project extends Component {
             </div>
           )}
 
+          {job && (
+            <article
+              data-test="project-work"
+              className="project-my-work-container"
+            >
+              <header>
+                <h1 className="project-subtitle">My role in this project</h1>
+              </header>
+              <div className="project-my-work">
+                {job && <strong>{job}</strong>} {myWork}
+              </div>
+            </article>
+          )}
+
           {about && (
             <article
               data-test="project-about"
@@ -96,20 +110,6 @@ export default class Project extends Component {
                 ))}
               </div>
             </div>
-          )}
-
-          {job && (
-            <article
-              data-test="project-work"
-              className="project-my-work-container"
-            >
-              <header>
-                <h1 className="project-subtitle">About my work</h1>
-              </header>
-              <div className="project-my-work">
-                {job && <strong>{job}</strong>} {myWork}
-              </div>
-            </article>
           )}
 
           {tags && (

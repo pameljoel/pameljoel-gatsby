@@ -40,6 +40,7 @@
 
   .project-date {
     color: $brand-color-light;
+    font-size: 12px;
     @media (max-width: 480px) {
       padding-left: 40px;
       padding-right: 40px;
@@ -54,7 +55,8 @@
     h1 {
       @include title;
 
-      margin-bottom: 10px;
+      margin-bottom: 2px;
+      font-weight: 700;
 
       @media (max-width: $phone-min) {
         font-size: 5vw;
@@ -64,6 +66,9 @@
 
   .project-category {
     @include subtitle;
+    margin-bottom: 40px;
+
+    font-size: 16px;
     @media (max-width: 480px) {
       padding-left: 40px;
       padding-right: 40px;
@@ -77,7 +82,7 @@
     text-transform: uppercase;
     font-weight: 300;
     color: $text-color-secondary;
-    font-size: 14px;
+    font-size: 12px;
     display: block;
     @media (max-width: 480px) {
       padding-left: 40px;
