@@ -4,6 +4,7 @@ import { skill, skills, skillsList } from '../../types';
 import skillsJson from '../../../static/resources/skills.json';
 import { filterSkills } from '../utils/skills';
 import './skills.scss';
+import { FadeIn } from '../utils/FadeIn';
 
 type props = {
   list: skillsList;
@@ -17,6 +18,7 @@ type renderSkillsProps = {
 const renderSkills = (props: renderSkillsProps) => {
   const { skillsJson, list } = props;
   const skills = filterSkills(list, skillsJson);
+  let delayNumber = 0.4;
 
   return skills
     ? skills.map((skill: skill) => {
@@ -29,16 +31,19 @@ const renderSkills = (props: renderSkillsProps) => {
           endDate,
         } = skill;
 
+        delayNumber = delayNumber + 0.1;
+
         return (
-          <Skill
-            name={name}
-            description={description}
-            percentage={percentage}
-            hint={hint}
-            key={name}
-            startDate={startDate}
-            endDate={endDate}
-          />
+          <FadeIn small key={name} delay={delayNumber}>
+            <Skill
+              name={name}
+              description={description}
+              percentage={percentage}
+              hint={hint}
+              startDate={startDate}
+              endDate={endDate}
+            />
+          </FadeIn>
         );
       })
     : null;

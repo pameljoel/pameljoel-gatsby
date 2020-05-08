@@ -4,20 +4,25 @@ import Tags from '../tags/Tags';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { section } from '../../types';
+import { FadeIn } from '../utils/FadeIn';
 
 const Section = (props: section) => {
   const { name, description, skills, tags } = props;
 
   const sectionTitle = name ? (
-    <h2 className="title" data-test="section-title">
-      {name}
-    </h2>
+    <FadeIn small>
+      <h2 className="title" data-test="section-title">
+        {name}
+      </h2>
+    </FadeIn>
   ) : null;
 
   const sectionDescription = description ? (
-    <div className="description" data-test="section-description">
-      {description}
-    </div>
+    <FadeIn small>
+      <div className="description" data-test="section-description">
+        {description}
+      </div>
+    </FadeIn>
   ) : null;
 
   const sectionSkills = skills ? (
@@ -27,23 +32,25 @@ const Section = (props: section) => {
   ) : null;
 
   const sectionTags = tags ? (
-    <div data-test="section-tags">
-      <h3>Other {name} skills:</h3>
-      <div className="tags">
-        <Tags data={tags} />
+    <FadeIn small>
+      <div data-test="section-tags">
+        <h3>Other {name} skills:</h3>
+        <div className="tags">
+          <Tags data={tags} />
+        </div>
       </div>
-    </div>
+    </FadeIn>
   ) : null;
 
   return (
-    <Fade big cascade key={name} data-test="section">
+    <FadeIn>
       <div className="card">
         {sectionTitle}
         {sectionDescription}
         {sectionSkills}
         {sectionTags}
       </div>
-    </Fade>
+    </FadeIn>
   );
 };
 

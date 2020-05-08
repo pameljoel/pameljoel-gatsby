@@ -12,9 +12,25 @@ $expert: #e3f6ee;
     display: flex;
     flex-wrap: wrap;
 
+  > div {
+    float: left;
+    width: 100%;
+
+    @media (min-width: $phone-min) {
+      width: 100%;
+    }
+
+    @media (min-width: $tablet-min) {
+      width: 50%;
+    }
+
+    @media (min-width: $desktop-min) {
+      width: 50%;
+    }
+  }
+
     .skill-graph {
-        float: left;
-        width: 100%;
+
         position: relative;
         padding: 10px;
 
@@ -24,17 +40,7 @@ $expert: #e3f6ee;
             margin-bottom: 40px;
         }
 
-        @media (min-width: $phone-min) {
-            width: 100%;
-        }
 
-        @media (min-width: $tablet-min) {
-            width: 50%;
-        }
-
-        @media (min-width: $desktop-min) {
-            width: 50%;
-        }
 
         &.clickable {
 
