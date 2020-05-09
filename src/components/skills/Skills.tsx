@@ -31,7 +31,7 @@ const renderSkills = (props: renderSkillsProps) => {
           endDate,
         } = skill;
 
-        delayNumber = delayNumber + 0.1;
+        delayNumber = delayNumber + 0.05;
 
         return (
           <FadeIn small key={name} delay={delayNumber}>

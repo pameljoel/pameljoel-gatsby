@@ -57,6 +57,7 @@ export default class Home extends Component {
         <ErrorBoundary isLoading={isLoading}>
           <div className="container">
             <div className="homepage-container">
+              <small>These are some of the things I work with</small>
               {isLoading ? (
                 <Loading isLoading={this.state.isLoading} />
               ) : (

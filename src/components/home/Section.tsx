@@ -1,4 +1,3 @@
-import Fade from 'react-reveal';
 import Skills from '../skills/Skills';
 import Tags from '../tags/Tags';
 import React from 'react';

@@ -1,11 +1,18 @@
 .homepage-container {
+  > small {
+    margin-bottom: 12px;
+    color: #054e80;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+  }
     padding: 20px;
 }
 
 .more-arrows {
     width: 48px;
-    margin-top: 50px;
     margin: auto;
+    margin-top: 50px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
