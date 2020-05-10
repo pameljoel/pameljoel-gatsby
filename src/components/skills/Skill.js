@@ -4,7 +4,9 @@ import PieChart from 'react-minimal-pie-chart';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
 
+import { breakpoints } from '../utils/breakpoints';
 import AdditionalInfo from './AdditionalInfo';
+import isBreakpoint from '../utils/isBreakpoint';
 
 export const getExperience = (startDate, endDate) => {
   const now = new Date().getFullYear();
@@ -17,6 +19,23 @@ const skillLevel = (percentage) => {
   if (percentage >= 75) return 'Proficient';
   if (percentage >= 50) return 'Competent';
   return 'Learning';
+};
+
+const randomDelay = () => Math.random().toFixed(2);
+
+const ProgressBar = (props) => {
+  const { delay, percentage } = props;
+  return (
+    <div className="progress" role="progress">
+      <div
+        className="meter"
+        style={{
+          width: `${percentage}%`,
+          animationDelay: `${delay}s`,
+        }}
+      />
+    </div>
+  );
 };
 
 const Skill = (props) => {
@@ -44,12 +63,10 @@ const Skill = (props) => {
     },
   ];
 
-  const graph = (
-    <div className="skill-graph-image" data-test="skill-graph">
-      <div className="skill-level-container">
-        <div className="skill-level-label">Proficiency: </div>
-        <div className="skill-level">{skillLevel(percentage)}</div>
-      </div>
+  const ShowGraph = () => {
+    return isBreakpoint(breakpoints.xs) ? (
+      <ProgressBar percentage={percentage} delay={randomDelay()} />
+    ) : (
       <PieChart
         className="graph-item"
         data={chartObject}
@@ -60,6 +77,16 @@ const Skill = (props) => {
         animationDuration={5000}
         animationEasing="ease-in-out"
       />
+    );
+  };
+
+  const graph = (
+    <div className="skill-graph-image" data-test="skill-graph">
+      <div className="skill-level-container">
+        <div className="skill-level-label">Proficiency: </div>
+        <div className="skill-level">{skillLevel(percentage)}</div>
+      </div>
+      <ShowGraph />
     </div>
   );
 

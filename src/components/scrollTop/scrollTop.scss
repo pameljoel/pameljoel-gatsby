@@ -70,3 +70,8 @@ $size: 40px;
         transform: scale(1);
     }
 }
+
+@keyframes AnimationName {
+  0%{background-position-x:100%}
+  100%{background-position-x:0}
+}

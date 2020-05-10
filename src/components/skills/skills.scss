@@ -6,11 +6,11 @@ $intermediate: #f3f6d8;
 $expert: #e3f6ee;
 
 .skill-container {
-    @include clearfix;
+  @include clearfix;
 
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
 
   > div {
     float: left;
@@ -29,122 +29,161 @@ $expert: #e3f6ee;
     }
   }
 
-    .skill-graph {
+  .progress {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
 
-        position: relative;
-        padding: 10px;
+    .meter {
+      height: 30px;
+      background: $brand-color-light linear-gradient(250deg, $brand-color-light 49%, #4cc2ff 50%, $brand-color-light 58%);
+      background-size: 200%;
+      animation: AnimationName 1s linear infinite;
+    }
+  }
 
-        @include clearfix;
+  .skill-graph {
 
-        @media (max-width: $phone-min) {
-            margin-bottom: 40px;
-        }
+    position: relative;
+    padding: 10px;
 
+    @include clearfix;
 
-
-        &.clickable {
-
-            .skill__title {
-                cursor: pointer;
-                &:hover {
-                    h1:after {
-                        background-color: $brand-color-light;
-                        color: white;
-                        border-color: transparent;
-                    }
-                }
-
-                h1 {
-                    color: $brand-color-light;
-
-                    &:after {
-                        $width: 20px;
-
-                        content: "?";
-                        display: inline-block;
-                        vertical-align: middle;
-                        text-align: center;
-                        margin-left: 10px;
-                        height: $width;
-                        width: $width;
-                        font-size: 12px;
-                        line-height: 19px;
-                        font-weight: 700;
-                        border: 1px solid #ddd;
-                        border-radius: 50%;
-                        transition: all .3s ease-in-out;
-                    }
-                }
-            }
-        }
+    @media (max-width: $phone-min) {
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
     }
 
-    .skill-graph-image {
-        position: relative;
+    &.clickable {
 
-        @media (max-width: $phone-min) {
-            margin-bottom: 20px;
+      .skill__title {
+        cursor: pointer;
+
+        &:hover {
+          h1:after {
+            background-color: $brand-color-light;
+            color: white;
+            border-color: transparent;
+          }
         }
 
-        @media (min-width: $phone-min) {
-            float: left;
-            width: 25%;
-        }
+        h1 {
+          color: $brand-color-light;
 
-        @media (min-width: $tablet-min) {
-            width: 25%;
-        }
+          &:after {
+            $width: 20px;
 
-        @media (min-width: $desktop-min) {
-            width: 25%;
-        }
-
-        .skill-level-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            content: "?";
+            display: inline-block;
+            vertical-align: middle;
             text-align: center;
-            z-index: 10;
+            margin-left: 10px;
+            height: $width;
+            width: $width;
+            font-size: 12px;
+            line-height: 19px;
+            font-weight: 700;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            transition: all .3s ease-in-out;
+          }
         }
-
-        .skill-level-label {
-            font-weight: 300;
-            color: $text-color-secondary;
-            font-size: 8px;
-            text-transform: uppercase;
-            line-height: 1;
-        }
-
-        .skill-level {
-            font-size: 14px;
-        }
-
-        .graph-item {
-            position: relative;
-
-            @media (max-width: $phone-min) {
-                max-width: 150px;
-                margin: auto;
-            }
-
-            svg {
-                position: relative;
-                z-index: 1;
-            }
-
-            &:after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                border-radius: 50%;
-                border: 10px solid #eee;
-            }
-        }
+      }
     }
+  }
+
+  .skill-graph-image {
+    position: relative;
+
+    @media (max-width: $phone-min) {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: $phone-min) {
+      float: left;
+      width: 25%;
+    }
+
+    @media (min-width: $tablet-min) {
+      width: 25%;
+    }
+
+    @media (min-width: $desktop-min) {
+      width: 25%;
+    }
+
+    .skill-level-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+
+      @media (max-width: $phone-min) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+      }
+    }
+
+    .skill-level-label {
+      font-weight: 300;
+      color: $text-color-secondary;
+      font-size: 8px;
+      text-transform: uppercase;
+      line-height: 1;
+      @media (max-width: $phone-min) {
+        color: white;
+        font-size: 10px;
+        font-weight: 700;
+      }
+    }
+
+    .skill-level {
+      font-size: 14px;
+
+      @media (max-width: $phone-min) {
+        background-color: white;
+        padding: 1px 6px;
+        border-radius: 5px;
+        border: none;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+
+    .graph-item {
+      position: relative;
+
+      @media (max-width: $phone-min) {
+        max-width: 150px;
+        margin: auto;
+      }
+
+      svg {
+        position: relative;
+        z-index: 1;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        border: 10px solid #eee;
+      }
+    }
+  }
 
   .skill__experience {
     background-color: #e3f6ee;
@@ -159,9 +198,11 @@ $expert: #e3f6ee;
     &--beginner {
       background-color: $beginner;
     }
+
     &--intermediate {
       background-color: $intermediate;
     }
+
     &--expert {
       background-color: $expert;
     }
@@ -185,27 +226,27 @@ $expert: #e3f6ee;
     color: $text-color-primary;
   }
 
-    .skill__text {
-        text-align: left;
+  .skill__text {
+    text-align: left;
 
-        @media (min-width: $phone-min) {
-            float: left;
-            padding: 0 20px;
-            width: 75%;
-        }
-
-        @media (min-width: $tablet-min) {
-            width: 75%;
-        }
-
-        @media (min-width: $desktop-min) {
-            width: 75%;
-        }
-
-
+    @media (min-width: $phone-min) {
+      float: left;
+      padding: 0 20px;
+      width: 75%;
     }
 
-    svg path {
-        stroke: $brand-color-light;
+    @media (min-width: $tablet-min) {
+      width: 75%;
     }
+
+    @media (min-width: $desktop-min) {
+      width: 75%;
+    }
+
+
+  }
+
+  svg path {
+    stroke: $brand-color-light;
+  }
 }
