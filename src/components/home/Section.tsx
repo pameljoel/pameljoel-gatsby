@@ -47,7 +47,6 @@ const Section = (props: section) => {
         {sectionTitle}
         {sectionDescription}
         {sectionSkills}
-        {sectionTags}
       </div>
     </FadeIn>
   );
