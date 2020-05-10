@@ -1,7 +1,7 @@
 [
   {
     "name":"UI",
-    "percentage":95,
+    "percentage":90,
     "startDate": 2013,
     "endDate": 2019,
     "description":"UI is knowing the patterns that make an interface usable and familiar to the users, and the ability to make it look good.",
@@ -9,7 +9,7 @@
   },
   {
     "name":"Photoshop",
-    "percentage":99,
+    "percentage":100,
     "startDate": 2004,
     "endDate": 2019,
     "description":"I have been working with Adobe Photoshop for more than 10 years, so I have extensive knowledge of the software.",
@@ -17,7 +17,7 @@
   },
   {
     "name":"Sketch",
-    "percentage":99,
+    "percentage":90,
     "startDate": 2017,
     "endDate": 2019,
     "description":"Sketch is the best tool to quickly and efficiently design modular UI",
@@ -25,7 +25,7 @@
   },
   {
     "name":"Illustrator",
-    "percentage":85,
+    "percentage":80,
     "startDate": 2004,
     "endDate": 2007,
     "description":"My workflow involves using Illustrator in all the vector artworks such as logos and icons",
@@ -33,7 +33,7 @@
   },
   {
     "name":"Indesign",
-    "percentage":90,
+    "percentage":70,
     "startDate": 2012,
     "endDate": 2014,
     "description":"I use Indesign when I need a presentation that makes a good impression.",
@@ -41,7 +41,7 @@
   },
   {
     "name":"After Effects",
-    "percentage":75,
+    "percentage":70,
     "startDate": 2013,
     "endDate": 2014,
     "description":"I use after effects for interaction design and animations.",
@@ -57,7 +57,7 @@
   },
   {
     "name":"Flat Design",
-    "percentage":95,
+    "percentage":90,
     "startDate": 2013,
     "endDate": 2019,
     "description":"I love simplicity and flat design is more than just a fade.",
@@ -65,14 +65,14 @@
   },
   {
     "name":"HTML 5",
-    "percentage":95,
+    "percentage":100,
     "startDate": 2013,
     "description":"Semantic and clean HTML 5 markup. I  work with accessibility in mind.",
     "hint":""
   },
   {
     "name":"CSS 3",
-    "percentage":95,
+    "percentage":100,
     "startDate": 2013,
     "description":"Organized Cascade style sheets using the latest conventions like BEM or atomic CSS.",
     "hint":""
@@ -100,7 +100,7 @@
   },
   {
     "name":"AngularJS",
-    "percentage":85,
+    "percentage":80,
     "startDate": 2016,
     "endDate": 2017,
     "description":"some years ago this was my framework of choice for web applications.",
@@ -108,7 +108,7 @@
   },
   {
     "name":"Mockups",
-    "percentage":95,
+    "percentage":100,
     "startDate": 2013,
     "endDate": 2019,
     "description":"With quick mockups I can bring your project to life. This helps you be on the same page with your clients and your development team.",
@@ -116,7 +116,7 @@
   },
   {
     "name":"Prototyping",
-    "percentage":75,
+    "percentage":90,
     "startDate": 2013,
     "endDate": 2019,
     "description":"Prototypes help you visualize the application flow, it's essential to spot any usability issue early on your project.",
@@ -124,7 +124,7 @@
   },
   {
     "name":"UX",
-    "percentage":90,
+    "percentage":85,
     "startDate": 2017,
     "endDate": 2019,
     "description":"Everything is UX, I'll help you polish your user flows and your personas with simplicity in mind.",
