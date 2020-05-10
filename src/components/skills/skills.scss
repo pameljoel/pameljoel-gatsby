@@ -32,7 +32,7 @@ $expert: #e3f6ee;
   .progress {
     width: 100%;
     background-color: #eee;
-    border-radius: 10px;
+    border-radius: 4px;
     overflow: hidden;
 
     .meter {
@@ -51,10 +51,12 @@ $expert: #e3f6ee;
     @include clearfix;
 
     @media (max-width: $phone-min) {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       display: flex;
       flex-wrap: wrap;
       flex-direction: column-reverse;
+      border: 1px solid #eee;
+      border-radius: 10px;
     }
 
     &.clickable {
@@ -97,10 +99,6 @@ $expert: #e3f6ee;
 
   .skill-graph-image {
     position: relative;
-
-    @media (max-width: $phone-min) {
-      margin-bottom: 20px;
-    }
 
     @media (min-width: $phone-min) {
       float: left;
