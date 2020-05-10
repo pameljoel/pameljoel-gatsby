@@ -33,7 +33,7 @@ const MobileNavigation = () => {
         <ul className="mobile-navigation-links">
           <ListItem to="/" text="Home" />
           <ListItem to="/daily" text="Daily" />
-          <ListItem to="/curriculum" text="C.V." />
+          <ListItem to="/curriculum" text="Curriculum Vitae" />
           <ListItem to="/projects" text="Projects" />
           <li
             onClick={() => {
