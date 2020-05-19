@@ -38,16 +38,8 @@ export default class Footer extends Component {
                 rel="noopener noreferrer"
                 className="linkedin"
               >
+                <span className="text">My Linkedin profile</span>
                 {linkedInSVG}
-              </a>
-              <a
-                href="https://www.facebook.com/pamel.joel"
-                target="_blank"
-                name="facebook profile"
-                rel="noopener noreferrer"
-                className="facebook"
-              >
-                {facebookSVG}
               </a>
               <a
                 href="skype:pjjjjk?chat"
@@ -56,6 +48,7 @@ export default class Footer extends Component {
                 rel="noopener noreferrer"
                 className="skype"
               >
+                <span className="text">Call me on Skype</span>
                 {skypeSVG}
               </a>
             </div>
