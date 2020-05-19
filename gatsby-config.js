@@ -17,10 +17,10 @@ module.exports = {
       resolve: 'gatsby-plugin-preconnect',
       options: {
         domains: [
-          'https://www.google.com/',
-          'https://www.google-analytics.com',
-          'https://www.google.it',
-          'https://stats.g.doubleclick.net',
+          { domain: 'https://www.google.com/', crossOrigin: true },
+          { domain: 'https://www.google-analytics.com', crossOrigin: true },
+          { domain: 'https://www.google.it', crossOrigin: true },
+          { domain: 'https://stats.g.doubleclick.net', crossOrigin: true },
         ],
       },
     },
