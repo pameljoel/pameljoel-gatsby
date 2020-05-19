@@ -14,6 +14,17 @@ module.exports = {
     `gatsby-plugin-sharp`,
     'gatsby-plugin-robots-txt',
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: [
+          'https://www.google.com/',
+          'https://www.google-analytics.com',
+          'https://www.google.it',
+          'https://stats.g.doubleclick.net',
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `pameljoel`,

@@ -8,6 +8,7 @@
     "@sentry/browser": "^5.7.1",
     "enzyme": "^3.10.0",
     "gatsby-cli": "^2.11.21",
+    "gatsby-plugin-preconnect": "^1.1.42",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
