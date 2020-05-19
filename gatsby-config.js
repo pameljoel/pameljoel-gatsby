@@ -3,6 +3,7 @@ module.exports = {
     title: `Pamel Joel Beltrè - Personal Portfolio site`,
     description: `I am a front end designer, I specialize in UI/UX Design and JavaScript development with React / AngularJS`,
     author: `@pameljoel`,
+    siteUrl: 'https://www.pameljoel.com',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,11 +12,12 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-robots-txt',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `pameljoel`,
-        short_name: `pj`,
+        short_name: `pameljoel`,
         start_url: `/`,
         background_color: `#12b5fc`,
         theme_color: `#12b5fc`,
@@ -27,4 +29,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};
