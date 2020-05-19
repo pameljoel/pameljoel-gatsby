@@ -12,15 +12,17 @@ const ScrollTop = () => {
     animateScroll.scrollTo(0, 0);
   };
 
-  useEffect(() => {
-    document.addEventListener('scroll', () => {
-      const viewportHeight = window.outerHeight;
-      const isAboveTheFold = window.scrollY < viewportHeight / 2;
+  const handleAboveTheFold = () => {
+    const viewportHeight = window.outerHeight;
+    const isAboveTheFold = window.scrollY < viewportHeight / 2;
 
-      if (isAboveTheFold !== isTop) {
-        setIsTop(isAboveTheFold);
-      }
-    });
+    if (isAboveTheFold !== isTop) {
+      setIsTop(isAboveTheFold);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleAboveTheFold, { passive: true });
   });
 
   return (
