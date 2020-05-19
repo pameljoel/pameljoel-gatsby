@@ -28,7 +28,8 @@ footer {
     display: inline-block;
     vertical-align: middle;
     .text {
-      display: none;
+      font-size: 0;
+      opacity: 0;
     }
     > a {
       width: 24px;
