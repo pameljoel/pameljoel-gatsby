@@ -9,33 +9,36 @@ export default class Education extends Component {
     const { data } = this.props;
     return (
       <article className="education-container">
-        {data &&
+        {data && (
           <div className="education-title">
-            <h1>Education</h1>
+            <h1>My Education</h1>
           </div>
-        }
-        {data &&
+        )}
+        {data && (
           <div className="education-content">
-            {data.map(item => <School data={item} key={item.school + item.year} />)}
+            {data.map((item) => (
+              <School data={item} key={item.school + item.year} />
+            ))}
           </div>
-        }
+        )}
       </article>
     );
   }
 }
 
 Education.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    city: PropTypes.string,
-    degree: PropTypes.string,
-    degreeType: PropTypes.string,
-    school: PropTypes.string,
-    subjects: PropTypes.arrayOf(PropTypes.string),
-    year: PropTypes.string,
-  })),
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      city: PropTypes.string,
+      degree: PropTypes.string,
+      degreeType: PropTypes.string,
+      school: PropTypes.string,
+      subjects: PropTypes.arrayOf(PropTypes.string),
+      year: PropTypes.string,
+    })
+  ),
 };
 
 Education.defaultProps = {
   data: [],
 };
-

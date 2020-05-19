@@ -1,7 +1,7 @@
 [
   {
   "year": "2019 - today",
-  "title": "Front end engineer",
+  "title": "Front-End Engineer",
   "company": "lastminute.com",
   "city": "Chiasso, Switzerland",
   "website": "https://www.lastminute.com",
@@ -50,7 +50,7 @@
 },
   {
     "year": "2017 - 2019",
-    "title": "Graphic Designer & Front-End Developer",
+    "title": "Lead Graphic Designer & Front-End Developer",
     "company": "Monrif.Net",
     "city": "Bologna",
     "website": "https://www.quotidiano.net",
@@ -113,7 +113,7 @@
   },
   {
     "year": "2016 - 2017",
-    "title": "Graphic Designer & Front-End Developer",
+    "title": "Graphic Designer & Front-end Developer",
     "contract": "External Consultant",
     "company": "Endurance Srl",
     "city": "Bologna",
@@ -158,7 +158,7 @@
   },
   {
     "year": "2014 - 2017",
-    "title": "Graphic Designer & Front-End Developer",
+    "title": "Graphic Designer & Front-end Developer",
     "company": "Esis Srl",
     "city": "Bologna",
     "website": "http://www.esis-italia.com",
@@ -214,7 +214,7 @@
   },
   {
     "year": "2013 - 2014",
-    "title": "Web Designer",
+    "title": "Graphic Designer & Front-end Developer",
     "contract": "Freelance",
     "company": "Sherbet Lemon",
     "city": "Bologna",
@@ -250,7 +250,7 @@
   },
   {
     "year": "2012",
-    "title": "Web Designer",
+    "title": "Graphic Designer & Front-end Developer",
     "contract": "Internship",
     "company": "Koinema",
     "city": "Bologna",
@@ -284,7 +284,7 @@
   },
   {
     "year": "2009",
-    "title": "Designer & Typographer",
+    "title": "Graphic Designer",
     "company": "Tipografia Luppi",
     "city": "Mantova",
     "description": "Tipografia Luppi is a small typography studio based in Mantova, they do all kind of typography work from offset printing to logo design, brochure design, business card design.",
@@ -314,7 +314,7 @@
   },
   {
     "year": "2006",
-    "title": "Designer & Typographer",
+    "title": "Graphic Designer",
     "company": "Tipografia Luppi",
     "city": "Mantova",
     "description": "Tipografia Luppi is a small typography studio based in Mantova, Luppi does all kind of typography work from offset printing to logo design, brochure design and business card design.",
@@ -347,7 +347,7 @@
   },
   {
     "year": "2004",
-    "title": "Graphics Guy",
+    "title": "Graphic Designer",
     "company": "Denny Service",
     "city": "Mirandola",
     "description": "Denny Service is a small printing business in Mirandola (MO), they print and design many different type of derivables.",

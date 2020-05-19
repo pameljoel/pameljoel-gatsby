@@ -9,7 +9,7 @@ export default class Career extends Component {
 
     const title = data && (
       <div className="career-title">
-        <h1>Career</h1>
+        <h1>My Career</h1>
       </div>
     );
 
