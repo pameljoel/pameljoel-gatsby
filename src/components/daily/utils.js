@@ -1,5 +1,5 @@
 import React from 'react';
-import DailyItem from './Image';
+import Image from './Image';
 
 const basePath = '/images/daily/works/';
 
@@ -39,18 +39,22 @@ export const showMonthName = (month) => {
 };
 
 export const showMonthImages = (month, callback) => {
+  const baseDelay = 0.1;
+  let delay = baseDelay;
   return month.dailiesOfTheMonth.map((daily) => {
     const { description, day, format } = daily;
     const imgSrc = `${basePath}${day}.${format}`;
     const id = `daily-${month.name}-${day}-${format}`;
+    delay = delay + 0.01;
     return (
-      <DailyItem
+      <Image
         description={description}
         day={day}
         format={format}
         imageSource={imgSrc}
         key={id}
         callback={callback}
+        delay={delay}
       />
     );
   });

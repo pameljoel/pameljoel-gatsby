@@ -1,22 +1,24 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import Fade from 'react-reveal/Fade';
+import { FadeIn } from '../utils/FadeIn';
 
 const Image = (props) => {
   const dailyItemStyle = {
     animationDelay: '1000ms',
   };
-  const { day, imageSource, description, callback } = props;
+  const { day, imageSource, description, callback, delay } = props;
   return (
-    <div className="daily-item" style={dailyItemStyle}>
-      <div className="day">{day}</div>
-      <img
-        className="daily-image"
-        src={imageSource}
-        alt={description}
-        onClick={() => callback(day)}
-      />
-    </div>
+    <FadeIn small delay={delay}>
+      <div className="daily-item" style={dailyItemStyle}>
+        <div className="day">{day}</div>
+        <img
+          className="daily-image"
+          src={imageSource}
+          alt={description}
+          onClick={() => callback(day)}
+        />
+      </div>
+    </FadeIn>
   );
 };
 
