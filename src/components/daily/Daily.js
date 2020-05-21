@@ -83,21 +83,22 @@ const Daily = () => {
 
   const hasLightBox = isLightBoxOpen && lightBoxUrl;
   const showImages = !isLoading && images;
-  const lightBox = hasLightBox && renderLightBox();
+  const LightBox = ({ hasLightBox }) => hasLightBox && renderLightBox();
 
-  const daily = showImages ? (
-    <Months months={months} callback={addImageToSlideShow} />
-  ) : (
-    <Loading isLoading={isLoading} />
-  );
+  const Daily = ({ showImages }) => {
+    return showImages ? <Months months={months} callback={addImageToSlideShow} /> : (
+      <Loading isLoading={isLoading} />
+    );
+  }
+
 
   return (
     <div>
       <Header />
       <div className="container">
         <DailyHeader />
-        {lightBox}
-        {daily}
+        <LightBox hasLightBox={hasLightBox} />
+        <Daily showImages={showImages} />
       </div>
     </div>
   );
