@@ -7,19 +7,19 @@ import HomeStaticContent from './HomeStaticContent';
 import Section from './Section';
 import { getData } from '../../helpers';
 import categoriesJson from '../../../static/resources/categories.json';
-import { sections } from '../../types';
+import { Sections } from '../../types';
 
 type props = {
-  sections: sections;
+  sections: Sections;
   isLoading: boolean;
 };
 
 type state = {
-  sections: sections | undefined;
+  sections: Sections | undefined;
   isLoading: boolean;
 };
 
-const createSections = (sections: sections) =>
+const createSections = (sections: Sections) =>
   sections.map((section) => {
     const { name, description, skills, tags } = section;
     return (

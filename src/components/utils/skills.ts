@@ -1,10 +1,10 @@
-import { skill, skills, skillsList } from '../../types';
+import { SkillType, SkillsType, SkillsList } from '../../types';
 
-const hasSkill = (array: skillsList, string: string) => {
+const hasSkill = (array: SkillsList, string: string) => {
   const isValid = Array.isArray(array) && array;
   return isValid ? array.includes(string) : false;
 };
 
-export const filterSkills = (stringArray: skillsList, skillsJson: skills) => {
-  return skillsJson.filter((skill: skill) => hasSkill(stringArray, skill.name));
+export const filterSkills = (stringArray: SkillsList, skillsJson: SkillsType) => {
+  return skillsJson.filter((skill: SkillType) => hasSkill(stringArray, skill.name));
 };

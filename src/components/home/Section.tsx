@@ -2,10 +2,10 @@ import Skills from '../skills/Skills';
 import Tags from '../tags/Tags';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { section } from '../../types';
+import { SectionType } from '../../types';
 import { FadeIn } from '../utils/FadeIn';
 
-const Section = (props: section) => {
+const Section = (props: SectionType) => {
   const { name, description, skills, tags } = props;
 
   const sectionTitle = name ? (

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
-import { tagObj, tooltip } from '../../types';
+import { TagObj, TooltipType } from '../../types';
 
 import './tag.scss';
 
-type props = tagObj;
+type props = TagObj;
 
-const showToolTip = (tooltip: tooltip) => {
+const showToolTip = (tooltip: TooltipType) => {
   const { description, name } = tooltip;
   return (
     <Tooltip

@@ -1,9 +1,9 @@
-export type skillsList = skillName[];
-export type skillName = string;
+export type SkillsList = SkillName[];
+export type SkillName = string;
 
-export type skills = skill[];
+export type SkillsType = SkillType[];
 
-export type skill = {
+export type SkillType = {
   name: string;
   percentage: number;
   description: string;
@@ -12,27 +12,27 @@ export type skill = {
   endDate?: number;
 };
 
-export type tags = tag[];
+export type Tags = Tag[];
 
-export type tagObj = {
+export type TagObj = {
   name: string;
   topSkill: boolean;
   newSkill: boolean;
   handleClick?: (name: string) => {};
 };
 
-export type tag = string;
+export type Tag = string;
 
-export type sections = section[];
+export type Sections = SectionType[];
 
-export type section = {
+export type SectionType = {
   name: string;
   description: string;
-  skills: skillsList;
-  tags: tags;
+  skills: SkillsList;
+  tags: Tags;
 };
 
-export type tooltip = {
+export type TooltipType = {
   description: string;
   name: string;
 };
