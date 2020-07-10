@@ -3,56 +3,38 @@ import PropTypes from 'prop-types';
 import PieChart from 'react-minimal-pie-chart';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
-
 import { breakpoints } from '../utils/breakpoints';
 import AdditionalInfo from './AdditionalInfo';
 import isBreakpoint from '../utils/isBreakpoint';
+import { SkillType } from '../../types';
+import { ProgressBar } from './ProgressBar';
+import {
+  EXPERIENCE_YEARS,
+  getExperience,
+  randomDelay,
+  skillLevel,
+} from './utils';
 
-export const getExperience = (startDate, endDate) => {
-  const now = new Date().getFullYear();
-  const end = endDate ? endDate : now;
-  return end - startDate;
-};
+type GraphProps = { percentage: number; chartObject: any[] };
 
-const EXPERIENCE = {
-  EXPERT: 'Expert',
-  PROFICIENT: 'Proficient',
-  COMPETENT: 'Competent',
-  LEARNING: 'Learning',
-};
-
-const EXPERIENCE_YEARS = {
-  4: EXPERIENCE.EXPERT.toLowerCase(),
-  3: EXPERIENCE.PROFICIENT.toLowerCase(),
-  2: EXPERIENCE.COMPETENT.toLowerCase(),
-  1: EXPERIENCE.LEARNING.toLowerCase(),
-};
-
-const skillLevel = (percentage) => {
-  if (percentage >= 90) return EXPERIENCE.EXPERT;
-  if (percentage >= 75) return EXPERIENCE.PROFICIENT;
-  if (percentage >= 50) return EXPERIENCE.COMPETENT;
-  return EXPERIENCE.LEARNING;
-};
-
-const randomDelay = () => Math.random().toFixed(2);
-
-const ProgressBar = (props) => {
-  const { delay, percentage } = props;
-  return (
-    <div className="progress" role="progress">
-      <div
-        className="meter"
-        style={{
-          width: `${percentage}%`,
-          animationDelay: `${delay}s`,
-        }}
-      />
-    </div>
+const ShowGraph = ({ percentage, chartObject }: GraphProps) => {
+  return isBreakpoint(breakpoints.xs) ? (
+    <ProgressBar percentage={percentage} delay={randomDelay()} />
+  ) : (
+    <PieChart
+      className="graph-item"
+      data={chartObject}
+      lineWidth={20}
+      rounded
+      totalValue={100}
+      animate
+      animationDuration={5000}
+      animationEasing="ease-in-out"
+    />
   );
 };
 
-const Skill = (props) => {
+const Skill = (props: SkillType) => {
   const {
     percentage,
     color,
@@ -69,7 +51,6 @@ const Skill = (props) => {
     setShowAdditionalInfo((prevState) => !prevState);
   };
 
-  const hasAdditionalInfo = showAdditionalInfo && hint;
   const chartObject = [
     {
       value: percentage,
@@ -77,47 +58,31 @@ const Skill = (props) => {
     },
   ];
 
-  const ShowGraph = () => {
-    return isBreakpoint(breakpoints.xs) ? (
-      <ProgressBar percentage={percentage} delay={randomDelay()} />
-    ) : (
-      <PieChart
-        className="graph-item"
-        data={chartObject}
-        lineWidth={20}
-        rounded
-        totalValue={100}
-        animate
-        animationDuration={5000}
-        animationEasing="ease-in-out"
-      />
-    );
-  };
-
   const graph = (
     <div className="skill-graph-image" data-test="skill-graph">
       <div className="skill-level-container">
         <div className="skill-level-label">Proficiency: </div>
         <div className="skill-level">{skillLevel(percentage)}</div>
       </div>
-      <ShowGraph />
+      <ShowGraph percentage={percentage} chartObject={chartObject} />
     </div>
   );
 
-  const additionalInfo = hasAdditionalInfo && (
+  const additionalInfo = showAdditionalInfo && hint && (
     <div data-test="skill-additional-info">
       <AdditionalInfo show={showAdditionalInfo} description={hint} />
     </div>
   );
 
-  const generateExperienceClass = (years) => {
+  const generateExperienceClass = (years: number) => {
     const baseClass = 'skill__experience--';
     if (years > 4) return `${baseClass}${EXPERIENCE_YEARS[4]}`;
     if (years < 1) return `${baseClass}${EXPERIENCE_YEARS[1]}`;
     return `${baseClass}${EXPERIENCE_YEARS[years]}`;
   };
 
-  const experienceClass = () => {
+  const addExperienceClass = () => {
+    if (!startDate || !endDate) return '';
     const years = getExperience(startDate, endDate);
     return generateExperienceClass(years);
   };
@@ -129,9 +94,9 @@ const Skill = (props) => {
       : base + ` since ${startDate}`;
   };
 
-  const skillExperience = startDate && (
+  const skillExperience = startDate && endDate && (
     <div
-      className={`skill__experience ${experienceClass()}`}
+      className={`skill__experience ${addExperienceClass()}`}
       data-test="skill-experience"
     >
       <Tooltip
@@ -190,7 +155,7 @@ Skill.propTypes = {
   color: PropTypes.string,
 };
 
-Skill.defaultProps = {
+Skill.defaeultProps = {
   hint: '',
   color: '#E38627',
 };

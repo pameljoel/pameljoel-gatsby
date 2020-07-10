@@ -1,14 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Skill, { getExperience } from './Skill';
-import { Tooltip } from 'react-tippy';
+import Skill from './Skill';
+import { getExperience } from './utils';
 
 let wrapper;
 const descriptionDefault = 'description';
 const nameDefault = 'description';
 const percentageDefault = 90;
 const hintDefault = undefined;
-const experienceDefault = 5;
+const startDateDefault = 1980;
+const endDateDefault = 2020;
 
 const createWrapper = (props = {}) => {
   const {
@@ -16,7 +17,8 @@ const createWrapper = (props = {}) => {
     name = nameDefault,
     percentage = percentageDefault,
     hint = hintDefault,
-    startDate = experienceDefault,
+    startDate = startDateDefault,
+    endDate = endDateDefault,
   } = props;
 
   return shallow(
@@ -26,6 +28,7 @@ const createWrapper = (props = {}) => {
       percentage={percentage}
       startDate={startDate}
       hint={hint}
+      endDate={endDate}
     />
   );
 };

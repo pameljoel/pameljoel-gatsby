@@ -7,6 +7,7 @@ export type SkillType = {
   name: string;
   percentage: number;
   description: string;
+  color?: string;
   hint?: string;
   startDate?: number;
   endDate?: number;
