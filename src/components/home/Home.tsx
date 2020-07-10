@@ -9,7 +9,10 @@ import { getData } from '../../helpers';
 import categoriesJson from '../../../static/resources/categories.json';
 import { sections } from '../../types';
 
-type props = {};
+type props = {
+  sections: sections;
+  isLoading: boolean;
+};
 
 type state = {
   sections: sections | undefined;
@@ -30,7 +33,7 @@ const createSections = (sections: sections) =>
     );
   });
 
-export default class Home extends Component {
+export default class Home extends Component<props> {
   state: state;
   constructor(props: props) {
     super(props);
