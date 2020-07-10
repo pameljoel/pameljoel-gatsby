@@ -14,11 +14,25 @@ export const getExperience = (startDate, endDate) => {
   return end - startDate;
 };
 
+const EXPERIENCE = {
+  EXPERT: 'Expert',
+  PROFICIENT: 'Proficient',
+  COMPETENT: 'Competent',
+  LEARNING: 'Learning',
+};
+
+const EXPERIENCE_YEARS = {
+  4: EXPERIENCE.EXPERT.toLowerCase(),
+  3: EXPERIENCE.PROFICIENT.toLowerCase(),
+  2: EXPERIENCE.COMPETENT.toLowerCase(),
+  1: EXPERIENCE.LEARNING.toLowerCase(),
+};
+
 const skillLevel = (percentage) => {
-  if (percentage >= 90) return 'Expert';
-  if (percentage >= 75) return 'Proficient';
-  if (percentage >= 50) return 'Competent';
-  return 'Learning';
+  if (percentage >= 90) return EXPERIENCE.EXPERT;
+  if (percentage >= 75) return EXPERIENCE.PROFICIENT;
+  if (percentage >= 50) return EXPERIENCE.COMPETENT;
+  return EXPERIENCE.LEARNING;
 };
 
 const randomDelay = () => Math.random().toFixed(2);
@@ -96,12 +110,16 @@ const Skill = (props) => {
     </div>
   );
 
+  const generateExperienceClass = (years) => {
+    const baseClass = 'skill__experience--';
+    if (years > 4) return `${baseClass}${EXPERIENCE_YEARS[4]}`;
+    if (years < 1) return `${baseClass}${EXPERIENCE_YEARS[1]}`;
+    return `${baseClass}${EXPERIENCE_YEARS[years]}`;
+  };
+
   const experienceClass = () => {
-    const experience = getExperience(startDate, endDate);
-    const baseClass = 'skill__experience';
-    if (experience < 2) return baseClass + '--beginner';
-    if (experience < 5) return baseClass + '--intermediate';
-    return baseClass + '--expert';
+    const years = getExperience(startDate, endDate);
+    return generateExperienceClass(years);
   };
 
   const experienceTooltip = () => {

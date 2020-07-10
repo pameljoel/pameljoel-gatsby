@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Skill, { getExperience } from './Skill';
+import { Tooltip } from 'react-tippy';
 
 let wrapper;
 const descriptionDefault = 'description';
@@ -49,13 +50,13 @@ describe('Skill', () => {
   });
 
   describe('experience', () => {
-    const selector = '[data-test="skill-experience"] ';
+    const selector = '[data-test="skill-experience"]';
     it('renders', () => {
       expect(wrapper.find(selector).length).toBe(1);
     });
 
-    it('has text', () => {
-      expect(wrapper.find(selector).text()).toBe('5 years');
+    it('has tooltip', () => {
+      expect(wrapper.find(selector).text()).toBe('<Tooltip />');
     });
   });
 
@@ -85,10 +86,11 @@ describe('Skill', () => {
     describe('has hint', () => {
       const selector = '[data-test="skill-additional-info"]';
       beforeEach(() => {
-        wrapper = createWrapper({ hint: 'string' });
+        wrapper = createWrapper({ hasAdditionalInfo: true, hint: 'string' });
       });
 
-      it('renders', () => {
+      it('renders hints', () => {
+        wrapper.find('header').simulate('click');
         expect(wrapper.find(selector).length).toBe(1);
       });
     });

@@ -206,11 +206,15 @@ $expert: #e3f6ee;
     float: right;
     cursor: pointer;
 
-    &--beginner {
+    &--learning {
       background-color: $beginner;
     }
 
-    &--intermediate {
+    &--proficient {
+      background-color: $intermediate;
+    }
+
+    &--competent {
       background-color: $intermediate;
     }
 
