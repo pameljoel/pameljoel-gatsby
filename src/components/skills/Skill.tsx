@@ -4,10 +4,10 @@ import PieChart from 'react-minimal-pie-chart';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
 import { breakpoints } from '../utils/breakpoints';
-import AdditionalInfo from './AdditionalInfo';
+import AdditionalInfo from './partials/AdditionalInfo';
 import isBreakpoint from '../utils/isBreakpoint';
 import { SkillType } from '../../types';
-import { ProgressBar } from './ProgressBar';
+import { ProgressBar } from './partials/ProgressBar';
 import {
   EXPERIENCE_YEARS,
   getExperience,
