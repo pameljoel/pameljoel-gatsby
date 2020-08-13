@@ -183,6 +183,17 @@ $expert: #e3f6ee;
         z-index: 1;
       }
 
+      &:before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border-radius: 50%;
+        border: 5px solid #e6e6e6;
+      }
+
       &:after {
         content: "";
         position: absolute;
@@ -191,7 +202,7 @@ $expert: #e3f6ee;
         right: 0;
         bottom: 0;
         border-radius: 50%;
-        border: 10px solid #eee;
+        border: 5px solid #eee;
       }
     }
   }
