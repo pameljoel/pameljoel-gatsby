@@ -9,8 +9,8 @@ export type SkillType = {
   description: string;
   color?: string;
   hint?: string;
-  startDate?: number;
-  endDate?: number;
+  startDate?: StartDate;
+  endDate?: EndDate;
 };
 
 export type Tags = Tag[];

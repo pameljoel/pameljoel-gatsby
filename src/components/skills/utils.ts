@@ -1,4 +1,4 @@
-export const getExperience = (startDate: number, endDate: number) => {
+export const getExperience = (startDate: number, endDate?: number) => {
   const now = new Date().getFullYear();
   const end = endDate ? endDate : now;
   return end - startDate;
