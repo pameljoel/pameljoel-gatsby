@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Skill from './Skill';
-import { getExperience } from './utils';
+import { getYearsOfExperience } from './utils';
 
 let wrapper;
 const descriptionDefault = 'description';
@@ -101,7 +101,7 @@ describe('Skill', () => {
 
   describe('getExperience', () => {
     describe('5 years', () => {
-      const experience = getExperience(2000, 2005);
+      const experience = getYearsOfExperience(2000, 2005);
       expect(experience).toBe(5);
     });
   });
