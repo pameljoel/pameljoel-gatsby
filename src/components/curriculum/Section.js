@@ -5,21 +5,19 @@ import Field from './Field';
 
 import './section.scss';
 
-export default class Section extends Component {
-  render() {
-    const { data } = this.props;
+const Section = ({ data }) => {
+  const container = data && (
+    <div className="fields-container">
+      {data.map((item, i) => (
+        <Field {...item} key={`field-container-${i}`} />
+      ))}
+    </div>
+  );
 
-    const container = data && (
-      <div className="fields-container">
-        {data.map((item, i) => (
-          <Field data={item} key={`field-container-${i}`} />
-        ))}
-      </div>
-    );
+  return <article className="cv-section">{container}</article>;
+};
 
-    return <article className="cv-section">{container}</article>;
-  }
-}
+export default Section;
 
 Section.propTypes = {
   data: PropTypes.arrayOf(
