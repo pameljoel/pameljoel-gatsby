@@ -28,7 +28,7 @@ const Section: React.FC<SectionType> = ({ name, description, skills }) => {
 
   return (
     <FadeIn>
-      <div className="card">
+      <div className="card" data-test="section">
         {sectionTitle}
         {sectionDescription}
         {sectionSkills}

@@ -11,7 +11,6 @@ describe('Section', () => {
   const TITLE_SELECTOR = '[data-test="section-title"]';
   const DESCRIPTION_SELECTOR = '[data-test="section-description"]';
   const SKILLS_SELECTOR = '[data-test="section-skills"]';
-  const TAGS_SELECTOR = '[data-test="section-tags"]';
 
   const oneSkills = [
     {
@@ -21,21 +20,11 @@ describe('Section', () => {
       pro: true,
     },
   ];
-  const oneTag = [
-    {
-      name: 'React',
-      description: 'an UI library',
-      percentage: '50',
-      topSkill: true,
-      newSkill: false,
-    },
-  ];
 
   const defaultProps = {
     name: 'Section name',
     description: 'Section description',
     skills: oneSkills,
-    tags: oneTag,
   };
 
   const createWrapper = (props = {}) => {
@@ -43,16 +32,10 @@ describe('Section', () => {
       name = defaultProps.name,
       description = defaultProps.description,
       skills = defaultProps.skills,
-      tags = defaultProps.tags,
     } = props;
 
     return shallow(
-      <Section
-        name={name}
-        description={description}
-        skills={skills}
-        tags={tags}
-      />
+      <Section name={name} description={description} skills={skills} />
     );
   };
 
@@ -92,16 +75,6 @@ describe('Section', () => {
 
     it('renders skills', () => {
       expect(wrapper.find(Skills).length).toBe(1);
-    });
-  });
-
-  describe('tags', () => {
-    it('has a tags section', () => {
-      expect(wrapper.find(TAGS_SELECTOR).length).toBe(1);
-    });
-
-    it('renders tags', () => {
-      expect(wrapper.find(Tags).length).toBe(1);
     });
   });
 });
