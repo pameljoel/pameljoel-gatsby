@@ -24,7 +24,7 @@ export type TagObj = {
 
 export type Tag = string;
 
-export type Sections = SectionType[];
+export type Sections = SectionType[]?;
 
 export type SectionType = {
   name: string;
