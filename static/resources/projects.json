@@ -37,7 +37,7 @@
     "myWork": "In this project I was the lead Front-end developer, I worked on the scaffolding, defining the file structure and code style, created the HTML interface and styled it with SASS Preprocessor, I worked with REST APIs to implement CRUD functionalities in the application.",
     "category": "Web Development",
     "job": "Lead Front-end developer",
-    "sliderId": 0,
+    "sliderId": 1,
     "images": [
       "mockup-1.jpg",
       "mockup-2.jpg"
@@ -68,7 +68,7 @@
     "category": "Web Development",
     "job": "Interface developer",
     "url": "https://it.rinascimento.com/",
-    "sliderId": 1,
+    "sliderId": 2,
     "images": [
       "mockup-1.jpg",
       "mockup-2.jpg",
@@ -95,7 +95,7 @@
     "category": "Web Development",
     "job": "Front-end Developer",
     "url": "https://b2b.rinascimento.com/",
-    "sliderId": 2,
+    "sliderId": 3,
     "images": [
       "mockup-1.jpg"
     ],
@@ -122,7 +122,7 @@
     "category": "Web Design & Content Management",
     "job": "Graphic Designer & Developer",
     "url": "https://www.agro.basf.it/",
-    "sliderId": 3,
+    "sliderId": 4,
     "images": [
       "mockup-1.jpg"
     ],
@@ -154,7 +154,7 @@
     "category": "Web Design & Content Management",
     "job": "Graphic Designer & Developer",
     "url": "http://www.il-piu-grande-lavoro-sulla-terra.it/home/",
-    "sliderId": 4,
+    "sliderId": 5,
     "images": [
       "mockup-1.jpg"
     ],
@@ -176,7 +176,7 @@
     "category": "Web Design",
     "job": "Graphic Designer & Front-end Developer",
     "url": "http://clempad.clementoni.com/it/",
-    "sliderId": 5,
+    "sliderId": 6,
     "images": [
       "mockup-1.jpg"
     ],
@@ -206,7 +206,7 @@
     "myWork": "I worked on the website concept and development as well as the branding.",
     "category": "Web Development & Design",
     "job": "Branding & web Design",
-    "sliderId": 6,
+    "sliderId": 7,
     "images": [
       "mockup-1.jpg"
     ],
@@ -238,7 +238,7 @@
       "enterprenourship",
       "jquery"
     ],
-    "sliderId": 7
+    "sliderId": 8
   },
   {
     "slug": "amus",
@@ -257,7 +257,7 @@
       "UX",
       "UI"
     ],
-    "sliderId": 8
+    "sliderId": 9
   },
   {
     "slug": "wim",
@@ -277,6 +277,6 @@
       "Mockup",
       "User Interface"
     ],
-    "sliderId": 9
+    "sliderId": 10
   }
 ]
