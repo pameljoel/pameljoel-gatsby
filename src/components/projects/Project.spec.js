@@ -1,49 +1,51 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 import Project from './Project';
 
 import projectsStub from '../../../static/resources/projects.json';
 
-const project = projectsStub[1];
+const project = projectsStub[2];
+console.log(project);
 
 describe('Project', () => {
   const wrapper = shallow(<Project data={project} />);
-  const findDataTest = (selector) => {
+  const elementLength = (selector) => {
     return wrapper.find(`[data-test="project-${selector}"]`).length;
   };
 
   it('should have a date', () => {
-    expect(findDataTest('date')).toBe(1);
+    expect(elementLength('date')).toBe(1);
   });
 
   it('should have a name', () => {
-    expect(findDataTest('name')).toBe(1);
+    expect(elementLength('name')).toBe(1);
   });
 
   it('should have a category', () => {
-    expect(findDataTest('category')).toBe(1);
+    expect(elementLength('category')).toBe(1);
   });
 
   it('should have an about', () => {
-    expect(findDataTest('about')).toBe(1);
+    expect(elementLength('about')).toBe(1);
   });
 
   it('should have a description', () => {
-    expect(findDataTest('description')).toBe(1);
+    expect(elementLength('description')).toBe(1);
   });
 
   it('should have a link', () => {
-    expect(findDataTest('link')).toBe(1);
+    expect(elementLength('link')).toBe(1);
   });
 
   it('should have images', () => {
-    expect(findDataTest('images')).toBe(1);
+    expect(elementLength('images')).toBe(1);
   });
 
   it('should have a work description', () => {
-    expect(findDataTest('work')).toBe(1);
+    expect(elementLength('work')).toBe(1);
   });
 
   it('should have Tags', () => {
-    expect(findDataTest('tags')).toBe(1);
+    expect(elementLength('tags')).toBe(1);
   });
 });
