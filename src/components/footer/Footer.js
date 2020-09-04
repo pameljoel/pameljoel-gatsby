@@ -20,41 +20,41 @@ const skypeSVG = (
   </svg>
 );
 
-export default class Footer extends Component {
-  render() {
-    return (
-      <footer className="footer">
-        <div className="footer-text">
-          <p className="footer-name">
-            <strong>PAMEL JOEL BELTRÈ</strong>
-          </p>
-          <div>
-            <p className="footer-role">Graphic Designer & FrontEnd Developer</p>
-            <div className="social">
-              <a
-                href="https://www.linkedin.com/in/pameljoel/"
-                target="_blank"
-                name="Linkedin profile"
-                rel="noopener noreferrer"
-                className="linkedin"
-              >
-                <span className="text">My Linkedin profile</span>
-                {linkedInSVG}
-              </a>
-              <a
-                href="skype:pjjjjk?chat"
-                name="My skype name"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="skype"
-              >
-                <span className="text">Call me on Skype</span>
-                {skypeSVG}
-              </a>
-            </div>
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-text">
+        <p className="footer-name">
+          <strong>PAMEL JOEL BELTRÈ</strong>
+        </p>
+        <div>
+          <p className="footer-role">Graphic Designer & FrontEnd Developer</p>
+          <div className="social">
+            <a
+              href="https://www.linkedin.com/in/pameljoel/"
+              target="_blank"
+              name="Linkedin profile"
+              rel="noopener noreferrer"
+              className="linkedin"
+            >
+              <span className="text">My Linkedin profile</span>
+              {linkedInSVG}
+            </a>
+            <a
+              href="skype:pjjjjk?chat"
+              name="My skype name"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="skype"
+            >
+              <span className="text">Call me on Skype</span>
+              {skypeSVG}
+            </a>
           </div>
         </div>
-      </footer>
-    );
-  }
-}
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
