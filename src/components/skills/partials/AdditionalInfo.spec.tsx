@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Hint from './HintMarkup';
+import AdditionalInfo from './AdditionalInfo';
 
 type Props = {
   showAdditionalInfo: boolean;
@@ -10,7 +10,7 @@ type Props = {
 
 const createWrapper = ({ title, hint, showAdditionalInfo }: Props) => {
   return shallow(
-    <Hint title={title} showAdditionalInfo={showAdditionalInfo} hint={hint} />
+    <AdditionalInfo title={title} showAdditionalInfo={showAdditionalInfo} hint={hint} />
   );
 };
 

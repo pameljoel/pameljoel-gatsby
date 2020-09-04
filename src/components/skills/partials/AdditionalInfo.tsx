@@ -8,7 +8,7 @@ type Props = {
   title: string;
 };
 
-const Hint: React.FC<Props> = ({
+const AdditionalInfo: React.FC<Props> = ({
   showAdditionalInfo,
   hint,
   title = 'How can I help you?',
@@ -33,4 +33,4 @@ const Hint: React.FC<Props> = ({
   ) : null;
 };
 
-export default Hint;
+export default AdditionalInfo;

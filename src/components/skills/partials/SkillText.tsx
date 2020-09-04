@@ -1,6 +1,6 @@
 import SkillTitle from './SkillTitle';
 import SkillDescription from './SkillDescription';
-import Hint from './HintMarkup';
+import AdditionalInfo from './AdditionalInfo';
 import React from 'react';
 
 type Props = {
@@ -30,7 +30,7 @@ const SkillText: React.FC<Props> = ({
       toggleAdditionalInfo={toggleAdditionalInfo}
     />
     <SkillDescription description={description} />
-    <Hint showAdditionalInfo={showAdditionalInfo} hint={hint} title={name} />
+    <AdditionalInfo showAdditionalInfo={showAdditionalInfo} hint={hint} title={name} />
   </article>
 );
 
