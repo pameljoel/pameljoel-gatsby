@@ -10,10 +10,8 @@ type Props = {
   startDate: StartDate;
   endDate?: EndDate;
   description: string;
-  hint: string;
+  hint?: string;
   color?: string;
-  showAdditionalInfo: boolean;
-  toggleAdditionalInfo: () => void;
 };
 
 const Skill: React.FC<Props> = ({

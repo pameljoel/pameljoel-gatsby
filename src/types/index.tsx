@@ -9,7 +9,7 @@ export type SkillType = {
   description: string;
   color?: string;
   hint?: string;
-  startDate?: StartDate;
+  startDate: StartDate;
   endDate?: EndDate;
 };
 
