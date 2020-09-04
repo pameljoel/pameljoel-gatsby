@@ -1,12 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ProjectThumb from './ProjectThumb';
-import { ProjectContext } from '../../Context';
 
-const RelatedProject = () => {
-  const { setSelectedProject, project } = this.props;
+const RelatedProject = ({ setSelectedProject, project }) => {
   return (
-    <Fragment>
+    <>
       <div
         className="related-project-image"
         role="button"
@@ -16,11 +14,9 @@ const RelatedProject = () => {
       >
         <ProjectThumb project={project} />
       </div>
-    </Fragment>
+    </>
   );
 };
-
-RelatedProject.contextType = ProjectContext;
 
 export default RelatedProject;
 
