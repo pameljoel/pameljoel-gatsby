@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Tags from './../tags/Tags';
 
-export const Project = ({
+const Project = ({
   date,
   name,
   category,
@@ -122,6 +122,8 @@ export const Project = ({
   );
 };
 
+export default Project;
+
 Project.propTypes = {
   date: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -135,5 +137,3 @@ Project.propTypes = {
   url: PropTypes.string,
   tags: PropTypes.array,
 };
-
-export default Project;
