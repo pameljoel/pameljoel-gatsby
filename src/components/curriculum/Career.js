@@ -3,37 +3,35 @@ import PropTypes from 'prop-types';
 import Company from './Company';
 import './career.scss';
 
-export default class Career extends Component {
-  render() {
-    const { data, setSelectedProject } = this.props;
+const Career = ({ data, setSelectedProject }) => {
+  const title = data && (
+    <div className="career-title">
+      <h1>My Career</h1>
+    </div>
+  );
 
-    const title = data && (
-      <div className="career-title">
-        <h1>My Career</h1>
-      </div>
-    );
-
-    const company = (item) => {
-      const { year, company } = item;
-      return (
-        <Company
-          data={item}
-          key={company + year}
-          setSelectedProject={setSelectedProject}
-        />
-      );
-    };
-
-    const content = data && data.map((item) => company(item));
-
+  const company = (item) => {
+    const { year, company } = item;
     return (
-      <article className="career-container">
-        {title}
-        <div className="career-content">{content}</div>
-      </article>
+      <Company
+        data={item}
+        key={company + year}
+        setSelectedProject={setSelectedProject}
+      />
     );
-  }
-}
+  };
+
+  const content = data && data.map((item) => company(item));
+
+  return (
+    <article className="career-container">
+      {title}
+      <div className="career-content">{content}</div>
+    </article>
+  );
+};
+
+export default Career;
 
 Career.propTypes = {
   data: PropTypes.arrayOf(
