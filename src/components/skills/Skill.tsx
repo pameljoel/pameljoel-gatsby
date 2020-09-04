@@ -11,7 +11,7 @@ type Props = {
   endDate?: EndDate;
   description: string;
   hint: string;
-  color: string;
+  color?: string;
   showAdditionalInfo: boolean;
   toggleAdditionalInfo: () => void;
 };

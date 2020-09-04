@@ -18,7 +18,7 @@ describe('Experience', () => {
     expect(wrapper.find(selector).text()).toBe(expected);
   };
 
-  it('should render', () => {
+  it('renders', () => {
     const wrapper = shallow(<Experience startDate={2000} />);
     expect(wrapper.length).toBe(1);
   });
