@@ -5,7 +5,6 @@ import Project from './Project';
 import projectsStub from '../../../static/resources/projects.json';
 
 const project = projectsStub[2];
-console.log(project);
 
 describe('Project', () => {
   const wrapper = shallow(<Project data={project} />);
