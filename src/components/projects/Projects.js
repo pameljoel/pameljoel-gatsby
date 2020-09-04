@@ -59,7 +59,7 @@ const Projects = (props) => {
               <Slider {...settings}>
                 {projects.map((project) => (
                   <div key={`project-slider-${project.slug}`}>
-                    <Project data={project} />
+                    <Project {...project} />
                   </div>
                 ))}
               </Slider>

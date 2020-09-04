@@ -7,7 +7,7 @@ import projectsStub from '../../../static/resources/projects.json';
 const project = projectsStub[2];
 
 describe('Project', () => {
-  const wrapper = shallow(<Project data={project} />);
+  const wrapper = shallow(<Project {...project} />);
   const elementLength = (selector) => {
     return wrapper.find(`[data-test="project-${selector}"]`).length;
   };
