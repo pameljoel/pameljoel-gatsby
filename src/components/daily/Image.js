@@ -1,6 +1,5 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import { FadeIn } from '../utils/FadeIn';
 
 const Image = (props) => {
   const dailyItemStyle = {
@@ -8,17 +7,15 @@ const Image = (props) => {
   };
   const { day, imageSource, description, callback, delay } = props;
   return (
-    <FadeIn small delay={delay}>
-      <div className="daily-item" style={dailyItemStyle}>
-        <div className="day">{day}</div>
-        <img
-          className="daily-image"
-          src={imageSource}
-          alt={description}
-          onClick={() => callback(day)}
-        />
-      </div>
-    </FadeIn>
+    <div className="daily-item" style={dailyItemStyle}>
+      <div className="day">{day}</div>
+      <img
+        className="daily-image"
+        src={imageSource}
+        alt={description}
+        onClick={() => callback(day)}
+      />
+    </div>
   );
 };
 
