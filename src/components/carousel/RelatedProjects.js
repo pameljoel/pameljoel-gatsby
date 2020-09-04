@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 
 import RelatedProject from './RelatedProject';
-import CloseButton from './../buttons/CloseButton';
+import CloseButton from '../buttons/CloseButton';
 
 import './relatedProjects.scss';
 
