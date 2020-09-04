@@ -1,8 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Daily from './Daily';
+import { shallow } from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render( <Daily />, div);
+describe('Daily', () => {
+  const wrapper = shallow(<Daily />);
+
+  it('renders', () => {
+    const selector = '[data-test="daily"]';
+    expect(wrapper.find(selector).length).toBe(1);
+  });
 });

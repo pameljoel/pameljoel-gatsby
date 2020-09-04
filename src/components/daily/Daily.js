@@ -86,14 +86,15 @@ const Daily = () => {
   const LightBox = ({ hasLightBox }) => hasLightBox && renderLightBox();
 
   const Daily = ({ showImages }) => {
-    return showImages ? <Months months={months} callback={addImageToSlideShow} /> : (
+    return showImages ? (
+      <Months months={months} callback={addImageToSlideShow} />
+    ) : (
       <Loading isLoading={isLoading} />
     );
-  }
-
+  };
 
   return (
-    <div>
+    <div data-test="daily">
       <Header />
       <div className="container">
         <DailyHeader />
