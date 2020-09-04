@@ -5,16 +5,19 @@ import Error from './Error';
 import loading from './loading.gif';
 import './loading.scss';
 
-export default class Loading extends Component {
-  render() {
-    const { error, isLoading } = this.props;
-    return (
-      <div className="loading-panel">
-        {isLoading ? <img src={loading} alt="loading" /> : (error && <Error message={error} />)}
-      </div>
-    );
-  }
-}
+const Loading = ({ error, isLoading }) => {
+  return (
+    <div className="loading-panel">
+      {isLoading ? (
+        <img src={loading} alt="loading" />
+      ) : (
+        error && <Error message={error} />
+      )}
+    </div>
+  );
+};
+
+export default Loading;
 
 Loading.propTypes = {
   error: PropTypes.string,
