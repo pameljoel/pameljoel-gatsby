@@ -45,8 +45,7 @@ const Content = (props) => {
   );
 };
 
-const Curriculum = (props) => {
-  const { setSelectedProject } = props;
+const Curriculum = ({ setSelectedProject }) => {
   const [personal, setPersonal] = useState(null);
   const [education, setEducation] = useState(null);
   const [career, setCareer] = useState(null);

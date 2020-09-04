@@ -17,17 +17,18 @@ const SharedState = (props) => {
   };
 
   const publicAPI = {
-    selectedProject: selectedProject,
-    setSelectedProject: setSelectedProject,
+    selectedProject,
+    setSelectedProject,
     removeSelectedProject,
   };
+
   return (
-    <Fragment>
+    <>
       <Navigation />
       <ScrollTop />
       {cloneElement(Children.only(props.children), publicAPI)}
       <Footer />
-    </Fragment>
+    </>
   );
 };
 

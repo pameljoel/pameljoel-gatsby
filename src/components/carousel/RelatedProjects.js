@@ -23,13 +23,12 @@ const settings = {
   ],
 };
 
-const showResults = (props) => {
-  const {
-    projects,
-    selected,
-    emptyFilteredProjects,
-    setSelectedProject,
-  } = props;
+const showResults = ({
+  projects,
+  selected,
+  emptyFilteredProjects,
+  setSelectedProject,
+}) => {
   return (
     <div className="related-projects__results">
       <ResultsHeader
@@ -83,14 +82,12 @@ const ResultsHeader = (props) => {
   );
 };
 
-const RelatedProjects = (props) => {
-  const {
-    projects,
-    selected,
-    emptyFilteredProjects,
-    setSelectedProject,
-  } = props;
-
+const RelatedProjects = ({
+  projects,
+  selected,
+  emptyFilteredProjects,
+  setSelectedProject,
+}) => {
   const hasResults = !!selected && projects.length > 0;
   const hasNoResults = !!selected && projects.length === 0;
   return (
