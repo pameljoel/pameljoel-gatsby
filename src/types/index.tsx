@@ -30,7 +30,6 @@ export type SectionType = {
   name: string;
   description: string;
   skills: SkillsList;
-  tags: Tags;
 };
 
 export type TooltipType = {

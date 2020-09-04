@@ -1,13 +1,9 @@
 import Skills from '../skills/Skills';
-import Tags from '../tags/Tags';
 import React from 'react';
-import PropTypes from 'prop-types';
 import { SectionType } from '../../types';
 import { FadeIn } from '../utils/FadeIn';
 
-const Section = (props: SectionType) => {
-  const { name, description, skills, tags } = props;
-
+const Section: React.FC<SectionType> = ({ name, description, skills }) => {
   const sectionTitle = name ? (
     <FadeIn small>
       <h2 className="title" data-test="section-title">
@@ -30,17 +26,6 @@ const Section = (props: SectionType) => {
     </div>
   ) : null;
 
-  const sectionTags = tags ? (
-    <FadeIn small>
-      <div data-test="section-tags">
-        <h3>Other {name} skills:</h3>
-        <div className="tags">
-          <Tags data={tags} />
-        </div>
-      </div>
-    </FadeIn>
-  ) : null;
-
   return (
     <FadeIn>
       <div className="card">
@@ -50,13 +35,6 @@ const Section = (props: SectionType) => {
       </div>
     </FadeIn>
   );
-};
-
-Section.propTypes = {
-  name: PropTypes.string,
-  description: PropTypes.string,
-  skills: PropTypes.array,
-  tags: PropTypes.array,
 };
 
 export default Section;
