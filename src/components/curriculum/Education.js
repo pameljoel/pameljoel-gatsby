@@ -15,7 +15,7 @@ const Education = ({ data }) => {
       {data && (
         <div className="education-content">
           {data.map((item) => (
-            <School data={item} key={item.school + item.year} />
+            <School {...item} key={item.school + item.year} />
           ))}
         </div>
       )}

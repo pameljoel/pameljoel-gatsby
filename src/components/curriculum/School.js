@@ -6,8 +6,7 @@ import Tags from './../tags/Tags';
 import './school.scss';
 import './../card.scss';
 
-const School = ({ data }) => {
-  const { degree, degreeType, school, city, year, subjects } = data;
+const School = ({ degree, degreeType, school, city, year, subjects }) => {
   return (
     <article className="card school-container">
       <header className="school-role">
@@ -45,12 +44,10 @@ const School = ({ data }) => {
 export default School;
 
 School.propTypes = {
-  data: PropTypes.shape({
-    degree: PropTypes.string,
-    degreeType: PropTypes.string,
-    school: PropTypes.string,
-    city: PropTypes.string,
-    year: PropTypes.string,
-    subjects: PropTypes.arrayOf(PropTypes.string),
-  }),
+  degree: PropTypes.string,
+  degreeType: PropTypes.string,
+  school: PropTypes.string,
+  city: PropTypes.string,
+  year: PropTypes.string,
+  subjects: PropTypes.arrayOf(PropTypes.string),
 };
