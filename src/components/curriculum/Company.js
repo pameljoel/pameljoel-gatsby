@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { PropTypes } from 'prop-types';
 
 import Tags from './../tags/Tags';
-import RelatedProjects from './../carousel/RelatedProjects';
+import RelatedProjects from '../relatedProjects/RelatedProjects';
 
 import { getData } from '../../helpers';
 import projectsJSON from '../../../static/resources/projects.json';

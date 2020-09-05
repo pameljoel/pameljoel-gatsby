@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProjectThumb from './ProjectThumb';
+import ProjectThumb from '../carousel/ProjectThumb';
 
 const RelatedProject = ({ setSelectedProject, project }) => {
   return (

@@ -1,4 +1,4 @@
-@import "./../../mixins.scss";
+@import "../../mixins";
 
 $dots-offset-bottom: 40px;
 
@@ -21,10 +21,7 @@ $dots-offset-bottom: 40px;
         margin-bottom: 0;
       }
 
-      &.has-results {
-
-      }
-
+      &.has-results {}
     }
   }
 
