@@ -1,10 +1,10 @@
-import ErrorBoundary from '../status/ErrorBoundary'
-import TextLoop from 'react-text-loop'
-import Fade from 'react-reveal/Fade'
-import Link from 'gatsby-link'
-import { arrowDownSVG, facebookSVG, linkedInSVG, skypeSVG } from '../utils/svg'
-import { openCrisp } from '../crisp/Crisp'
-import React from 'react'
+import ErrorBoundary from '../status/ErrorBoundary';
+import TextLoop from 'react-text-loop';
+import Fade from 'react-reveal/Fade';
+import Link from 'gatsby-link';
+import { arrowDownSVG, facebookSVG, linkedInSVG, skypeSVG } from '../utils/svg';
+import { openCrisp } from '../crisp/Crisp';
+import React from 'react';
 
 const StaticContent = () => {
   return (
@@ -145,7 +145,7 @@ const StaticContent = () => {
         <div className="big-header-background" />
       </header>
     </ErrorBoundary>
-  )
-}
+  );
+};
 
-export default StaticContent
+export default StaticContent;

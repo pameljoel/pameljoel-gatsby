@@ -3,7 +3,7 @@ import Loading from '../status/Loading';
 import './../card.scss';
 import ErrorBoundary from './../status/ErrorBoundary';
 import './home.scss';
-import HomeStaticContent from './HomeStaticContent';
+import StaticContent from './StaticContent';
 import Section from './Section';
 import { getData } from '../../helpers';
 import categoriesJson from '../../../static/resources/categories.json';
@@ -13,14 +13,13 @@ const createSections = (sections: Sections) => {
   if (!sections) return null;
 
   return sections.map((section) => {
-    const { name, description, skills, tags } = section;
+    const { name, description, skills } = section;
     return (
       <Section
         key={name}
         name={name}
         description={description}
         skills={skills}
-        tags={tags}
       />
     );
   });
@@ -44,7 +43,7 @@ const Home: React.FC = () => {
 
   return (
     <div data-test="home">
-      <HomeStaticContent />
+      <StaticContent />
       <ErrorBoundary isLoading={isLoading}>
         <div className="container">
           <div className="homepage-container">
