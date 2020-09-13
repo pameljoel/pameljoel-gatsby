@@ -6,15 +6,28 @@ import { arrowDownSVG, facebookSVG, linkedInSVG, skypeSVG } from '../utils/svg';
 import { openCrisp } from '../crisp/Crisp';
 import React from 'react';
 
+const greetings = ['Hello,', 'Hola,', 'Ciao,', 'Guten tag,'];
+
+const jobTitles = [
+  'Front end engineer',
+  'Full stack Designer',
+  'Front-end Developer',
+  'Graphic Designer',
+  'UX Designer',
+];
+
 const StaticContent = () => {
   return (
     <ErrorBoundary>
       <header className="big-header home" data-test="static">
         <div className="big-header-content">
-          <TextLoop interval={10000}>
-            <h2>HELLO,</h2>
-            <h2>Hola,</h2>
-            <h2>Ciao,</h2>
+          <TextLoop
+            interval={10000}
+            springConfig={{ stiffness: 180, damping: 12 }}
+          >
+            {greetings.map((greeting) => (
+              <h2 key={greeting}>{greeting}</h2>
+            ))}
           </TextLoop>
 
           <Fade big cascade>
@@ -72,11 +85,14 @@ const StaticContent = () => {
                 <span>I'am a</span>
               </div>
               <div className="job-title">
-                <TextLoop interval={1000} adjustingSpeed={2000}>
-                  <h1>Full stack Designer</h1>
-                  <h1>Graphic Designer</h1>
-                  <h1>UX Designer</h1>
-                  <h1>Front-end Developer</h1>
+                <TextLoop
+                  interval={700}
+                  adjustingSpeed={2000}
+                  springConfig={{ stiffness: 180, damping: 15 }}
+                >
+                  {jobTitles.map((title) => (
+                    <h1 key={title}>{title}</h1>
+                  ))}
                 </TextLoop>
               </div>
             </div>
