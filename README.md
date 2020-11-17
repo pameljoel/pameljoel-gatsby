@@ -1,3 +1,5 @@
+![pameljoel-gatsby](https://socialify.git.ci/pameljoel/pameljoel-gatsby/image?description=1&font=KoHo&language=1&owner=1&pattern=Signal&theme=Light)
+
 # My personal website
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0d10e7c4-a209-41b1-ba95-1d799875f7ca/deploy-status)](https://app.netlify.com/sites/pameljoel-gatsby/deploys)
