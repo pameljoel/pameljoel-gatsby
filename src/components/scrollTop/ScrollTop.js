@@ -21,11 +21,15 @@ const ScrollTop = () => {
     }
   };
 
-  useEffect(() => {
+  const addEvent = () =>
     document.addEventListener('scroll', handleAboveTheFold, { passive: true });
-    return document.removeEventListener('scroll', handleAboveTheFold, {
-      passive: true,
-    });
+  const removeEvent = () =>
+    document.removeEventListener('scroll', handleAboveTheFold, true);
+
+  useEffect(() => {
+    addEvent();
+
+    return removeEvent();
   });
 
   return (
