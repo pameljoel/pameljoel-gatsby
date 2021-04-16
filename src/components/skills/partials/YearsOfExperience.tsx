@@ -9,29 +9,26 @@ type Props = {
   tooltipName: string;
 };
 
-const YearsOfExperience: React.FC<Props> = ({
-  startDate,
-  endDate,
-  tooltipName,
-}) => {
+const YearsOfExperience: React.FC<Props> = ({ startDate, endDate, tooltipName: name }) => {
+  const experienceClass = generateExperienceClassName({
+    startDate,
+    endDate,
+  });
+
+  const title = formatExperienceTooltip({
+    name,
+    startDate,
+    endDate,
+  });
+
   return startDate ? (
-    <div
-      className={`skill__experience ${generateExperienceClassName({
-        startDate,
-        endDate,
-      })}`}
-      data-test="skill-experience"
-    >
+    <div className={`skill__experience ${experienceClass}`} data-test="skill-experience">
       <Tooltip
         className="tag__tooltip"
-        title={formatExperienceTooltip({
-          name: tooltipName,
-          startDate,
-          endDate,
-        })}
+        title={title}
         position="top"
         trigger="mouseenter"
-        data-test={`tooltip-${tooltipName}`}
+        data-test={`tooltip-${name}`}
         arrow={true}
       >
         <Experience startDate={startDate} endDate={endDate} />
