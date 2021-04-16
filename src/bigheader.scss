@@ -139,6 +139,8 @@
     }
 
     .job-title {
+      height: 100px; // to avoid trembling in the page when the text changes
+
       h1 {
         font-size: 36px;
         font-weight: 700;
