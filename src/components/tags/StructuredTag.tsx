@@ -22,7 +22,7 @@ const showToolTip = (tooltip: TooltipType) => {
   );
 };
 
-export default function ObjectTag(props: props) {
+export default function StructuredTag(props: props) {
   const { name, topSkill, newSkill, handleClick } = props;
 
   const hasTooltip = topSkill || newSkill;

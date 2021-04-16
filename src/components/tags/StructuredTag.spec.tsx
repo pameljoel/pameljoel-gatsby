@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ObjectTag from './ObjectTag';
+import StructuredTag from './StructuredTag';
 
 type tag = {
   name?: string;
@@ -8,6 +8,10 @@ type tag = {
   newSkill?: boolean;
   handleClick?: (name: string) => {};
 };
+
+const topSelector = '[data-test="tooltip-top"]';
+const newSelector = '[data-test="tooltip-new"]';
+const noop = jest.fn(() => 'string');
 
 describe('tag', () => {
   const createWrapper = (props: tag) => {
@@ -18,7 +22,7 @@ describe('tag', () => {
       handleClick = undefined,
     } = props;
     const tag = (
-      <ObjectTag
+      <StructuredTag
         name={name}
         newSkill={newSkill}
         topSkill={topSkill}
@@ -28,16 +32,12 @@ describe('tag', () => {
     return shallow(tag);
   };
 
-  const topSelector = '[data-test="tooltip-top"]';
-  const newSelector = '[data-test="tooltip-new"]';
-  const noop = jest.fn(() => 'string');
-
   it('renders', () => {
     const wrapper = createWrapper({});
     expect(wrapper.length).toBe(1);
   });
 
-  describe('has TOP label', () => {
+  describe('TOP tooltip', () => {
     const wrapper = createWrapper({ topSkill: true });
 
     it('has TOP tooltip', () => {
@@ -49,7 +49,7 @@ describe('tag', () => {
     });
   });
 
-  describe('has NEW label', () => {
+  describe('NEW tooltip', () => {
     const wrapper = createWrapper({ newSkill: true });
 
     it('has NEW tooltip', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import ObjectTag from './ObjectTag';
+import StructuredTag from './StructuredTag';
 import './tags.scss';
 import { StringTag } from './StringTag';
 
@@ -13,7 +13,7 @@ const Tags = ({ data: tags, handleClick }) => {
       {tags.map((tag, i) => {
         const { name, topSkill, newSkill } = tag;
         return isObject(tag) ? (
-          <ObjectTag
+          <StructuredTag
             name={name}
             topSkill={topSkill}
             newSkill={newSkill}
