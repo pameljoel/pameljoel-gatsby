@@ -24,7 +24,11 @@ const YearsOfExperience: React.FC<Props> = ({
     >
       <Tooltip
         className="tag__tooltip"
-        title={formatExperienceTooltip({ startDate, endDate })}
+        title={formatExperienceTooltip({
+          name: tooltipName,
+          startDate,
+          endDate,
+        })}
         position="top"
         trigger="mouseenter"
         data-test={`tooltip-${tooltipName}`}

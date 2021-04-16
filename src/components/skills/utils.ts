@@ -2,7 +2,13 @@ type ExperienceName = {
   [key: number]: string;
 };
 
+type experienceClass = {
+  startDate: number;
+  endDate?: number;
+};
+
 type ExperienceTooltip = {
+  name: string;
   startDate: number;
   endDate?: number;
 };
@@ -37,13 +43,14 @@ export const formatExperienceClassName = (years: number) => {
 export const generateExperienceClassName = ({
   startDate,
   endDate,
-}: ExperienceTooltip) => {
+}: experienceClass) => {
   if (!startDate || !endDate) return '';
   const years = getYearsOfExperience(startDate, endDate);
   return formatExperienceClassName(years);
 };
 
 export const formatExperienceTooltip = ({
+  name,
   startDate,
   endDate,
 }: ExperienceTooltip) => {
